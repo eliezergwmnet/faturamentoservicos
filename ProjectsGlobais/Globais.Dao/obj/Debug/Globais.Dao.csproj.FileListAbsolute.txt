@@ -1,0 +1,18 @@
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\bin\Debug\Globais.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\bin\Debug\Globais.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\bin\Debug\Globais.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\bin\Debug\Globais.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\bin\Debug\Globais.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\bin\Debug\Globais.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\obj\Debug\Globais.Dao.csprojResolveAssemblyReference.cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\obj\Debug\Globais.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\obj\Debug\Globais.Dao.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\bin\Debug\Globais.Dao.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\bin\Debug\Globais.Dao.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\bin\Debug\Globais.BE.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\bin\Debug\Globais.Helper.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\bin\Debug\Globais.BE.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\bin\Debug\Globais.Helper.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\obj\Debug\Globais.Dao.csprojResolveAssemblyReference.cache
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\obj\Debug\Globais.Dao.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\obj\Debug\Globais.Dao.pdb

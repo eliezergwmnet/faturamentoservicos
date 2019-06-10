@@ -1,0 +1,59 @@
+﻿@{ 
+    var nomefantasia = "";
+    if (Request["searchnamecliente"] != null && Request["searchnamecliente"] != "")
+    {
+        nomefantasia = Request["searchnamecliente"].ToString();
+    }
+}
+
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 30px 0px;background: #fff;float: left;">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <div class="form-group">
+            <label for="cli_nomeFantasia" class="control-label mb-1">Nome Fantasia</label>
+            <div class="nk-int-st">
+                <input id="cli_nomeFantasia" placeholder="Nome Fantasia" name="cli_nomeFantasia" type="text" value="@nomefantasia" class="form-control obrigatorio">
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <div class="form-group">
+            <label for="cli_razaoSocial" class="control-label mb-1">Razão Social</label>
+            <div class="nk-int-st">
+                <input id="cli_razaoSocial" placeholder="Razão Social" name="cli_razaoSocial" type="text" class="form-control obrigatorio">
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+        <div class="form-group">
+            <label for="cli_CGC" class="control-label mb-1">CNPJ / CPF</label>
+            <div class="nk-int-st">
+                <input id="cli_CGC" placeholder="CNPJ / CPF" name="cli_CGC" type="text" class="form-control obrigatorio">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">
+        <div class="button-icon-btn mg-t-30 butt-mg-t-20">
+            <button class="btn btn-gray gray-icon-notika btn-reco-mg btn-button-mg waves-effect" id="btnbuscadados"><i class="notika-icon notika-search"></i></button>
+        </div>
+    </div>
+
+    <div id="viewPlaceHolder" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+        <b>Caregando Dados, Aguarde...</b><br /><br /><br />
+        <img src="@Url.Content("~/images/carregando.gif")" style="width:120px" />
+    </div>
+</div>
+
+
+
+@Html.Partial("~/Views/Clientes/ModalCliente.cshtml")
+
+
+<script src="@Url.Content("/Content/js/Projeto/Clientes.js")"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        CarregarLista()
+    });
+</script>

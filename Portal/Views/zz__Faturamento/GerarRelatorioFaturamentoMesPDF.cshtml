@@ -1,0 +1,164 @@
+﻿@model List<Portal.BE.NotasClientesEmitidasMes>
+@{
+    Layout = null;
+    var valor = Request["fat_mes"];
+    var quebra = valor.Split('/');
+    var mes = quebra[0];
+    var ano = quebra[1];
+    int diasmes = System.DateTime.DaysInMonth(Convert.ToInt32(ano), Convert.ToInt32(mes));
+    decimal total = 0;
+
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+
+<style>
+    body {
+        font-size: 12px !important;
+        height: 300px !important;
+    }
+
+    .tblBox {
+        border: 1px solid #CCCCCC;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        width: 850px;
+        padding: 0px;
+    }
+
+    .divTitle {
+        border: 1px solid #CCCCCC;
+        margin-top: 0px;
+        margin-bottom: 1px;
+        width: 848px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        text-align: center;
+    }
+
+    body {
+        font-family: Verdana;
+        font-size: 11px;
+        color: #000000;
+        margin-top: 0px;
+    }
+
+    #tblCabecNF {
+        font-family: Verdana;
+        font-size: 13px;
+    }
+
+    .spnDestaqueCabec {
+        font-weight: bold;
+    }
+
+    .tdL {
+        text-align: left;
+    }
+
+    .tdC {
+        text-align: center;
+    }
+
+    .tdR {
+        text-align: right;
+    }
+
+    #tblDadosServico {
+        padding: 0px;
+        width: 849px;
+    }
+        /* #tblDadosServico thead { color: Red; text-align: center; } */
+        #tblDadosServico thead td, #tblTotalizacao thead td, #tblInfoRodape thead td {
+            text-align: center;
+            border-bottom: 1px solid #CCCCCC;
+        }
+
+        #tblDadosServico tfoot td {
+            border-top: 1px solid #CCCCCC;
+        }
+
+        #tblDadosServico td, #tblTotalizacao td, #tblInfoRodape td {
+            border-right: 1px solid #CCCCCC;
+            padding: 3px;
+        }
+
+        .divTitle, #tblDadosServico tfoot td {
+            font-weight: bold;
+            color: #666666;
+        }
+
+    #tblInfoRodape tbody td {
+        vertical-align: top;
+        height: 100px;
+    }
+    table{
+        width: 100%;
+    }
+    table tbody tr th{
+        border-top: solid 2px #000000;
+        border-bottom: solid 2px #000000;
+        height: 30px;
+        margin-bottom: 10px
+    }
+    table tbody tr td {
+        padding: 5px;
+        border-bottom: solid 1px #dbd8d8;
+       
+    }
+</style>
+
+
+<body>
+    <h2 style="text-align:center">Notas Fiscais de SCM - Serviço de Comunicação Multimídia <br />Emitidas entre o Período de 01/@mes/@ano e @diasmes/@mes/@ano</h2>
+        <table cellpadding="0" cellpadding="0" cellspacing="0" align="center">
+            <tbody>
+                <tr>
+                    <th align="left" width="80px">Nro da Nota </th>
+                    <th align="left">Domínio</th>
+                    <th align="left">Cliente</th>
+                    <th align="left">CNPJ</th>
+                    <th align="left">CFOP</th>
+                    <th align="right" width="120px">Valor da Nota</th>
+                    <th align="left">Emissão</th>
+                    <th align="right">Vencimento</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    string numNota = item.not_numero.ToString().PadLeft(6, '0').Replace(",", ".");
+                    numNota = numNota.Substring(0, 3) + "." + numNota.Substring(3);
+                    total += item.not_totalliquido;
+                    <tr>
+                        <td>@numNota</td>
+                        <td>@item.cli_nomeFantasia</td>
+                        <td>@item.cli_razaoSocial</td>
+                        <td>@Convert.ToUInt64(item.cli_CGC.Replace(".", "").Replace("-", "").Replace("/", "").Trim()).ToString(@"00\.000\.000\/0000-00")</td>
+                        <td>@item.cli_CFOP.ToString().Replace(",", ".")</td>
+                        <td align="right">R$ @string.Format("{0:0,0.00}", item.not_totalliquido)</td>
+                        <td align="right">@item.not_dtEmissao.ToString("dd/MM/yyyy")</td>
+                        <td align="right">@item.not_dtVencimento.ToString("dd/MM/yyyy")</td>
+
+                    </tr>
+
+                }
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td align="left"><b>Total</b></td>
+                    <td align="right"><b>R$ @string.Format("{0:0,0.00}", total)</b></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+</body>
+</html>

@@ -1,0 +1,165 @@
+﻿<style>
+    .uploadimagemsistema {
+        display: none !important;
+    }
+
+    .newbtn {
+        cursor: pointer;
+    }
+
+
+</style>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 30px 0px;background: #fff;float: left;">
+    <div class="card">
+
+        <div class="card-body">
+            <div id="pay-invoice">
+                <div class="card-body">
+                    <form action="@Url.Content("~/Empresa/Insert")" method="post" name="submitenviar">
+                            <div class="col-sm-8">
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <div class="form-cli_nomeFantasia">
+                                            <label for="conf_nomefantasia" class="control-label mb-1">Nome Fantasia *</label>
+                                            <div class="nk-int-st">
+                                                <input id="conf_nomefantasia" name="conf_nomefantasia" type="text" placeholder="Nome Fantasia" class="form-control obrigatorio" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <label for="conf_razaosocial" class="control-label mb-1">Razão Social *</label>
+                                            <div class="nk-int-st">
+                                                <input id="conf_razaosocial" name="conf_razaosocial" type="text" placeholder="Razão Social" class="form-control obrigatorio" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <label for="conf_cnpj" class="control-label mb-1">Cadastro</label>
+                                        <select id="tipocampo" onchange="AlterarTipoCampo(this)" class="form-control">
+                                            <option value="formCnpj">Pessoa Juridica</option>
+                                            <option value="formCpf">Pessoa Física</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label for="conf_cnpj" class="control-label mb-1" id="tipocadastro">CNPJ</label>
+                                        <div class="nk-int-st">
+                                            <input type="text" id="conf_cnpj" name="conf_cnpj" placeholder="CPF/CNPJ" class="form-control formCnpj">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label for="conf_inscricaoestadual" class="control-label mb-1">Inscrição Estadual</label>
+                                        <div class="nk-int-st">
+                                            <input type="text" id="conf_inscricaoestadual" name="conf_inscricaoestadual" placeholder="Inscrição Estadual" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                    <div class="row">
+                                        <div class="col-sm-5 text-center">
+                                            <label for="usu_senha" class="control-label mb-1 uploadImagem">Imagem Pequena</label><br />
+                                            <label class=newbtn>
+                                                <img id="image_pequena" src="http://placehold.it/180x80">
+                                                <input id="conf_imagempequena" name="conf_imagempequena" type="hidden">
+                                                <input class="uploadimagemsistema" onchange="salvarImagemPequena(this);" type="file">
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-5 text-center">
+                                            <label for="usu_senha" class="control-label mb-1 uploadImagem">Imagem Grande</label><br />
+                                            <label class=newbtn>
+                                                <img id="image_grande" src="http://placehold.it/180x180" style="max-height: 100px">
+                                                <input id="conf_imagemgrande" name="conf_imagemgrande" type="hidden">
+                                                <input class="uploadimagemsistema" onchange="salvarImagemGrande(this);" type="file">
+                                            </label>
+                                        </div>
+                                    </div>                                   
+                            </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            @Html.Partial("~/Views/Helper/EnderecoPartial.cshtml")
+                        </div>
+
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-conf_telefone">
+                                        <label for="conf_telefone" class="control-label mb-1">Telefone *</label>
+                                        <div class="nk-int-st">
+                                            <input id="conf_telefone" name="conf_telefone" type="text" placeholder="Telefone" class="form-control obrigatorio formFone" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="conf_celular" class="control-label mb-1">Celular *</label>
+                                        <div class="nk-int-st">
+                                            <input id="conf_celular" name="conf_celular" type="text" placeholder="Celular" class="form-control formCel" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="conf_celularwhats" class="control-label mb-1">Whats *</label>
+                                        <select id="conf_celularwhats" name="conf_celularwhats"class="form-control obrigatorio">
+                                            <option value="1">Sim</option>
+                                            <option value="0">Não</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="conf_email" class="control-label mb-1">E-Mail *</label>
+                                        <div class="nk-int-st">
+                                            <input id="conf_email" name="conf_email" type="text" placeholder="E-Mail" class="form-control obrigatorio" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="conf_dominio" class="control-label mb-1">Dominio *</label>
+                                        <div class="nk-int-st">
+                                            <input id="conf_dominio" name="conf_dominio" type="text" placeholder="Dominio" class="form-control obrigatorio" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label for="conf_layoutcor" class="control-label mb-1">Layout *</label>
+                                        <select id="conf_layoutcor" name="conf_layoutcor" class="form-control obrigatorio">
+                                            @foreach (Globais.Helper.ModeloTemplate item in Enum.GetValues(typeof(Globais.Helper.ModeloTemplate)))
+                                            {
+                                                <option value="@item">@item.GetDescription()</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                <i class="fa fa-dot-circle-o"></i> Salvar
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="@Url.Content("~/Content/js/Projeto/Empresa.js")"></script>

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A35E204A-9F9B-47A6-84FE-AC60E95BF4AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NFENotasFiscais.BLL</RootNamespace>
+    <AssemblyName>NFENotasFiscais.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NFSE.Net">
+      <HintPath>NFEServicos\DLLProjeto\NFSE.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NFEServicos\NFEEnviarNota.cs" />
+    <Compile Include="NFEServicos\NFEGerarXMLNotasServicos.cs" />
+    <Compile Include="NTLoteBLL.cs" />
+    <Compile Include="NTLoteErroBLL.cs" />
+    <Compile Include="NTNotasBLL.cs" />
+    <Compile Include="NTNotasItensBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\ProjectsGlobais\Globais.BE\Globais.BE.csproj">
+      <Project>{babd2c80-4559-40b1-9079-373fce1a75bc}</Project>
+      <Name>Globais.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\ProjectsGlobais\Globais.BLL\Globais.BLL.csproj">
+      <Project>{bd716341-aae7-4a42-9b42-fb2ce7693bc2}</Project>
+      <Name>Globais.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\ProjectsGlobais\Globais.Dao\Globais.Dao.csproj">
+      <Project>{7c68beb7-adab-4fdb-a7b6-8696de0e71a8}</Project>
+      <Name>Globais.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\ProjectsGlobais\Portal.Helper\Globais.Helper.csproj">
+      <Project>{108e9ddb-7fc2-4352-ab19-351ad4328a4e}</Project>
+      <Name>Globais.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PortalSCM\Class\PortalSCM.BE\PortalSCM.BE.csproj">
+      <Project>{a68ccb82-958d-422c-92db-5db1d97ced77}</Project>
+      <Name>PortalSCM.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PortalSCM\Class\PortalSCM.Helper\PortalSCM.Helper.csproj">
+      <Project>{5BE2CA67-2D14-4E21-B834-5DEC8B45217F}</Project>
+      <Name>PortalSCM.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NFENotasFiscais.BE\NFENotasFiscais.BE.csproj">
+      <Project>{362FC5A5-1538-4246-9E58-5226C635553B}</Project>
+      <Name>NFENotasFiscais.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NFENotasFiscais.Dao\NFENotasFiscais.Dao.csproj">
+      <Project>{BAD1CF0B-13B7-4597-9A07-7788D58AC4DA}</Project>
+      <Name>NFENotasFiscais.Dao</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

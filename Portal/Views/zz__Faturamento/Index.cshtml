@@ -1,0 +1,125 @@
+﻿@{ 
+    var mes = DateTime.Now.Month.ToString().PadLeft(2, '0');
+}
+<div class="col-12">
+    <h5 class="col-sm-3">Buscar</h5>
+    <div class="col-sm-2">
+        <div class="form-group">
+            <label for="fat_mes" class="control-label mb-1">Mes</label>
+            <input id="fat_mes" name="fat_mes" type="text" value="@DateTime.Now.ToString("MM/yyyy")" class="form-control obrigatorio formDateMes">
+        </div>
+    </div>
+    <!--<div class="col-sm-4">
+        <label for="fat_mes" class="control-label mb-1">Status</label><br />
+        <div class="btn-group " data-toggle="buttons">
+            <label class="btn btn-success active">
+                <input type="checkbox" style="display:none"> Liquidado
+                <span class="fa fa-check"></span>
+            </label>
+            <label class="btn btn-primary active">
+                <input type="checkbox" style="display:none"> Baixado
+                <span class="fa fa-check"></span>
+            </label>
+            <label class="btn btn-warning active">
+                <input type="checkbox" style="display:none"> Pendente
+                <span class="fa fa-check"></span>
+            </label>
+            <label class="btn btn-danger active">
+                <input type="checkbox" style="display:none"> Atrasado
+                <span class="fa fa-check"></span>
+            </label>
+        </div>
+    </div>-->
+    <div class="col-sm-4">
+        <button class="btn btn-info" id="btnbuscadados" style="margin-top:20px" type="button"><i class="fa fa-search"></i> Buscar</button>
+        <a href="javascript:" class="btn btn-dark" id="gerarpdf" style="margin-top:20px" type="button"><i class="fa fa-code"></i> Atendimento</a>
+        <a href="javascript:" class="btn btn-dark" id="gerarpdf2" style="margin-top:20px" type="button"><i class="fa fa-code"></i> Rel. Contábil</a>
+    </div>
+    <div class="col-sm-5 text-right" style="float:right">
+        <button class="btn btn-info" id="btnremessaxml" style="margin-top:20px" type="button"><i class="fa fa-file-text-o"></i> XML</button>
+        <button class="btn btn-info" id="btnremessa" style="margin-top:20px" type="button"><i class="fa fa-file-text-o"></i> Remessa</button>
+        <button class="btn btn-success" id="btnenviarnotas" style="margin-top:20px" type="button"><i class="fa fa-envelope"></i> Enviar Notas</button>
+        <button class="btn btn-warning" id="btnbotaocancelarnotas" style="margin-top:20px" type="button"><i class="fa fa-exclamation"></i> Cancelar Notas do Mês Atual</button>
+    </div>
+
+</div>
+
+<div id="viewPlaceHolder" class="text-center">
+    <b>Caregando Dados, Aguarde...</b><br /><br /><br />
+    <img src="@Url.Content("~/images/carregando.gif")" style="width:120px" />
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#viewPlaceHolder").load("/Faturamento/IndexCarregaListaFaturamento", function () { Paginacao(); });
+
+        $("#gerarpdf").click(function () {
+            var mes = $("#fat_mes").val();
+            var conf_id = @GlobalVariables.User_EmpresaSelecionar;
+            window.open('/faturamento/RelatorioFaturamento?mes=' + mes + '&conf_id=' + conf_id, '_blank');
+        })
+        $("#gerarpdf2").click(function () {
+            var mes = $("#fat_mes").val();
+            var conf_id = @GlobalVariables.User_EmpresaSelecionar;
+            window.open('/faturamento/RelatorioFaturamentomes?mes=' + mes + '&conf_id=' + conf_id, '_blank');
+        })
+
+
+        $("#btnremessa").click(function () {
+            var itensselecionados = [];
+            $(".itemselecionados").each(function () {
+                if ($(this).prop("checked")) {
+                    itensselecionados.push($(this).attr('id'));
+                }
+                //else {
+                //    $(this).prop("checked", true);
+                //}
+            });
+            window.location = '/Faturamento/GerarXMLRemessaInsert?notas=' + itensselecionados.join(", ") ;
+           // EnviarRequisicao("/Faturamento/GerarXMLRemessaInsert", { notas: itensselecionados.join(", ") }, "POST", function (url) {
+           //
+           // }, true);
+           // console.log(itensselecionados);
+        })
+
+        $("#btnremessaxml").click(function () {
+            var itensselecionados = [];
+            $(".itemselecionados").each(function () {
+                if ($(this).prop("checked")) {
+                    itensselecionados.push($(this).attr('id'));
+                }
+            });
+            window.location = '/Faturamento/GerarXMLRemessaInsert?notas=' + $("#fat_mes").val() + '&xml=True' ;
+        })
+
+        
+
+        $("#btnbuscadados").click(function () {
+            $("#page-loader").fadeIn("slow");
+            var parametro = "fat_mes=" + $("#fat_mes").val();
+            $("#viewPlaceHolder").load("/Faturamento/IndexCarregaListaFaturamento?" + parametro, function () { Paginacao(); });
+        })
+
+        $("#btnbotaocancelarnotas").click(function () {
+            Confirmacao("Atenação", "Tem certeza que deseja cancelar as notas do mes @mes ?", function (res) {
+                if (res) {
+                    EnviarRequisicao("/Faturamento/CalcelarNotaMes", {}, "GET", function () {
+                        window.location = "/Faturamento";
+                    }, true);
+                }
+            })
+        });
+
+        $("#btnenviarnotas").click(function () {
+            Confirmacao("Atenação", "Tem certeza que deseja enviar as notas por e-mail ?", function (res) {
+                if (res) {
+                    EnviarRequisicao("/Faturamento/EnviarNotasEmail", {}, "GET", function () {
+                        window.location = "/Faturamento";
+                    }, true);
+                }
+            })
+        })
+
+    });
+</script>

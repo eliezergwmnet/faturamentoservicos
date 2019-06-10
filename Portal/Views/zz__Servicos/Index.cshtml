@@ -1,0 +1,36 @@
+﻿<div class="col-12">
+    <h5 class="col-sm-3">Buscar</h5>
+    <div class="col-sm-3" style="display:none">
+        <div class="form-group">
+            <label for="serv_nome" class="control-label mb-1">Nome</label>
+            <input id="serv_nome" name="serv_nome" type="text" class="form-control obrigatorio">
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label for="serv_descricao" class="control-label mb-1">Nome</label>
+            <input id="serv_descricao" name="serv_descricao" placeholder="Nome Serviço" type="text" class="form-control obrigatorio">
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <button class="btn btn-info" id="btnbuscadados" style="margin-top:20px" type="button"><i class="fa fa-search"></i> Buscar</button>
+    </div>
+</div>
+
+<div id="viewPlaceHolder" class="text-center">
+    <b>Caregando Dados, Aguarde...</b><br /><br /><br />
+    <img src="@Url.Content("~/images/carregando.gif")" style="width:120px" />
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#viewPlaceHolder").load("/Servicos/CarregaListaServicos", function () { Paginacao(); });
+
+        $("#btnbuscadados").click(function () {
+            $("#page-loader").fadeIn("slow");
+            var parametro = "serv_nome=" + $("#serv_nome").val() + "&serv_descricao=" + $("#serv_descricao").val();
+            $("#viewPlaceHolder").load("/Servicos/CarregaListaServicos?" + parametro, function () { Paginacao(); });
+        })
+    });
+</script>

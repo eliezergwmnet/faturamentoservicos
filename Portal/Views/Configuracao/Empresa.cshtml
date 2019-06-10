@@ -1,0 +1,155 @@
+﻿@{
+    var empresa = (Portal.BE.EmpresaBE)ViewData["empresa"];
+    var endereco = new Portal.BE.EnderecoBE
+    {
+        end_id = empresa.end_id,
+        end_bairro = empresa.end_bairro,
+        end_cep = empresa.end_cep,
+        end_cidade = empresa.end_cidade,
+        end_complemento = empresa.end_complemento,
+        end_estado = empresa.end_estado,
+        end_latitude = empresa.end_latitude,
+        end_logradouro = empresa.end_logradouro,
+        end_longetitude = empresa.end_longetitude,
+        end_numero = empresa.end_numero
+    };
+    var selecionado = "";
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+
+            <div class="card-body">
+                <div id="pay-invoice">
+                    <div class="card-body">
+                        <form action="@Url.Content("~/Configuracao/InsertEmpresa")" method="post" name="submitenviar">
+                            <input type="hidden" value="@empresa.conf_id" id="conf_id" name="conf_id" />
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-4">
+                                        <div class="form-cli_nomeFantasia">
+                                            <label for="conf_nomefantasia" class="control-label mb-1">Nome Fantasia *</label>
+                                            <div class="input-group">
+                                                <input id="conf_nomefantasia" name="conf_nomefantasia" type="text" placeholder="Nome Fantasia" class="form-control obrigatorio" required value="@empresa.conf_nomefantasia">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <label for="conf_razaosocial" class="control-label mb-1">Razão Social *</label>
+                                            <input id="conf_razaosocial" name="conf_razaosocial" type="text" placeholder="Razão Social" class="form-control obrigatorio" required value="@empresa.conf_razaosocial ">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label for="conf_cnpj" class="control-label mb-1">CPF/CNPJ</label>
+                                        <input type="text" id="conf_cnpj" name="conf_cnpj" placeholder="CPF/CNPJ" class="form-control formCnpj" value="@empresa.conf_cnpj">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+
+                                    <div class="col-sm-3">
+                                        <label for="conf_inscricaoestadual" class="control-label mb-1">Inscrição Estadual</label>
+                                        <input type="text" id="conf_inscricaoestadual" name="conf_inscricaoestadual" placeholder="Inscrição Estadual" class="form-control" value="@empresa.conf_inscricaoestadual">
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                        <label for="conf_ccm" class="control-label mb-1">CCM</label>
+                                        <input type="text" id="conf_ccm" name="conf_ccm" placeholder="CCM" class="form-control" value="@empresa.conf_ccm">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12" style="margin-top: 30px">
+                                <h5 class="text-left">Endereço(s)</h5>
+                            </div>
+
+                            <div class="col-sm-12">
+                                @Html.Partial("~/Views/Helper/EnderecoPartial.cshtml", endereco)
+                            </div>
+
+                            <div class="col-sm-12" style="margin-top: 30px">
+                                <h5 class="text-left">Banco</h5>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="conf_banco" class="control-label mb-1">Banco</label>
+                                    <select id="conf_banco" name="conf_banco" class="form-control obrigatorio">
+                                        @if ("1" == empresa.conf_banco.ToString()) { selecionado = "selected=selected"; } else { selecionado = ""; }
+                                        <option @selecionado value="1">BancodoBrasil</option>
+                                        @if ("41" == empresa.conf_banco.ToString()) { selecionado = "selected=selected"; } else { selecionado = ""; }
+                                        <option @selecionado value="41">Banrisul</option>
+                                        @if ("3" == empresa.conf_banco.ToString()) { selecionado = "selected=selected"; } else { selecionado = ""; }
+                                        <option @selecionado value="3">Basa</option>
+                                        @if ("237" == empresa.conf_banco.ToString()) { selecionado = "selected=selected"; } else { selecionado = ""; }
+                                        <option @selecionado value="237">Bradesco</option>
+                                        @if ("70" == empresa.conf_banco.ToString()) { selecionado = "selected=selected"; } else { selecionado = ""; }
+                                        <option @selecionado value="70">BRB</option>
+                                        @if ("104" == empresa.conf_banco.ToString()) { selecionado = "selected=selected"; } else { selecionado = ""; }
+                                        <option @selecionado value="104">Caixa</option>
+                                        @if ("399" == empresa.conf_banco.ToString()) { selecionado = "selected=selected"; } else { selecionado = ""; }
+                                        <option @selecionado value="399">HSBC</option>
+                                        @if ("341" == empresa.conf_banco.ToString()) { selecionado = "selected=selected"; } else { selecionado = ""; }
+                                        <option @selecionado value="341">Itau</option>
+                                        @if ("356" == empresa.conf_banco.ToString()) { selecionado = "selected=selected"; } else { selecionado = ""; }
+                                        <option @selecionado value="356">Real</option>
+                                        @if ("422" == empresa.conf_banco.ToString()) { selecionado = "selected=selected"; } else { selecionado = ""; }
+                                        <option @selecionado value="422">Safra</option>
+                                        @if ("33" == empresa.conf_banco.ToString()) { selecionado = "selected=selected"; } else { selecionado = ""; }
+                                        <option @selecionado value="33">Santander</option>
+                                        @if ("756" == empresa.conf_banco.ToString()) { selecionado = "selected=selected"; } else { selecionado = ""; }
+                                        <option @selecionado value="756">Sicoob</option>
+                                        @if ("748" == empresa.conf_banco.ToString()) { selecionado = "selected=selected"; } else { selecionado = ""; }
+                                        <option @selecionado value="748">Sicred</option>
+                                        @if ("347" == empresa.conf_banco.ToString()) { selecionado = "selected=selected"; } else { selecionado = ""; }
+                                        <option @selecionado value="347">Sudameris</option>
+                                        @if ("409" == empresa.conf_banco.ToString()) { selecionado = "selected=selected"; } else { selecionado = ""; }
+                                        <option @selecionado value="409">Unibanco</option>
+                                        @if ("743" == empresa.conf_banco.ToString()) { selecionado = "selected=selected"; } else { selecionado = ""; }
+                                        <option @selecionado value="743">Semear</option>
+
+                                    </select>
+                                 </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="conf_agencia" class="control-label mb-1">Agência *</label>
+                                    <input id="conf_agencia" name="conf_agencia" type="text" placeholder="Agência" class="form-control obrigatorio" required value="@empresa.conf_agencia ">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="conf_agencia" class="control-label mb-1">Digito </label>
+                                    <input id="conf_agencia" name="conf_agencia" type="text" placeholder="Razão Social" class="form-control" required value="@empresa.conf_agenciadiito ">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="conf_conta" class="control-label mb-1">Numero da Conta *</label>
+                                    <input id="conf_conta" name="conf_conta" type="text" placeholder="Razão Social" class="form-control obrigatorio" required value="@empresa.conf_conta ">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="conf_digito" class="control-label mb-1">Digito</label>
+                                    <input id="conf_digito" name="conf_digito" type="text" placeholder="Digito Conta" class="form-control" required value="@empresa.conf_digito ">
+                                </div>
+                            </div>
+
+
+
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                <i class="fa fa-dot-circle-o"></i> Salvar
+                            </button>
+                        </div>
+
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

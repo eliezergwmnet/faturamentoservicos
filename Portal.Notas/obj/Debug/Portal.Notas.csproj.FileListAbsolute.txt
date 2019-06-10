@@ -1,0 +1,37 @@
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.Notas.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.Notas.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.BLL.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.BLL.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\obj\Debug\Portal.Notas.csprojResolveAssemblyReference.cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\obj\Debug\Portal.Notas.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\obj\Debug\Portal.Notas.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.Notas.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.Notas.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Globais.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Globais.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.BLL.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.BLL.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Globais.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Globais.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\obj\Debug\Portal.Notas.csprojResolveAssemblyReference.cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\obj\Debug\Portal.Notas.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Notas\obj\Debug\Portal.Notas.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.Notas.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Notas\bin\Debug\Portal.Notas.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Notas\bin\Debug\Globais.BE.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Notas\bin\Debug\Globais.Helper.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Notas\bin\Debug\Globais.BE.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Notas\bin\Debug\Globais.Helper.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Notas\obj\Debug\Portal.Notas.csprojResolveAssemblyReference.cache
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Notas\obj\Debug\Portal.Notas.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Notas\obj\Debug\Portal.Notas.pdb

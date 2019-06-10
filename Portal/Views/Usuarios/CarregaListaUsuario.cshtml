@@ -1,0 +1,109 @@
+﻿@model List<Globais.BE.GlobaisUsuarioBE>
+
+@{
+    /*var permissao = (Globais.BE.GlobaisPermissaoBE)Session[Globais.Helper.Globais.SessionSistemaPermissao];
+    var page = (from x in permissao.Paginas where x.permPag_url.Equals("/Usuarios") select x).FirstOrDefault<Globais.BE.GlobaisPermissaoPaginaBE>();
+    page = new Globais.BE.GlobaisPermissaoPaginaBE { permPag_alterar = true, permPag_excluir = true };*/
+    int i = 0;
+    var cor = "";
+}
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th class="text-left" style="width: 20px"></th>
+            <th>Imagem</th>
+            <th>Nome</th>
+            <th>Perfil</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Celular</th>
+            <th class="text-right" style="width: 20px"></th>
+            <th class="text-right" style="width: 20px"></th>
+            <th class="text-right" style="width: 20px"></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (i % 2 == 0) { cor = "background-color: rgba(0,0,0,.05);"; } else { cor = ""; }
+            <tr href='#@i' style="@cor">
+                <td class="accordion-toggle clickable-row" href='#@i' data-toggle="collapse"><i class="fa fa-sort-desc"></i></td>
+                <td class="text-left"><img src="@item.usu_imagem" style="height: 80px !important;" /></td>
+                <td class="text-left">@item.usu_nome</td>
+                <td class="text-left">@item.Permissao.perm_nome</td>
+                <td class="text-left">@item.usu_email</td>
+                <td class="text-left">@item.usu_telefone</td>
+                <td class="text-left">@item.usu_celular</td>
+                <td align="right">
+                    <button class="btn btn-info btn-sm" alt="Alterar Senha" onclick="AlterarSenha(@item.usu_id)" title="Alterar Senha"><i class="fa fa-unlock-alt"></i></button>
+                </td>
+                <td align="right">
+                    <button class="btn btn-warning btn-sm" alt="Alterar Usuário" onclick="AlterarUsuario(@item.usu_id)" title="Alterar Usuário"><i class="fa fa-arrow-circle-o-right"></i></button>
+                </td>
+                <td align="right">
+                    <button class="btn btn-danger btn-sm" alt="Remover Usuário" onclick="RemoveUsuarioCadastrado(@item.usu_id)" title="Remover Usuário"><i class="fa fa-trash-o"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="100" style="padding:0px">
+                    <div id="@i" class="accordion-body collapse">
+                        <div class="accordion-inner" style="background: #fff">
+
+                            @if (item.Endereco != null)
+                            {
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <h5>Endereço</h5>
+                                        </div>
+                                    </div>
+
+
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>CEP</th>
+                                                <th>Logradouro</th>
+                                                <th>Numero</th>
+                                                <th>Bairro</th>
+                                                <th>Cidade / Estado</th>
+                                                <th class="text-right" style="width: 120px"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr id="@item.Endereco.end_id">
+                                                <td>@item.Endereco.end_cep</td>
+                                                <td>@item.Endereco.end_logradouro</td>
+                                                <td>@item.Endereco.end_numero @item.Endereco.end_complemento</td>
+                                                <td>@item.Endereco.end_bairro</td>
+                                                <td>@item.Endereco.end_cidade @item.Endereco.end_estado</td>
+                                                <td><div class="text-right" style="width:55px"><a href="javascript:" style="padding: 0px 18px !important;" class="btn btn-warning btn-sm" onclick="CarregarEndereco(@item.Endereco.end_id)" ><i class="fa fa-refresh"></i>&nbsp;Alterar</a></div></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
+
+
+                            
+
+
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            i++;
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="50">
+                Total de Itens Encontrados: @Model.Count
+            </th>
+        </tr>
+    </tfoot>
+</table>
+

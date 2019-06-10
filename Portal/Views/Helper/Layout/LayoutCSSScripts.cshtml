@@ -1,0 +1,113 @@
+﻿<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/bootstrap.min.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/font-awesome.min.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/owl.carousel.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/owl.theme.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/owl.transitions.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/meanmenu/meanmenu.min.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/animate.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/normalize.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/scrollbar/jquery.mCustomScrollbar.min.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/jvectormap/jquery-jvectormap-2.0.3.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/notika-custom-icon.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/wave/waves.min.css")">
+@* CSS para Alerta *@
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/dialog/sweetalert2.min.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/dialog/dialog.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/main.css")">
+
+
+
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/summernote/summernote.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/themesaller-forms.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/bootstrap-select/bootstrap-select.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/datapicker/datepicker3.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/color-picker/farbtastic.css")">
+
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/chosen/chosen.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/dropzone/dropzone.css")">
+
+
+
+@{ 
+    var emp = (Globais.BE.GlobaisEmpresaBE)HttpContext.Current.Session[Globais.Helper.Globais.SessionSistemaEmpresaSelecionada];
+    var temp = emp.conf_layoutcor;
+    var corTemp = new Portal.Models.TemplateSistema(temp);
+}
+
+@if (corTemp.TemplateSelecionado == Globais.Helper.ModeloTemplate.Vermelho)
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/vermelho.css")">
+}
+else if (corTemp.TemplateSelecionado == Globais.Helper.ModeloTemplate.Rosa)
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/rosa.css")">
+}
+else if (corTemp.TemplateSelecionado == Globais.Helper.ModeloTemplate.Purpura)
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/purpura.css")">
+}
+else if (corTemp.TemplateSelecionado == Globais.Helper.ModeloTemplate.Roxo)
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/roxo.css")">
+}
+else if (corTemp.TemplateSelecionado == Globais.Helper.ModeloTemplate.AzulEscuro)
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/azulescuro.css")">
+}
+else if (corTemp.TemplateSelecionado == Globais.Helper.ModeloTemplate.Azul)
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/azul.css")">
+}
+else if (corTemp.TemplateSelecionado == Globais.Helper.ModeloTemplate.AzulClaro)
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/azulclaro.css")">
+}
+else if (corTemp.TemplateSelecionado == Globais.Helper.ModeloTemplate.Ciano)
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/ciano.css")">
+}
+else if (corTemp.TemplateSelecionado == Globais.Helper.ModeloTemplate.VerdeEscuro)
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/verdeescuro.css")">
+}
+else if (corTemp.TemplateSelecionado == Globais.Helper.ModeloTemplate.Verde)
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/verde.css")">
+}
+else if (corTemp.TemplateSelecionado == Globais.Helper.ModeloTemplate.VerdeClaro)
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/verdeclaro.css")">
+}
+else if (corTemp.TemplateSelecionado == Globais.Helper.ModeloTemplate.Amarelo)
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/amarelo.css")">
+}
+else if (corTemp.TemplateSelecionado == Globais.Helper.ModeloTemplate.Laranja)
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/laranja.css")">
+}
+else if (corTemp.TemplateSelecionado == Globais.Helper.ModeloTemplate.Marron)
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/marron.css")">
+}
+else if (corTemp.TemplateSelecionado == Globais.Helper.ModeloTemplate.Cinza)
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/cinza.css")">
+}
+else if (corTemp.TemplateSelecionado == Globais.Helper.ModeloTemplate.CinzaEscuro)
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/cinzaescuro.css")">
+}
+else if (corTemp.TemplateSelecionado == Globais.Helper.ModeloTemplate.Preto)
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/preto.css")">
+}
+else
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/style.css")">
+}
+<link rel="stylesheet" href="@Url.Content("~/Content/Template/Verde/css/responsive.css")">
+<script src="@Url.Content("~/Content/Template/Verde/js/vendor/modernizr-2.8.3.min.js")"></script>
+
+
+

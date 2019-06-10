@@ -1,0 +1,89 @@
+﻿<style>
+    .uploadimagemsistema {
+        display: none !important;
+    }
+
+    .newbtn {
+        cursor: pointer;
+    }
+</style>
+
+<div class="modal fade" id="modalCadastroModuloPages" role="dialog">
+    <div class="modal-dialog modals-default">
+        <div class="modal-content">
+            <div class="modal-header" style="margin-bottom: 20px;background-color: #fff !important;">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="breadcomb-wp">
+                            <div class="breadcomb-icon">
+                                <i class="notika-icon notika-app"></i>
+                            </div>
+                            <div class="breadcomb-ctn">
+                                <h2>Modulos Paginas</h2>
+                                <p>Cadastro de Paginas do Modulo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                
+                <input id="mod_id" name="mod_id" type="hidden" value="" />
+                <input id="modPage_id" name="modPage_id" type="hidden" value="" />
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label for="modPage_nome" class="control-label mb-1">Titulo Pagina</label>
+                        <div class="nk-int-st">
+                            <input id="modPage_nome" placeholder="Titulo da Pagina" name="modPage_nome" type="text" value="" class="form-control obrigatorio">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label for="modPage_descricao" class="control-label mb-1">Descrição Pagina</label>
+                        <div class="nk-int-st">
+                            <textarea id="modPage_descricao" rows="4" placeholder="Descrição da Pagina" name="modPage_descricao" type="text" value="" class="form-control obrigatorio"></textarea>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div class="form-group">
+                        <label for="modPage_icone" class="control-label mb-1">Nome Icone</label>
+                        <div class="nk-int-st">
+                            <input id="modPage_icone" placeholder="Icone da Pagina" name="modPage_icone" type="text" value="" class="form-control obrigatorio">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div class="form-group">
+                        <label for="modPage_url" class="control-label mb-1">URL Pagina</label>
+                        <div class="nk-int-st">
+                            <input id="modPage_url" placeholder="URL Pagina" name="modPage_url" type="text" value="" class="form-control obrigatorio">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label for="modPage_cadTitulo" class="control-label mb-1">Cadastro Topo Pagina</label>
+                        <div class="nk-int-st">
+                            <select id="modPage_cadTitulo" name="modPage_cadTitulo" class="form-control obrigatorio">
+                                <option value="1">Sim</option>
+                                <option value="0">Não</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="margin-top: 30px">
+                <button type="button" class="btn btn-default" onclick="CadastrarModuloPages()" data-dismiss="modal">Salvar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

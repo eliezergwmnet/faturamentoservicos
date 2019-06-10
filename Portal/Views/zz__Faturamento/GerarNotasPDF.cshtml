@@ -1,0 +1,338 @@
+﻿@model List<Portal.BE.ClienteBE>
+@{
+    Layout = null;
+    ViewBag.Title = "GerarNotasPDF";
+    var empresa = (Portal.BE.EmpresaBE)ViewData["empresa"];
+    var img = Portal.Controllers._BaseController.ImageToBase64();
+    Portal.BE.ClienteEnderecoBE endCliente;
+    string cnpj;
+    string numNota;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+
+<style>
+    body{
+        font-size:12px !important;
+        height: 300px !important;
+    }
+    .tblBox {
+        border: 1px solid #CCCCCC;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        width: 850px;
+        padding: 0px;
+    }
+
+    .divTitle {
+        border: 1px solid #CCCCCC;
+        margin-top: 0px;
+        margin-bottom: 1px;
+        width: 848px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        text-align: center;
+    }
+
+    body {
+        font-family: Verdana;
+        font-size: 11px;
+        color: #000000;
+        margin-top: 0px;
+    }
+
+    #tblCabecNF {
+        font-family: Verdana;
+        font-size: 13px;
+    }
+
+    .spnDestaqueCabec {
+        font-weight: bold;
+    }
+
+    .tdL {
+        text-align: left;
+    }
+
+    .tdC {
+        text-align: center;
+    }
+
+    .tdR {
+        text-align: right;
+    }
+
+    #tblDadosServico {
+        padding: 0px;
+        width: 849px;
+    }
+        /* #tblDadosServico thead { color: Red; text-align: center; } */
+        #tblDadosServico thead td, #tblTotalizacao thead td, #tblInfoRodape thead td {
+            text-align: center;
+            border-bottom: 1px solid #CCCCCC;
+        }
+
+        #tblDadosServico tfoot td {
+            border-top: 1px solid #CCCCCC;
+        }
+
+        #tblDadosServico td, #tblTotalizacao td, #tblInfoRodape td {
+            border-right: 1px solid #CCCCCC;
+            padding: 3px;
+        }
+
+        .divTitle, #tblDadosServico tfoot td {
+            font-weight: bold;
+            color: #666666;
+        }
+
+    #tblInfoRodape tbody td {
+        vertical-align: top;
+        height: 100px;
+    }
+</style>
+
+
+<body>
+    <form id="form1">
+        @foreach (var item in Model)
+        {
+            if (item.Nota != null)
+            {
+                endCliente = item.Endereco.Count > 0 ? item.Endereco[0] : new Portal.BE.ClienteEnderecoBE();
+                cnpj = item.cli_CGC.Length == 14 ? Convert.ToUInt64(item.cli_CGC).ToString(@"00\.000\.000\/0000\-00") : item.cli_CGC;
+                numNota = item.Nota.not_numero.ToString().PadLeft(6, '0').Replace(",", ".");
+                numNota = numNota.Substring(0, 3) + "." + numNota.Substring(3);
+            <div align="center">
+                <div align="left" style="width: 850px; margin-left: 10px;">
+                    <table class="tblBox" id="tblCabecNF" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td style="width: 500px; height: 140px; border-right: 1px solid #CCCCCC;">
+
+                                <div style="position: relative; width: 470px;">
+
+                                    <div style="float: left; width: 220px; padding-top: 8px; margin-left: 5px;">
+                                        <img src="data:image/jpeg;base64,@img" alt ="GWMNet" style="width: 190px" />
+                                    </div>
+
+                                    <div style="float: left; width: 245px; padding-top: 4px; vertical-align: middle;">
+                                        <span class="spnDestaqueCabec">@empresa.conf_razaosocial</span>
+                                        <br />
+                                        CNPJ : @empresa.conf_cnpj<br />
+                                        I.E. : @empresa.conf_inscricaoestadual<br />
+                                        CCM : @empresa.conf_ccm<br />
+                                        @empresa.end_logradouro @empresa.end_numero <br />
+                                        @empresa.end_complemento<br />
+                                        @string.Format("{0}/{1}", empresa.end_cidade, empresa.end_estado) - CEP: @empresa.end_cep
+                                    </div>
+                                </div>
+
+                            </td>
+                            <td style="width: 460px; padding-left: 20px; vertical-align: middle;">
+                                <span class="spnDestaqueCabec">
+                                    NOTA FISCAL FATURA DE<br />SERVIÇO DE COMUNICAÇÃO
+                                </span>
+                                <br />
+                                Nº @numNota &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mês: @item.Nota.not_dtEmissao.ToString("MM/yyyy")<br />
+                                <b>Modelo 21</b> - Série: Única - 1ª Via<br />
+                                Natureza da Operação: Serviço de Comunicação<br />
+                                CFOP: @item.cli_CFOP.ToString().Replace(",", ".")<br />
+                                Data de Emissão: @item.Nota.not_dtEmissao.ToString("dd/MM/yyyy")
+                            </td>
+                        </tr>
+                    </table>
+
+
+                        <div class="divTitle">DESTINATÁRIO</div>
+
+                        <table class="tblBox">
+                            <tr>
+                                <td>
+
+                                    <table id="tblDadosCliente">
+                                        <tr>
+                                            <td class="tdR">NOME : </td>
+                                            <td colspan="3">@item.cli_razaoSocial</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tdR">ENDEREÇO : </td>
+                                            <td colspan="3">@endCliente.end_logradouro @endCliente.end_numero @endCliente.end_complemento</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tdR">MUNICÍPIO : </td>
+                                            <td>@endCliente.end_cidade</td>
+                                            <td class="tdR">ESTADO : </td>
+                                            <td>@endCliente.end_estado</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tdR">CNPJ : </td>
+                                            <td style="width: 500px;">@cnpj</td>
+                                            <td class="tdR">INSCR.ESTADUAL : </td>
+                                            <td>@item.cli_incricaoEstadual</td>
+                                        </tr>
+                                    </table>
+
+                                </td>
+                            </tr>
+                        </table>
+
+
+                        <table class="tblBox">
+                            <tr>
+                                <td>
+
+                                    <table id="Table1">
+                                        <tr>
+                                            <td colspan="6">
+                                                FATURA
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tdR" style="width: 75px;">Nº TÍTULO : </td>
+                                            <td class="tdL" style="width: 250px;">@numNota</td>
+
+                                            <td class="tdR" style="width: 90px;">VALOR (R$) : </td>
+                                            <td class="tdL" style="width: 240px;">@string.Format("{0:0,0.00}", item.Nota.not_totalbruto)</td>
+                                            <td class="tdR">VENCIMENTO : </td>
+                                            <td class="tdL" style="">@item.Nota.not_dtVencimento.ToString("dd/MM/yyyy")</td>
+
+                                        </tr>
+                                    </table>
+
+                                </td>
+                            </tr>
+                        </table>
+
+
+
+                        <div class="divTitle">DISCRIMINAÇÃO DO SERVIÇO</div>
+
+                        <table class="tblBox" cellpadding="0" cellspacing="0" style="border-right-width: 0px;">
+                            <tr>
+                                <td>
+
+                                    <table id="tblDadosServico" cellpadding="0" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <td style="width: 60px;">ITEM</td>
+                                                <td>DESCRIÇÃO</td>
+                                                <td style="width: 150px;">VALOR TOTAL (R$)</td>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td class="tdC"></td>
+                                                <td class="tdL">SERVIÇO DE COMUNICAÇÃO MULTIMÍDIA</td>
+                                                <td class="tdR"></td>
+                                            </tr>
+                                            @for (int i = 0; i < item.Nota.ItensNota.Count; i++)
+                                            {
+                                                <tr>
+                                                    <td class="tdC">@(i + 1)</td>
+                                                    <td class="tdL">@item.Nota.ItensNota[i].notI_descricao&nbsp;</td>
+                                                    <td class="tdR">@string.Format("{0:0,0.00}", item.Nota.ItensNota[i].notI_total)</td>
+                                                </tr>
+                                            }
+                                            <tr style="height: 100px;">
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td class="tdR" colspan="2">VALOR TOTAL NOTA FISCAL (R$) : </td>
+                                                <td class="tdR">@string.Format("{0:0,0.00}", item.Nota.not_totalbruto)</td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+
+                                </td>
+                            </tr>
+                        </table>
+
+
+                        <table class="tblBox" cellpadding="0" cellspacing="0" style="border-right-width: 0px;">
+                            <tr>
+                                <td>
+
+                                    <table id="tblTotalizacao" cellpadding="0" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <td style="width: 262px;">VALOR TOTAL NOTA FISCAL (R$)</td>
+                                                <td style="width: 262px;">BASE DE CÁLCULO DO ICMS</td>
+                                                <td style="width: 262px;">ALÍQUOTA DO ICMS (R$)</td>
+                                                <td style="width: 262px;">VALOR DO ICMS (R$)</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="tdR">@string.Format("{0:0,0.00}", item.Nota.not_totalbruto)</td>
+                                                <td class="tdR">0,00</td>
+                                                <td class="tdC">0%</td>
+                                                <td class="tdR">0,00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </td>
+                            </tr>
+                        </table>
+
+
+                        <table class="tblBox" cellpadding="0" cellspacing="0" style="border-right-width: 0px;">
+                            <tr>
+                                <td>
+
+                                    <table id="tblInfoRodape" cellpadding="0" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <td>RESERVADO AO FISCO</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 850px; height: 95px;">
+                                                    Chave de Codificação Digital: @item.Nota.not_chave<br /><br />
+                                                    Verifique a vericidade após o 2º mês subsequente a emissão da NF em:<br />
+                                                    http://www.fazenda.sp.gov.br/NFCE/Sistema/Consultas/InformacoesBasicasChaveCodificacao.aspx
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tdC" style="border-top: 1px solid #CCCCCC; border-bottom: 1px solid #CCCCCC; height: 10px;">
+                                                    INFORMAÇÕES COMPLEMENTARES
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="height: 95px;">
+                                                    Empresa optante pelo Simples Nacional. ICMS Recolhido de acordo com a LC n. 123/2006<br />
+                                                    Valor aproximado dos tributos R$ @string.Format("{0:0,0.00}", ((item.Nota.not_totalliquido * Convert.ToDecimal(18.16)) / 100)) (18,16%). Fonte: IBPT <br /><br />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+
+            <SeparatorTemplate>
+                <SeparatorTemplate>
+                    <div style="page-break-after: always;"></div>
+                </SeparatorTemplate>
+            </SeparatorTemplate>
+            }
+        }
+    </form>
+</body>
+</html>

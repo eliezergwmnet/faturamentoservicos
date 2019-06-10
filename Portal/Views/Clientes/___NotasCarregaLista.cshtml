@@ -1,0 +1,167 @@
+﻿@model List<Portal.BE.NotasClientesEmitidasMes>
+
+@{ 
+    var i = 0;
+    var cor = "";
+    var link = "";
+    decimal totalbruto = 0;
+    decimal totalliquido = 0;
+}
+
+<!--
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nº Nota</th>
+            <th>Nome Fantasia</th>
+            <th>Dt Emissão</th>
+            <th>Dt Venc.</th>
+            <th style="width: 100px; text-align: right">Valor Bruto.</th>
+            <th style="width: 100px; text-align: right">Valor Liq.</th>
+            <th style="width: 60px">Nota</th>
+            <th style="width: 60px">Boleto</th>
+            <th style="width: 60px">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (i % 2 == 0) { cor = "background-color: rgba(0,0,0,.05);"; } else { cor = ""; }
+                <tr class="accordion-toggle" style="@cor" data-toggle="collapse" data-href="#@i">
+                    <td><a class="accordion-toggle" data-toggle="collapse" href="#@i">@item.not_numero.ToString().PadLeft(6, '0')</a></td>
+                    <td text><a class="accordion-toggle" data-toggle="collapse" href="#@i">@item.cli_nomeFantasia</a></td>
+                    <td><a class="accordion-toggle" data-toggle="collapse" href="#@i">@item.not_dtEmissao.ToString("dd/MM/yyyy")</a></td>
+                    <td><a class="accordion-toggle" data-toggle="collapse" href="#@i">@item.not_dtVencimento.ToString("dd/MM/yyyy")</a></td>
+                    <td class="text-right">R$ @string.Format("{0:0,0.00}", item.not_totalbruto) </td>
+                    <td class="text-right">R$ @string.Format("{0:0,0.00}", item.not_totalliquido) </td>
+                    @{link = item.not_linkNota == "" ? "" : "<a target='_blank' href='/Notas_Fiscais/" + item.not_dtEmissao.Year.ToString() + "/" + item.not_dtEmissao.Month.ToString() + "/Notas/" + item.not_id.ToString() + ".pdf'> <i class='fa fa-file-text' aria-hidden='true'></i> Nota </a>";}
+                    <td class="text-center">@Html.Raw(link)</td>
+                    @{link = item.not_linkBoleto == "" ? "" : "<a target='_blank' href='/Notas_Fiscais/" + item.not_dtEmissao.Year.ToString() + "/" + item.not_dtEmissao.Month.ToString() + "/Boletos/" + item.not_id.ToString() + ".pdf'> <i class='fa fa-file-pdf-o' aria-hidden='true'></i> Boleto </a>";}
+                    <td class="text-center">@Html.Raw(link)</td>
+                    @if(item.not_statusPagamento == "LIQ" || item.not_statusPagamento == "BAX")
+                    {
+                        <td>
+                            <a href="javascript:" class="detalhespagamento" id="@item.not_numero" data-toggle="modal" data-target="#contact" data-original-title><img src="@Url.Content("~/images/icone_pag/pago.png")" alt="Pago" title="Pago" style="width: 25px;"/></a>
+                        </td>
+                    }
+                    else if (item.not_dtVencimento > DateTime.Now)
+                    {
+                        <td>
+                            <a href="javascript:" class="detalhespagamento" id="@item.not_numero" data-toggle="modal" data-target="#contact" data-original-title><img src="@Url.Content("~/images/icone_pag/pendente.png")" alt="Pendente" title="Pendente" style="width: 25px;"/></a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <a href="javascript:" class="detalhespagamento"><img src="@Url.Content("~/images/icone_pag/atrasado.png")" alt="Atrasado" title="Atrasado" style="width: 25px;"/></a>
+                        </td>
+                    }
+                </tr>
+                totalbruto = totalbruto + item.not_totalbruto;
+                totalliquido = totalliquido + item.not_totalliquido;
+            i++;
+        }
+        <tr>
+            <td colspan="4" class="text-right"><b>Total: </b></td>
+            <td class="text-right">R$ @string.Format("{0:0,0.00}", totalbruto) </td>
+            <td class="text-right">R$ @string.Format("{0:0,0.00}", totalliquido) </td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    $(function () {
+        var panels = $('.vote-results');
+        panels.hide();
+        $(".detalhespagamento").click(function () {
+
+            var dataFor = $(this).attr('data-for');
+            var id = $(this).attr('id');
+            var idFor = $(dataFor);
+            var currentButton = $(this);
+
+            EnviarRequisicao("/Faturamento/RetornoBoletoBancoDados", { id: id }, "GET", function (dados) {
+                if (dados != null) {
+                    if (dados.Tipo == "Pago") {
+                        
+
+                        $("#baixamanualidcliente").val(dados.Dados.retBol_id);
+                        $("#nomepagadormodal").html(dados.Dados.retBol_pagador);
+
+                        $("#formapagamentomodal").show();
+                        $("#formapagamento").hide();
+
+                        if (dados.Dados.retBol_formapagamento == "TFB")
+                            $("#formapagamentomodal").html("TRANSFERÊNCIA");
+                        if (dados.Dados.retBol_formapagamento == "BOL")
+                            $("#formapagamentomodal").html("BOLETO");
+                        if (dados.Dados.retBol_formapagamento == "DEP")
+                            $("#formapagamentomodal").html("DEPÓSITO");
+
+                        $("#datavencimentomodal").html(FormatarData(dados.Dados.retBol_vencimento));
+                        $("#dataliquitadomodal").html(FormatarData(dados.Dados.retBol_dataLiquidado));
+                        $("#valortitulomodal").html('R$ ' + dados.Dados.retBol_valorTitulo.toFixed(2));
+
+                        $("#jurosmodal").show();
+                        $("#jurosparamento").hide();
+
+                        $("#jurosmodal").html('R$ ' + dados.Dados.retBol_ociliacao.toFixed(2));
+                        $("#totapagomodal").html('R$ ' + dados.Dados.retBol_valorCobrando.toFixed(2));
+                        $("#comentarios").val(dados.Dados.retBol_comentarios);
+                        idFor.slideToggle(400, function () {
+                            if (idFor.is(':visible')) {
+                                currentButton.html('Hide Results');
+                            }
+                            else {
+                                currentButton.html('View Results');
+                            }
+                        });
+
+                        $("#btnSalvarComentarios").show();
+                        $("#btnBaixaManual").hide();
+                    }
+                    else {
+                        
+                        $("#baixamanualidcliente").val(dados.Dados.not_numero);
+                        $("#nomepagadormodal").html(dados.Cliente.cli_razaoSocial);
+
+                        $("#formapagamentomodal").hide();
+                        $("#formapagamento").show();
+                        $("#datavencimentomodal").html(FormatarData(dados.Dados.not_dtVencimento));
+                        $("#dataliquitadomodal").html("--");
+                        $("#valortitulomodal").html('R$ ' + dados.Dados.not_totalliquido.toFixed(2));
+
+                        $("#jurosmodal").hide();
+                        $("#jurosparamento").show();
+
+                        $("#totapagomodal").html('R$ ' + dados.Dados.not_totalliquido.toFixed(2));
+                        $("#comentarios").val('');
+                        $("#btnSalvarComentarios").hide();
+                        $("#btnBaixaManual").show();
+                    }
+                }
+                else {
+
+                }
+
+            }, false);
+
+
+            
+        });
+    })
+
+
+    function FormatarData(data) {
+        data = new Date(parseInt(data.substr(6)));
+        return ("0" + data.getDate()).slice(-2) + "/" + ("0" + (data.getMonth() + 1)).slice(-2) + "/" + data.getFullYear();
+        //data.getFullYear() + "-" +
+        //              ("0" + (data.getMonth() + 1)).slice(-2) + "-" +
+        //              ("0" + data.getDate()).slice(-2) + " " + data.getHours() + ":" +
+        //              data.getMinutes();
+    }
+
+</script>-->

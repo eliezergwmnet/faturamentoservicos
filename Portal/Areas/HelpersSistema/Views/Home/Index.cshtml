@@ -1,0 +1,207 @@
+﻿@model List<HelpersSistema.BE.ConectionsStringSitemaBE>
+
+
+<div class="data-table-list">
+    <div class="table-responsive">
+        <table id="data-table-basic" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nome Conexão</th>
+                    <th>Conexao</th>
+                    <th style="padding: 15px 0px !important;width: 40px !important;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Nome</td>
+                        <td>@item.Conexao.ToString()</td>
+                        <td style="padding: 15px 0px !important;"><a href="javascript:" class="btn btn-success btn-sm" alt="Criar Procedure" onclick="CarregarTabelas('@item.Nome')"  title="Criar Procedure"><i class="fa fa-briefcase"></i></a></td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<script>
+    function CarregarTabelas(conection) {
+        EnviarRequisicao("/HelpersSistema/Home/CarregarTabelas", { conection: conection }, "Post", function (res) {
+            var html = "<table id='data-table-basic' class='table table-striped'>";
+
+            $.each(res, function(x, item){
+                html += "<tr>";
+                html += "   <td> => " + item.Nome + "</td>";
+                html += "   <td><a href='javascript:' class='btn btn-success btn-sm' alt='Selecionar' onclick='CriarProcedure(\"" + conection + "\", \"" + item.Nome + "\")' title='Selecionar'><i class='fa fa-trash-o'></i> Procedure</a></td>";
+                html += "   <td><a href='javascript:' class='btn btn-success btn-sm' alt='Selecionar' onclick='CriarTrigger(\"" + conection + "\", \"" + item.Nome + "\")' title='Selecionar'><i class='fa fa-trash-o'></i> Trigge</a></td>";
+                html += "   <td><a href='javascript:' class='btn btn-success btn-sm' alt='Selecionar' onclick='CriarBE(\"" + conection + "\", \"" + item.Nome + "\")' title='Selecionar'><i class='fa fa-trash-o'></i> BE</a></td>";
+                html += "   <td><a href='javascript:' class='btn btn-success btn-sm' alt='Selecionar' onclick='CriarDao(\"" + conection + "\", \"" + item.Nome + "\")' title='Selecionar'><i class='fa fa-trash-o'></i> Dao</a></td>";
+                html += "   <td><a href='javascript:' class='btn btn-success btn-sm' alt='Selecionar' onclick='CriarBLL(\"" + conection + "\", \"" + item.Nome + "\")' title='Selecionar'><i class='fa fa-trash-o'></i> BLL</a></td>";
+                html += "   <td><a href='javascript:' class='btn btn-success btn-sm' alt='Selecionar' onclick='CriarLista(\"" + conection + "\", \"" + item.Nome + "\")' title='Selecionar'><i class='fa fa-trash-o'></i> Lista HTML</a></td>";
+                html += "   <td><a href='javascript:' class='btn btn-success btn-sm' alt='Selecionar' onclick='CriarModal(\"" + conection + "\", \"" + item.Nome + "\")' title='Selecionar'><i class='fa fa-trash-o'></i> Modal HTML</a></td>";
+                html += "   <td><a href='javascript:' class='btn btn-success btn-sm' alt='Selecionar' onclick='CriarJS(\"" + conection + "\", \"" + item.Nome + "\")' title='Selecionar'><i class='fa fa-trash-o'></i> JS Paginas</a></td>";
+                html += "   <td><a href='javascript:' class='btn btn-success btn-sm' alt='Selecionar' onclick='Geral(\"" + conection + "\", \"" + item.Nome + "\")' title='Selecionar'><i class='fa fa-trash-o'></i> Todos</a></td>";
+                html += "</tr>";
+            });
+
+            html += "</table>";
+
+            $("#dadosModal").html(html);
+            $('#SCMCadastroContrato').modal({ backdrop: 'static', keyboard: true });
+        });
+    }
+
+    function Geral(conection, table) {
+        setTimeout(function () { CriarProcedure(conection, table) } , 100);
+        setTimeout(function () { CriarTrigger(conection, table); }, 300);
+        setTimeout(function () { CriarBE(conection, table); }, 600);
+        setTimeout(function () { CriarDao(conection, table); }, 900);
+        setTimeout(function () { CriarBLL(conection, table); }, 1200);
+        setTimeout(function () { CriarLista(conection, table); }, 1500);
+        setTimeout(function () { CriarModal(conection, table); }, 1800);
+        setTimeout(function () { CriarJS(conection, table); }, 2000);
+    }
+
+    function CriarProcedure(conection, table) {
+        window.open("/HelpersSistema/Home/CriarProcedure?conection=" + conection + "&Nome=" + table, '_blank');
+        /*EnviarRequisicao("/HelpersSistema/Home/CriarProcedure", { conection: conection, Nome: table }, "Post", function (res) {
+            html = "<textarea  class='form-control obrigatorio' style='min-height: 500px;'>" + res + "</textarea>";
+            $("#dadosModal").html(html);
+            $('#SCMCadastroContrato').modal({ backdrop: 'static', keyboard: true });
+
+            $("#voltaritem").click(function () {
+                CarregarTabelas(conection)
+            })
+        });*/
+    }
+
+    function CriarTrigger(conection, table) {
+        window.open("/HelpersSistema/Home/CriarTrigger?conection=" + conection + "&Nome=" + table, '_blank');
+        /*EnviarRequisicao("/HelpersSistema/Home/CriarTrigger", { conection: conection, Nome: table }, "Post", function (res) {
+            html = "<textarea  class='form-control obrigatorio' style='min-height: 500px;'>" + res + "</textarea>";
+            $("#dadosModal").html(html);
+            $('#SCMCadastroContrato').modal({ backdrop: 'static', keyboard: true });
+
+            $("#voltaritem").click(function () {
+                CarregarTabelas(conection)
+            })
+        });*/
+    }
+
+    function CriarBE(conection, table) {
+        window.open("/HelpersSistema/Home/CriarBE?conection=" + conection + "&Nome=" + table, '_blank');
+        /*EnviarRequisicao("/HelpersSistema/Home/CriarBLL", { conection: conection, Nome: table }, "Post", function (res) {
+            html = "<textarea  class='form-control obrigatorio' style='min-height: 500px;'>" + res + "</textarea>";
+            $("#dadosModal").html(html);
+            $('#SCMCadastroContrato').modal({ backdrop: 'static', keyboard: true });
+
+            $("#voltaritem").click(function () {
+                CarregarTabelas(conection)
+            })
+        });*/
+    }
+
+    function CriarDao(conection, table) {
+        window.open("/HelpersSistema/Home/CriarDao?conection=" + conection + "&Nome=" + table, '_blank');
+       /* EnviarRequisicao("/HelpersSistema/Home/CriarDao", { conection: conection, Nome: table }, "Post", function (res) {
+            html = "<textarea  class='form-control obrigatorio' style='min-height: 500px;'>" + res + "</textarea>";
+            $("#dadosModal").html(html);
+            $('#SCMCadastroContrato').modal({ backdrop: 'static', keyboard: true });
+
+            $("#voltaritem").click(function () {
+                CarregarTabelas(conection)
+            })
+        });*/
+    }
+
+    function CriarBLL(conection, table) {
+        window.open("/HelpersSistema/Home/CriarBLL?conection=" + conection + "&Nome=" + table, '_blank');
+        /* EnviarRequisicao("/HelpersSistema/Home/CriarDao", { conection: conection, Nome: table }, "Post", function (res) {
+             html = "<textarea  class='form-control obrigatorio' style='min-height: 500px;'>" + res + "</textarea>";
+             $("#dadosModal").html(html);
+             $('#SCMCadastroContrato').modal({ backdrop: 'static', keyboard: true });
+ 
+             $("#voltaritem").click(function () {
+                 CarregarTabelas(conection)
+             })
+         });*/
+    }
+
+    function CriarLista(conection, table) {
+        window.open("/HelpersSistema/Home/CriarLista?conection=" + conection + "&Nome=" + table, '_blank');
+        /*EnviarRequisicao("/HelpersSistema/Home/CriarLista", { conection: conection, Nome: table }, "Post", function (res) {
+            html = "<textarea  class='form-control obrigatorio' style='min-height: 500px;'>" + res + "</textarea>";
+            $("#dadosModal").html(html);
+            $('#SCMCadastroContrato').modal({ backdrop: 'static', keyboard: true });
+
+            $("#voltaritem").click(function () {
+                CarregarTabelas(conection)
+            })
+        });*/
+    }
+
+    function CriarModal(conection, table) {
+        window.open("/HelpersSistema/Home/CriarModal?conection=" + conection + "&Nome=" + table, '_blank');
+        /*EnviarRequisicao("/HelpersSistema/Home/CriarModal", { conection: conection, Nome: table }, "Post", function (res) {
+            html = "<textarea  class='form-control obrigatorio' style='min-height: 500px;'>" + res + "</textarea>";
+            $("#dadosModal").html(html);
+            $('#SCMCadastroContrato').modal({ backdrop: 'static', keyboard: true });
+
+            $("#voltaritem").click(function () {
+                CarregarTabelas(conection)
+            })
+        });*/
+    }
+
+    function CriarJS(conection, table) {
+        window.open("/HelpersSistema/Home/CriarJS?conection=" + conection + "&Nome=" + table, '_blank');
+        /*EnviarRequisicao("/HelpersSistema/Home/CriarJS", { conection: conection, Nome: table }, "Post", function (res) {
+            html = "<textarea  class='form-control obrigatorio' style='min-height: 500px;'>" + res + "</textarea>";
+            $("#dadosModal").html(html);
+            $('#SCMCadastroContrato').modal({ backdrop: 'static', keyboard: true });
+
+            $("#voltaritem").click(function () {
+                CarregarTabelas(conection)
+            })
+        });*/
+    }
+</script>
+
+
+
+
+<div class="modal fade" id="SCMCadastroContrato" role="dialog">
+    <div class="modal-dialog modals-default" style="width: 90%;">
+        <div class="modal-content">
+            <div class="modal-header" style="margin-bottom: 20px;background-color: #fff !important;">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="breadcomb-wp">
+                            <div class="breadcomb-icon">
+                                <i class="notika-icon notika-app"></i>
+                            </div>
+                            <div class="breadcomb-ctn">
+                                <h2>Criar Telas</h2>
+                                <p>Criação de Procedures, Classe e Paginas HTML</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form id="SCMCadastroServico" method="get">
+                <div class="modal-body">
+                    <div id="dadosModal" style="min-height: 500px"></div>
+                </div>
+                <div class="modal-footer" style="margin-top: 30px">
+                    <button type="button" class="btn btn-default" id="voltaritem">Voltar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

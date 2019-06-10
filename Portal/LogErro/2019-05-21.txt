@@ -1,0 +1,145 @@
+#21/05/2019 16:22:03| System.Data.SqlClient.SqlException|    em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em Globais.Dao.Base.ExecCommands.ExecutaItem(String Procedures, List`1 Parameters, String connection) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\ExecCommands.cs:linha 84
+   em Globais.Dao.Base.BaseDados.ExecutaItem(TipoSql sql, Object obj) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\BaseDados.cs:linha 86| .Net SqlClient Data Provider| Cannot insert the value NULL into column 'log_id', table 'sistemaviaweb_notasSCM.dbo.tblSCMServicos'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+The 'proc_SCMServicos' procedure attempted to return a status of NULL, which is not allowed. A status of 0 will be returned instead.| Portal
+#21/05/2019 16:26:04| System.Data.SqlClient.SqlException|    em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em Globais.Dao.Base.ExecCommands.ExecutaItem(String Procedures, List`1 Parameters, String connection) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\ExecCommands.cs:linha 84
+   em Globais.Dao.Base.BaseDados.ExecutaItem(TipoSql sql, Object obj) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\BaseDados.cs:linha 86| .Net SqlClient Data Provider| Cannot insert the value NULL into column 'ser_aliquota', table 'sistemaviaweb_notasSCM.dbo.tblSCMServicos'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+The 'proc_SCMServicos' procedure attempted to return a status of NULL, which is not allowed. A status of 0 will be returned instead.| Portal
+#21/05/2019 16:26:19| System.Data.SqlClient.SqlException|    em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em Globais.Dao.Base.ExecCommands.ExecutaItem(String Procedures, List`1 Parameters, String connection) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\ExecCommands.cs:linha 84
+   em Globais.Dao.Base.BaseDados.ExecutaItem(TipoSql sql, Object obj) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\BaseDados.cs:linha 86| .Net SqlClient Data Provider| Cannot insert the value NULL into column 'ser_aliquota', table 'sistemaviaweb_notasSCM.dbo.tblSCMServicos'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+The 'proc_SCMServicos' procedure attempted to return a status of NULL, which is not allowed. A status of 0 will be returned instead.| Portal
+#21/05/2019 16:26:44| System.Data.SqlClient.SqlException|    em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em Globais.Dao.Base.ExecCommands.ExecutaItem(String Procedures, List`1 Parameters, String connection) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\ExecCommands.cs:linha 84
+   em Globais.Dao.Base.BaseDados.ExecutaItem(TipoSql sql, Object obj) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\BaseDados.cs:linha 86| .Net SqlClient Data Provider| Cannot insert the value NULL into column 'ser_aliquota', table 'sistemaviaweb_notasSCM.dbo.tblSCMServicos'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+The 'proc_SCMServicos' procedure attempted to return a status of NULL, which is not allowed. A status of 0 will be returned instead.| Portal
+#21/05/2019 16:28:26| System.Data.SqlClient.SqlException|    em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em Globais.Dao.Base.ExecCommands.ExecutaItem(String Procedures, List`1 Parameters, String connection) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\ExecCommands.cs:linha 84
+   em Globais.Dao.Base.BaseDados.ExecutaItem(TipoSql sql, Object obj) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\BaseDados.cs:linha 86| .Net SqlClient Data Provider| Cannot insert the value NULL into column 'ser_aliquota', table 'sistemaviaweb_notasSCM.dbo.tblSCMServicos'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+The 'proc_SCMServicos' procedure attempted to return a status of NULL, which is not allowed. A status of 0 will be returned instead.| Portal
+#21/05/2019 16:28:39| System.Data.SqlClient.SqlException|    em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em Globais.Dao.Base.ExecCommands.ExecutaItem(String Procedures, List`1 Parameters, String connection) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\ExecCommands.cs:linha 84
+   em Globais.Dao.Base.BaseDados.ExecutaItem(TipoSql sql, Object obj) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\BaseDados.cs:linha 86| .Net SqlClient Data Provider| Cannot insert the value NULL into column 'ser_aliquota', table 'sistemaviaweb_notasSCM.dbo.tblSCMServicos'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+The 'proc_SCMServicos' procedure attempted to return a status of NULL, which is not allowed. A status of 0 will be returned instead.| Portal
+#21/05/2019 16:28:43| System.Data.SqlClient.SqlException|    em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em Globais.Dao.Base.ExecCommands.ExecutaItem(String Procedures, List`1 Parameters, String connection) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\ExecCommands.cs:linha 84
+   em Globais.Dao.Base.BaseDados.ExecutaItem(TipoSql sql, Object obj) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\BaseDados.cs:linha 86| .Net SqlClient Data Provider| Cannot insert the value NULL into column 'ser_aliquota', table 'sistemaviaweb_notasSCM.dbo.tblSCMServicos'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+The 'proc_SCMServicos' procedure attempted to return a status of NULL, which is not allowed. A status of 0 will be returned instead.| Portal
+#21/05/2019 16:51:26| System.Data.SqlClient.SqlException|    em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader()
+   em Globais.Dao.Base.ExecCommands.RetornaLista[T](String Procedure, List`1 Parameters, String connection) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\ExecCommands.cs:linha 33
+   em Globais.Dao.Base.BaseDados.RetornaListaDados[T](TipoSql sql, Object obj) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\BaseDados.cs:linha 23| .Net SqlClient Data Provider| Column, parameter, or variable #8: Cannot specify a column width on data type bit.| Portal
+#21/05/2019 16:52:01| System.Data.SqlClient.SqlException|    em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader()
+   em Globais.Dao.Base.ExecCommands.RetornaLista[T](String Procedure, List`1 Parameters, String connection) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\ExecCommands.cs:linha 33
+   em Globais.Dao.Base.BaseDados.RetornaListaDados[T](TipoSql sql, Object obj) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\BaseDados.cs:linha 23| .Net SqlClient Data Provider| Column, parameter, or variable #8: Cannot specify a column width on data type bit.| Portal
+#21/05/2019 17:15:07| System.Data.SqlClient.SqlException|    em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em Globais.Dao.Base.ExecCommands.ExecutaItem(String Procedures, List`1 Parameters, String connection) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\ExecCommands.cs:linha 84
+   em Globais.Dao.Base.BaseDados.ExecutaItem(TipoSql sql, Object obj) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\BaseDados.cs:linha 86| .Net SqlClient Data Provider| Cannot insert the value NULL into column 'ser_aliquota', table 'sistemaviaweb_notasSCM.dbo.tblSCMServicos'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+The 'proc_SCMServicos' procedure attempted to return a status of NULL, which is not allowed. A status of 0 will be returned instead.| Portal
+#21/05/2019 17:15:19| System.Data.SqlClient.SqlException|    em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em Globais.Dao.Base.ExecCommands.ExecutaItem(String Procedures, List`1 Parameters, String connection) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\ExecCommands.cs:linha 84
+   em Globais.Dao.Base.BaseDados.ExecutaItem(TipoSql sql, Object obj) na E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.Dao\Base\BaseDados.cs:linha 86| .Net SqlClient Data Provider| Cannot insert the value NULL into column 'ser_aliquota', table 'sistemaviaweb_notasSCM.dbo.tblSCMServicos'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+The 'proc_SCMServicos' procedure attempted to return a status of NULL, which is not allowed. A status of 0 will be returned instead.| Portal

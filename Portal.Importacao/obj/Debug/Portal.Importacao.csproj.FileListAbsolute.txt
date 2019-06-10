@@ -1,0 +1,26 @@
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Importacao\bin\Debug\Portal.Importacao.exe.config
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Importacao\bin\Debug\Portal.Importacao.exe
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Importacao\bin\Debug\Portal.Importacao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.csprojResolveAssemblyReference.cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.Form1.resources
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.Properties.Resources.resources
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.csproj.GenerateResource.Cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.exe
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Importacao\bin\Debug\Portal.Importacao.exe.config
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Importacao\bin\Debug\Portal.Importacao.exe
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Importacao\bin\Debug\Portal.Importacao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.Form1.resources
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.Properties.Resources.resources
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.csproj.GenerateResource.Cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.exe
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Importacao\bin\Debug\Portal.Importacao.exe.config
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Importacao\bin\Debug\Portal.Importacao.exe
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Importacao\bin\Debug\Portal.Importacao.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.Form1.resources
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.Properties.Resources.resources
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.csproj.GenerateResource.Cache
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.exe
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.csprojResolveAssemblyReference.cache

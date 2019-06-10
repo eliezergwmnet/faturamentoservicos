@@ -1,0 +1,11 @@
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BE\bin\Debug\NFENotasFiscais.BE.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BE\bin\Debug\NFENotasFiscais.BE.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BE\bin\Debug\Globais.BE.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BE\bin\Debug\PortalSCM.BE.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BE\bin\Debug\Globais.Helper.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BE\bin\Debug\Globais.BE.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BE\bin\Debug\PortalSCM.BE.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BE\bin\Debug\Globais.Helper.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BE\obj\Debug\NFENotasFiscais.BE.csprojResolveAssemblyReference.cache
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BE\obj\Debug\NFENotasFiscais.BE.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BE\obj\Debug\NFENotasFiscais.BE.pdb

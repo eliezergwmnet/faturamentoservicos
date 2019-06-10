@@ -1,0 +1,9 @@
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.BE\bin\Debug\PortalSCM.BE.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.BE\bin\Debug\PortalSCM.BE.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.BE\bin\Debug\Globais.BE.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.BE\bin\Debug\Globais.Helper.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.BE\bin\Debug\Globais.BE.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.BE\bin\Debug\Globais.Helper.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.BE\obj\Debug\PortalSCM.BE.csprojResolveAssemblyReference.cache
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.BE\obj\Debug\PortalSCM.BE.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.BE\obj\Debug\PortalSCM.BE.pdb

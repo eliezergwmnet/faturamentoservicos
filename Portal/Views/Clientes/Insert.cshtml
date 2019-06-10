@@ -1,0 +1,198 @@
+﻿<style>
+    .one, .two, .three{
+    position:absolute;
+	margin-top:-18px;
+	z-index:1;
+	height:40px;
+	width:40px;
+	border-radius:25px;
+	
+}
+.one{
+	left:25%;
+}
+.two{
+	left:50%;
+}
+.three{
+	left:75%;
+}
+.iconbolacolor{
+	background-color:#007bff;
+}
+
+</style>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 30px 0px;background: #fff;float: left;">
+    <div class="col-lg-12" style="padding: 20px 0px;">
+            <div class="card-body" style="padding-bottom: 20px">
+                <div id="pay-invoice">
+                    <div class="container" style="margin-bottom: 30px">
+                        <div class="row">
+                            <br />
+                            <div class="col-md-12">
+                                <div class="progress" style="height: 5px">
+                                    <div class="one iconbolacolor">
+                                        <i class="fa fa-building" style="margin-top: 11px;font-size: 20px;color: #fff;left: 30%;position: absolute;"></i>
+                                    </div>
+                                    <div class="two iconbolacolor">
+                                        <i class="fa fa-map-marker" style="margin-top: 11px;font-size: 20px;color: #fff;left: 35%;position: absolute;"></i>
+                                    </div>
+                                    <div class="three iconbolacolor">
+                                        <i class="fa fa-address-book-o" style="margin-top: 11px;font-size: 20px;color: #fff;left: 25%;position: absolute;"></i>
+                                    </div>
+                                    <div class="progress-bar" id="progress" style="width: 25%;"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="page01">
+                        <div class="col-sm-12">
+                            <h5 class="text-left">Dados do Cliente</h5>
+                            <hr>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="end_cep" class="control-label mb-1">Nome Fantasia *</label>
+                                <div class="nk-int-st">
+                                    <input id="cli_nomeFantasia" name="cli_nomeFantasia" type="text" placeholder="Nome Fantasia" class="form-control obrigatorio" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="cli_razaoSocial" class="control-label mb-1">Razão Social *</label>
+                                <div class="nk-int-st">
+                                    <input id="cli_razaoSocial" name="cli_razaoSocial" type="text" placeholder="Razão Social" class="form-control obrigatorio" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="cli_CPF" class="control-label mb-1">CPF/CNPJ</label>
+                            <div class="input-group">
+                                    
+                                <div class="input-group-btn">
+                                    <div class="btn-group">
+                                        <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle btn btn-primary itemselecionado">CNPJ </button>
+                                        <div tabindex="-1" aria-hidden="true" role="menu" class="dropdown-menu">
+                                            <button type="button" tabindex="0" class="dropdown-item cnpjselecionado">CNPJ</button>
+                                            <button type="button" tabindex="0" class="dropdown-item cpfselecionado">CPF</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="text"  id="cli_CPF" name="cli_CPF" onfocusout="ValidaCFPCNPJ()" placeholder="CPF/CNPJ" class="form-control formCnpj">
+                                <input type="hidden" id="cli_tipoInscricao" name="cli_tipoInscricao" value="1">
+                                    
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="cli_incricaoEstadual" class="control-label mb-1">Inscr. Estadual</label>
+                                <div class="nk-int-st">
+                                    <input id="cli_incricaoEstadual" name="cli_incricaoEstadual" placeholder="Inscr. Estadual" type="text" class="form-control obrigatorio">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="cli_CFOP" class="control-label mb-1">CFOP</label>
+                                <div class="nk-int-st">
+                                    <select id="cli_CFOP" name="cli_CFOP" class="form-control obrigatorio"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="cli_tipoVencimento" class="control-label mb-1">Tipo Vencimento</label>
+                                <div class="nk-int-st">
+                                    <select id="cli_tipoVencimento" name="cli_tipoVencimento" class="form-control obrigatorio"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="cli_parametroVencimento" class="control-label mb-1">Dia Venc. ou Dias DLL</label>
+                                <div class="nk-int-st">
+                                    <input id="cli_parametroVencimento" name="cli_parametroVencimento" maxlength="2" placeholder="Dia Venc. ou Dias DLL" type="text" class="form-control formDiasVencimento obrigatorio">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="cli_CodCidIBGE" class="control-label mb-1">Codigo IBGE</label>
+                                <div class="nk-int-st">
+                                    <select id="cli_CodCidIBGE" name="cli_CodCidIBGE" class="form-control obrigatorio"></select>
+                                </div>
+                            </div>
+                        </div>
+
+
+                   </div>
+
+                    <div id="page02">
+                        <div class="col-sm-12">
+                            <h5 class="text-left">Endereço Principal</h5>
+                            <hr>
+                        </div>
+                        <div class="col-sm-12">
+                            @Html.Partial("~/Views/Helper/EnderecoPartial.cshtml")
+                        </div>
+                    </div>
+
+                    <div id="page03">
+                        <div class="col-sm-12">
+                            <h5 class="text-left">Adicionar Contatos</h5>
+                            <hr>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="cont_nome" class="control-label mb-1">Nome</label>
+                                <input id="cont_nome" name="cont_nome" placeholder="Nome" type="text" class="form-control obrigatorio">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="cont_fone" class="control-label mb-1">Telefone</label>
+                                <input id="cont_fone" name="cont_fone" placeholder="Telefone" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" type="text" class="form-control formCel obrigatorio">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="cont_departamento" class="control-label mb-1">Departamento</label>
+                                <input id="cont_departamento" name="cont_departamento" placeholder="Departamento" type="text" class="form-control obrigatorio">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="cont_email" class="control-label mb-1">E-Mail</label>
+                                <input id="cont_email" name="cont_email" type="text" placeholder="E-Mail" class="form-control obrigatorio">
+                            </div>
+                        </div>
+                        </div>
+
+                    <div class="col-sm-6">
+                        <button class="btn btn-default" id="volta" value="1">Volta</button>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <button class="btn btn-success" id="avancar" value="1">Avançar</button>
+                        <button type="button" class="btn btn-primary btn-sm" id="salvardados">
+                            <i class="fa fa-dot-circle-o"></i> Salvar
+                        </button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/Content/js/Projeto/Clientes.js")"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        CarregaDadosCadastro()
+    });
+</script>

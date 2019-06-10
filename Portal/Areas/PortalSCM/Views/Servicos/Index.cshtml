@@ -1,0 +1,42 @@
+﻿@model List<PortalSCM.BE.SCMServicosBE>
+
+<table>
+    
+</table>
+<div class="data-table-list">
+    <div class="table-responsive">
+        <table id="data-table-basic" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th width="100px">Cod Serv.</th>
+                    <th>Cod Ativ.</th>
+                    <th>Descrição</th>
+                    <th>Aliquota</th>
+                    <th style="padding: 15px 0px !important;width: 35px !important;"></th>
+                    <th style="padding: 15px 0px !important;width: 35px !important;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ser_id</td>
+                        <td>@item.ser_codigoServico</td>
+                        <td>@item.ser_codigoAtividade</td>
+                        <td>@item.ser_descricaoServico</td>
+                        <td>@item.ser_aliquota</td>
+                        <td style="padding: 15px 0px !important;"><button class="btn btn-warning btn-sm" alt="Alterar Informação" title="Alterar Informação" onclick="SCMAlterarServicos(@item.ser_id)"><i class="fa fa-arrow-circle-o-right"></i></button></td>
+                        <td style="padding: 15px 0px !important;"><button class="btn btn-danger btn-sm" alt="Remover Item" onclick="SCMRemoverServicos(@item.ser_id)" title="Remover Item"><i class="fa fa-trash-o"></i></button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@Html.Partial("~/Areas/PortalSCM/Views/Servicos/ModelServicoCadastro.cshtml")
+
+<script src="~/Content/Template/Verde/js/data-table/jquery.dataTables.min.js"></script>
+<script src="~/Content/Template/Verde/js/data-table/data-table-act.js"></script>
+<script src="~/Areas/PortalSCM/js/Servicos.js"></script>

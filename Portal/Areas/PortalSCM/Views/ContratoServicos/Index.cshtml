@@ -1,0 +1,97 @@
+﻿@model PortalSCM.BE.SCMContratoBE
+@{ 
+    var cobrarPropor = "";
+}
+
+<input id="cli_id" name="cli_id" type="hidden" value="@Model.cli_id" />
+<input id="cont_id" name="cont_id" type="hidden" value="@Model.cont_id" />
+
+<div class="view-mail-list sm-res-mg-t-30">
+    <div class="view-mail-hd">
+        <div class="view-mail-hrd">
+            <h2>Nº @Model.cont_numero.PadLeft(6,'0')</h2>
+        </div>
+        <div class="view-ml-rl">
+            <p>@Model.cont_data.ToString("dd/MM/yyyy")</p>
+        </div>
+    </div>
+    <hr />
+    <div class="mail-ads mail-vw-ph">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <p class="first-ph"><b>Nome Fantasia: </b>@Model.Cliente.cli_nomeFantasia</p>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                <p class="first-ph"><b>Razão Social: </b>@Model.Cliente.cli_razaoSocial</p>
+            </div>
+            <div class="col-lg-3 col-md-5 col-sm-3 col-xs-12">
+                <p class="first-ph"><b>CNPJ: </b>@Model.Cliente.cli_CPF</p>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <p class="first-ph"><b>Nome Contrato: </b>@Model.cont_nome</p>
+            </div>
+            <div class="col-lg-7 col-md-5 col-sm-5 col-xs-12">
+                <p class="first-ph"><b>Descrição: </b>@Model.cont_descricao</p>
+            </div>
+            <div class="col-lg-2 col-md-5 col-sm-3 col-xs-12">
+                <p class="first-ph"><b>Mensal: </b>Sim</p>
+            </div>
+        </div>
+        <hr />
+    </div>
+</div>
+
+
+
+
+<div class="data-table-list">
+    
+    <div class="table-responsive">
+        @if (Model.Servicos.Count == 0)
+        {
+            <h5 class="">Nenhum Serviço Cadastrado Neste Contrato.</h5>
+        }
+        else
+        {
+            <table id="data-table-basic" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Valor</th>
+                        @*<th>Parcelado</th>
+                        <th>Qtde.</th>*@
+                        <th>Cobrar. Propor.</th>
+                        <th>Dias</th>
+                        <th>Dt Ativ.</th>
+                        <th style="padding: 15px 0px !important;width: 35px !important;"></th>
+                        <th style="padding: 15px 0px !important;width: 35px !important;"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Servicos)
+                    {
+                        cobrarPropor = item.servCli_cobrarPorpor == 1 ? "Sim" : "Não";
+                        <tr>
+                            <td>@item.servCli_nome</td>
+                            <td>@string.Format("{0:0,0.00}", item.servCli_valor)</td>
+                            @*<td>@item.servCli_parcelado</td>
+                            <td>@item.servCli_parceladoQtd</td>*@
+                            <td>@cobrarPropor</td>
+                            <td>@item.servCli_qtdDias</td>
+                            <td>@item.servCli_dataAtivacao.ToString("dd/MM/yyyy")</td>
+                            <td style="padding: 15px 0px !important;"><button class="btn btn-warning btn-sm" alt="Alterar Informação" title="Alterar Informação" onclick="SCMAlterarServicoCliente(@item.servCli_id)"><i class="fa fa-arrow-circle-o-right"></i></button></td>
+                            <td style="padding: 15px 0px !important;"><button class="btn btn-danger btn-sm" onclick="SCMRemoverServicoCliente(@item.servCli_id)" alt="Remover Item"  title="Remover Item"><i class="fa fa-trash-o"></i></button></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+
+
+<script src="~/Areas/PortalSCM/js/ClienteServicos.js"></script>
+@Html.Partial("~/Areas/PortalSCM/Views/ContratoServicos/ModalSCMCadastroContratoServico.cshtml")

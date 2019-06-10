@@ -1,0 +1,175 @@
+﻿
+<style>
+    
+
+</style>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 30px 0px;background: #fff;float: left;">
+    <div class="col-lg-12" style="padding: 20px 0px;">
+        <div class="card">
+
+            <div class="card-body">
+                <div id="pay-invoice">
+                    <div class="card-body">
+                        
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="col-sm-4">
+                                    <div class="form-cli_nomeFantasia">
+                                        <label for="usu_nome" class="control-label mb-1">Nome *</label>
+                                        <div class="nk-int-st">
+                                            <input id="usu_nome" name="usu_nome" placeholder="Nome" type="text" class="form-control obrigatorio" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="form-group">
+                                        <label for="usu_telefone" class="control-label mb-1">Telefone *</label>
+                                        <div class="nk-int-st">
+                                            <input id="usu_telefone" name="usu_telefone" placeholder="Telefone" type="text" class="form-control formCel obrigatorio" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="form-group">
+                                        <label for="usu_celular" class="control-label mb-1">Celular</label>
+                                        <div class="nk-int-st">
+                                            <input id="usu_celular" name="usu_celular" placeholder="Celular" type="text" class="form-control formCel obrigatorio">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="perm_id" class="control-label mb-1">Perfil *</label>
+                                        <select id="perm_id" name="perm_id" class="form-control obrigatorio" required></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="usu_email" class="control-label mb-1">E-Mail *</label>
+                                        <div class="nk-int-st">
+                                            <input id="usu_email" name="usu_email" placeholder="E-Mail" type="text" class="form-control obrigatorio" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label for="usu_senha" class="control-label mb-1">Senha *</label>
+                                        <div class="nk-int-st">
+                                            <input id="usu_senha" name="usu_senha" placeholder="Senha" type="password" class="form-control obrigatorio" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label for="usu_senhaconfirmacao" class="control-label mb-1">Confirmação *</label>
+                                        <div class="nk-int-st">
+                                            <input id="usu_senhaconfirmacao" placeholder="Confirmação" name="usu_senhaconfirmacao" type="password" class="form-control obrigatorio" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                    <div class="col-sm-12">
+                                        @Html.Partial("~/Views/Helper/EnderecoPartial.cshtml")
+                                    </div>
+
+                            </div>
+
+
+                            <div class="col-sm-2 text-center">
+                                <label for="usu_senha" class="control-label mb-1">Imagem</label><br />
+                                <label class=fileuploadnewbtn>
+                                    <img id="image" src="http://placehold.it/120x120">
+                                    <input id="file" class="fileuploadimagem" onchange="SalvarImagemServidor(this, 'Usuario', 'image', 'usu_imagem');" type="file">
+                                    <input id="usu_imagem" name="usu_imagem" type="hidden" class="form-control">
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-12">
+                            <button type="button" onclick="SalvarCliente()" class="btn btn-primary btn-sm">
+                                <i class="fa fa-dot-circle-o"></i> Salvar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="@Url.Content("~/Content/js/Projeto/Usuarios.js")"></script>
+<script src="@Url.Content("~/Content/Template/Verde/js/dropzone/dropzone.js")"></script>
+
+
+
+
+
+
+<script>
+    $(function () {
+        $(document).on('change', '.btn-file :file', function () {
+            var input = $(this),
+                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+            input.trigger('fileselect', [label]);
+
+
+            jQuery('nav#dropdown').meanmenu();
+
+        });
+
+
+        $("form[name='submitenviar']").submit(function () {
+            var senha = $("#usu_senha").val();
+            var confirmacao = $("#usu_senhaconfirmacao").val();
+            if (senha.length < 6) {
+                Alerta("Senha precisar ter pelo menos 6 digitos", function () { });
+                return false;
+            }
+            if (senha != confirmacao) {
+                Alerta("Senha diferente de confimação", function () { });
+                return false;
+            }
+        });
+
+
+
+
+        $('.btn-file :file').on('fileselect', function (event, label) {
+
+            var input = $(this).parents('.input-group').find(':text'),
+		        log = label;
+
+            if (input.length) {
+                input.val(log);
+            } else {
+                if (log) alert(log);
+            }
+
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#usu_imagem').val(e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#imgInp").change(function () {
+            readURL(this);
+        });
+
+    })
+</script>

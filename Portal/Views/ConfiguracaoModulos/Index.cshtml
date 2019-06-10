@@ -1,0 +1,92 @@
+﻿@model List<Globais.BE.GlobaisModulosBE>
+
+@{
+    int i = 0;
+    var cor = "";
+}
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0px 0px;background: #fff;float: left;">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th class="text-left" style="width: 30px"></th>
+                <th style="width: 120px"></th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Cadastro</th>
+                <th class="text-right" style="width: 20px"></th>
+                <th class="text-right" style="width: 20px"></th>
+                <th class="text-right" style="width: 10px"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                if (i % 2 == 0) { cor = "background-color: rgba(0,0,0,.05);"; } else { cor = ""; }
+                <tr href='#@i' style="@cor">
+                    <td class="accordion-toggle clickable-row" href='#@i' data-toggle="collapse"><i class="fa fa-sort-desc"></i></td>
+                    <td><img src="@Url.Content(item.mod_image)" width="120px" /></td>
+                    <td>@item.mod_nome</td>
+                    <td>@item.mod_descricao</td>
+                    <td>@item.log_cadastro.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td></td>
+                    <td><button class="btn btn-warning btn-sm" alt="Alterar Informação" title="Alterar Informação" onclick="AlterarModuloCadastrado(@item.mod_id)"><i class="fa fa-arrow-circle-o-right"></i></button></td>
+                    <td><button class="btn btn-danger btn-sm" alt="Desativar Item" onclick="DeletarModuloCadastrado(@item.mod_id)" title="Desativar Item"><i class="fa fa-trash-o"></i></button></td>
+                </tr>
+
+                <tr>
+                    <td colspan="100" style="padding:0px">
+                        <div id="@i" class="accordion-body collapse">
+                            <div class="accordion-inner" style="background: #fff">
+
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <h5>Paginas(s)</h5>
+                                            </div>
+                                            <div class="col-sm-4 text-right">
+                                                <div class="breadcomb-report">
+                                                    <button class="btn btn-warning btn-sm" alt="Cadastrar Nova Pagina" title="Cadastrar Nova Pagina" onclick="CadastrarModulosPages(@item.mod_id)"><i class="fa fa-arrow-circle-o-right"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                @if (item.Paginas.Count > 0)
+                                {
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nome</th>
+                                                    <th>Descrição</th>
+                                                    <th>URL</th>
+                                                    <th class="text-right" style="width: 120px"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var itemEnd in item.Paginas)
+                                                {
+                                                    <tr>
+                                                        <td>@itemEnd.modPage_nome</td>
+                                                        <td>@itemEnd.modPage_descricao</td>
+                                                        <td>@itemEnd.modPage_url</td>
+                                                        <td><div class="text-right" style="width:55px"><button type="button" style="padding: 0px 18px !important;" class="btn btn-danger btn-sm" onclick="DeletarPageModulo(@itemEnd.modPage_id)" ><i class="fa fa-trash-o"></i>&nbsp;Delete</button></div></td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                }
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                i++;
+            }
+        </tbody>
+   </table>
+</div>
+
+<script src="@Url.Content("~/Content/js/Projeto/Modulos.js")"></script>
+@Html.Partial("~/Views/ConfiguracaoModulos/ModalModulos.cshtml")
+@Html.Partial("~/Views/ConfiguracaoModulos/ModalModulosPages.cshtml")

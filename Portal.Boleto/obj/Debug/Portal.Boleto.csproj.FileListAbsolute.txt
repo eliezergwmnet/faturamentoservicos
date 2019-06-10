@@ -1,0 +1,32 @@
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\bin\Debug\Portal.Boleto.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\bin\Debug\Portal.Boleto.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\bin\Debug\NReco.PdfGenerator.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\bin\Debug\System.Net.Http.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\bin\Debug\NReco.PdfGenerator.xml
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\bin\Debug\System.Net.Http.xml
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\obj\Debug\BoletoNet.Html.resources
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\obj\Debug\Portal.Boleto.csproj.GenerateResource.Cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\obj\Debug\Portal.Boleto.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\obj\Debug\Portal.Boleto.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\bin\Debug\Portal.Boleto.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\bin\Debug\Portal.Boleto.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\bin\Debug\NReco.PdfGenerator.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\bin\Debug\System.Net.Http.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\bin\Debug\NReco.PdfGenerator.xml
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\bin\Debug\System.Net.Http.xml
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\obj\Debug\BoletoNet.Html.resources
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\obj\Debug\Portal.Boleto.csproj.GenerateResource.Cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\obj\Debug\Portal.Boleto.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\obj\Debug\Portal.Boleto.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Boleto\obj\Debug\Portal.Boleto.csprojResolveAssemblyReference.cache
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Boleto\bin\Debug\Portal.Boleto.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Boleto\bin\Debug\Portal.Boleto.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Boleto\bin\Debug\NReco.PdfGenerator.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Boleto\bin\Debug\System.Net.Http.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Boleto\bin\Debug\NReco.PdfGenerator.xml
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Boleto\bin\Debug\System.Net.Http.xml
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Boleto\obj\Debug\Portal.Boleto.csprojResolveAssemblyReference.cache
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Boleto\obj\Debug\BoletoNet.Html.resources
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Boleto\obj\Debug\Portal.Boleto.csproj.GenerateResource.Cache
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Boleto\obj\Debug\Portal.Boleto.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Boleto\obj\Debug\Portal.Boleto.pdb

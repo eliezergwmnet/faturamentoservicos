@@ -1,0 +1,71 @@
+﻿
+
+
+@{
+    var nomefantasia = "";
+    if (Request["searchnamecliente"] != null && Request["searchnamecliente"] != "")
+    {
+        nomefantasia = Request["searchnamecliente"].ToString();
+    }
+
+    List<Portal.BE.RetornoBancoBoletoBE> lista = new List<Portal.BE.RetornoBancoBoletoBE>();
+    if (ViewData["listaboletos"] != null)
+    {
+        lista = (List<Portal.BE.RetornoBancoBoletoBE>)ViewData["listaboletos"];
+    }
+}
+<div class="col-12">
+    <h5 class="col-sm-3">Buscar</h5>
+    <form action="" method="post" name="submitenviar" enctype="multipart/form-data">
+        
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="cli_CGC" class="control-label mb-1">Selecionar Arquivo</label>
+                <input id="upload" name="upload" type="file" class="form-control obrigatorio">
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-info" id="" style="margin-top:20px" type="submit"><i class="fa fa-search"></i> Enviar arquivo</button>
+        </div>
+
+    </form>
+        
+</div>
+<div class="col-12">
+<hr />
+@Html.ValidationSummary()
+</div>
+
+
+@if(lista.Count > 0)
+{
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Nome Pagador</th>
+                <th>Nosso Número</th>
+                <th>Id Banco</th>
+                <th>DT Vencimento</th>
+                <th>DT Pagamento</th>
+                <th>Valor Titulo</th>
+                <th>Valor Cobrado</th>
+                <th>Valor Juros</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in lista)
+            {
+                <tr>
+                    <td>@item.retBol_pagador</td>
+                    <td>@item.retBol_seuBanco</td>
+                    <td>@item.retBol_nossoNumero</td>
+                    <td>@item.retBol_vencimento.ToString("dd/MM/yyyy")</td>
+                    <td>@item.retBol_dataLiquidado.ToString("dd/MM/yyyy")</td>
+                    <td>R$ @string.Format("{0:0,0.00}", item.retBol_valorTitulo)</td>
+                    <td>R$ @string.Format("{0:0,0.00}", item.retBol_valorCobrando)</td>
+                    <td>R$ @string.Format("{0:0,0.00}", item.retBol_ociliacao)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

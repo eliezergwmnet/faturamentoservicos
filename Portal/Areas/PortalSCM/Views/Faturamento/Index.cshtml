@@ -1,0 +1,201 @@
+﻿@model PortalSCM.BE.SCMContratoFaturamentoBE
+
+@{
+    var mensal = "";
+    int i = 0;
+    var cor = "";
+    var propor = "";
+    var dias = "";
+}
+
+<div class="data-table-list">
+    <div class="table-responsive">
+        <table id="data-table-basic" class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="text-left" style="width: 30px"></th>
+                    <th>Nº</th>
+                    <th>Cliente</th>
+                    <th>Contrato</th>
+                    @{ 
+                        if (Model.EmpresaTaxas.confCom_calcularTributos)
+                        {
+                            <th>Pis</th>
+                            <th>Confins</th>
+                            <th>Cssl</th>
+                            <th>Irrf</th>
+                        }
+                    }
+                    <th>Liquído</th>
+                    <th>Bruto</th>
+                    <th>Mensal</th>
+                    <th style="padding: 15px 0px !important;width: 35px !important;">
+                        <div class="fm-checkbox">
+                            <label><input type="checkbox" alt="Selecionar Todos" id="selecionartodos" title="Selecionar Todos" checked="" class="i-checks"> </label>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Contratos)
+                {
+                    mensal = item.Contrato.cont_avulso ? "Sim" : "Não";
+                    if (i % 2 == 0) { cor = "background-color: rgba(0,0,0,.05);"; } else { cor = ""; }
+                    <tr href='#@i' style="@cor">
+                        <td class="accordion-toggle clickable-row" href='#@i' data-toggle="collapse"><i class="fa fa-sort-desc"></i></td>
+                        <td>@item.Contrato.cont_numero</td>
+                        <td>@item.Contrato.Cliente.cli_nomeFantasia</td>
+                        <td>@item.Contrato.cont_nome</td>
+                        @{
+                            if (Model.EmpresaTaxas.confCom_calcularTributos)
+                            {
+                                <td>@string.Format("{0:0,0.00}", item.pis)</td>
+                                <td>@string.Format("{0:0,0.00}", item.confins)</td>
+                                <td>@string.Format("{0:0,0.00}", item.cssl)</td>
+                                <td>@string.Format("{0:0,0.00}", item.irrf)</td>
+                            }
+                        }
+                        <td>@string.Format("{0:0,0.00}", item.valorLiquito)</td>
+                        <td>@string.Format("{0:0,0.00}", item.valorBruto)</td>
+                        <td>@mensal</td>
+                        <td style="padding: 15px 0px !important;">
+                            <div class="fm-checkbox">
+                                <label><input type="checkbox" id="@item.Contrato.cont_id" checked="" class="i-checks faturacheck"> </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="100" style="padding:0px">
+                            <div id="@i" class="accordion-body collapse">
+                                <div class="accordion-inner" style="background: #fff">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Nome</th>
+                                                <th>Descrição</th>
+                                                <th>Valor</th>
+                                                <th>Prop.</th>
+                                                <th>Dias</th>
+                                                <th>Ativação</th>
+                                                <th style="padding: 15px 0px !important;width: 35px !important;"></th>
+                                                <th style="padding: 15px 0px !important;width: 35px !important;">
+                                                    <div class="breadcomb-report">
+                                                        <button data-toggle="tooltip" onclick="CadastrarConfiguracaoItemTelaContrato(@item.Contrato.cli_id, @item.Contrato.cont_id)" data-placement="left" title="Cadastrar Novo Serviço" alt="Cadastrar Novo Serviço" class="btn waves-effect" data-original-title="Cadastrar Novo"><i class="notika-icon notika-sent"></i></button>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        @if (item.Contrato.Servicos.Count > 0)
+                                        {
+
+                                            <tbody>
+                                                @foreach (var itemEnd in item.Contrato.Servicos)
+                                                {
+                                                    if (itemEnd.servCli_cobrarPorpor == 1)
+                                                    {
+                                                        dias = itemEnd.servCli_qtdDias.ToString() + " Dias";
+                                                        propor = "Sim";
+                                                    }
+                                                    else
+                                                    {
+                                                        dias = "-";
+                                                        propor = "Não";
+                                                    }
+                                                    <tr id="@itemEnd.servCli_id">
+                                                        <td>@itemEnd.servCli_nome</td>
+                                                        <td>@itemEnd.servCli_descricao</td>
+                                                        <td>@string.Format("{0:0,0.00}", itemEnd.servCli_valor)</td>
+                                                        <td>@propor</td>
+                                                        <td>@dias</td>
+                                                        <td>@itemEnd.servCli_dataAtivacao.ToString("dd/MM/yyyy")</td>
+                                                        <td style="padding: 15px 0px !important;"><button class="btn btn-warning btn-sm" alt="Alterar Informação" title="Alterar Informação" onclick="SCMAlterarServicoCliente(@itemEnd.servCli_id)"><i class="fa fa-arrow-circle-o-right"></i></button></td>
+                                                        <td style="padding: 15px 0px !important;"><button class="btn btn-danger btn-sm" alt="Remover Item" onclick="SCMRemoverContrato(@item.Contrato.cont_id)" title="Remover Item"><i class="fa fa-trash-o"></i></button></td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        }
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    i++;
+                }
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="text-rigth"><b>Totais: </b></td>
+                    @{
+                        if (Model.EmpresaTaxas.confCom_calcularTributos)
+                        {
+                            <td class="text-rigth"><b>@string.Format("{0:0,0.00}", (from x in Model.Contratos select x.pis).Sum()) </b></td>
+                            <td class="text-rigth"><b>@string.Format("{0:0,0.00}", (from x in Model.Contratos select x.confins).Sum()) </b></td>
+                            <td class="text-rigth"><b>@string.Format("{0:0,0.00}", (from x in Model.Contratos select x.cssl).Sum()) </b></td>
+                            <td class="text-rigth"><b>@string.Format("{0:0,0.00}", (from x in Model.Contratos select x.irrf).Sum()) </b></td>
+                        }
+                    }
+                    <td class="text-rigth" ><b>@string.Format("{0:0,0.00}", (from x in Model.Contratos select x.valorLiquito).Sum()) </b></td>
+                    <td class="text-rigth" colspan="100"><b>@string.Format("{0:0,0.00}", (from x in Model.Contratos select x.valorBruto).Sum()) </b></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        setTimeout(function () {
+            $("#buttonTituloPagesCadastro").hide();
+        }, 1000)
+        $("#buttonTituloPagesCadastro").hide();
+
+        var html = '<div style="float: right; margin-top: 11px;"><button type="button" class="btn btn-success" data-placement="left" onclick="SCMFaturarServicos()" >Faturar Serviços</button></div>';
+
+        $("#divPagesCadastro").html(html);
+
+        $('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'iradio_square-green',
+        });
+        $("#selecionartodos").on("ifChanged", function () {
+            var ativo = $(this).is(':checked');
+            $.each($(".faturacheck"), function (x, item) {
+                if(ativo)
+                    $("#" + item.id).iCheck('check');
+                else
+                    $("#" + item.id).iCheck('uncheck');
+            })
+        })
+        
+
+    })
+
+    function SCMFaturarServicos() {
+        AbreModal();
+        var arrayContratos = [];
+        $.each($(".faturacheck"), function (x, item) {
+            if($("#" + item.id).is(':checked'))
+                arrayContratos.push(item.id);
+        });
+        if (arrayContratos.length == 0) {
+            Alerta("Atenção", "Você precisar selecionar 1 contato", function () { });
+        }
+        else{
+            var obj = {contratos: arrayContratos.join(',')}
+            EnviarRequisicao("/SCM/Faturamento/SarvarFaturamento", obj, "Post", function(res){
+                if(res == null){
+                    Alerta("Atenção", "Falha ao enviar faturamento, por favor tente novamente!", function () { });
+                }
+                else{
+                    window.location = "/SCM/Faturamento";
+                }
+            }, false);
+        }
+    }
+</script>
+
+<script src="~/Content/Template/Verde/js/data-table/jquery.dataTables.min.js"></script>
+<script src="~/Content/Template/Verde/js/data-table/data-table-act.js"></script>
+<script src="~/Areas/PortalSCM/js/Contrato.js"></script>

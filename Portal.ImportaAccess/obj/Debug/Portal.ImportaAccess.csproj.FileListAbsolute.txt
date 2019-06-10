@@ -1,0 +1,49 @@
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\BaseAccess\Faturamento_GWMNET.accdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.ImportaAccess.exe.config
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.ImportaAccess.exe
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.ImportaAccess.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.BLL.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.BLL.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\obj\Debug\Portal.ImportaAccess.csprojResolveAssemblyReference.cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\obj\Debug\Portal.ImportaAccess.exe
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\obj\Debug\Portal.ImportaAccess.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\BaseAccess\Faturamento_GWMNET.accdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.ImportaAccess.exe.config
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.ImportaAccess.exe
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.ImportaAccess.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Globais.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Globais.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.BLL.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.BLL.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Globais.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Globais.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\obj\Debug\Portal.ImportaAccess.csprojResolveAssemblyReference.cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\obj\Debug\Portal.ImportaAccess.exe
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.ImportaAccess\obj\Debug\Portal.ImportaAccess.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\BaseAccess\Faturamento_GWMNET.accdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.ImportaAccess.exe.config
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.ImportaAccess.exe
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.ImportaAccess.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Globais.BE.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Globais.Helper.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.BE.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.BLL.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.Dao.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.BE.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.BLL.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Portal.Dao.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Globais.BE.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.ImportaAccess\bin\Debug\Globais.Helper.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.ImportaAccess\obj\Debug\Portal.ImportaAccess.csprojResolveAssemblyReference.cache
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.ImportaAccess\obj\Debug\Portal.ImportaAccess.exe
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.ImportaAccess\obj\Debug\Portal.ImportaAccess.pdb

@@ -1,0 +1,40 @@
+﻿<div class="col-12">
+    <div class="col-sm-3">
+        <button class="btn btn-info" id="gerarnotasmes" style="margin-top:20px" type="button"><i class="fa fa-search"></i> Gerar Arquivo XML e Remessa</button>
+    </div>
+</div>
+
+<div id="viewPlaceHolder" class="text-center">
+    <b>Caregando Dados, Aguarde...</b><br /><br /><br />
+    <img src="@Url.Content("~/images/carregando.gif")" style="width:120px" />
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#viewPlaceHolder").load("/Faturamento/GerarXMLRemessaCarregaListaFaturamento", function () { Paginacao(); });
+
+        $("#btnbuscadados").click(function () {
+            $("#page-loader").fadeIn("slow");
+            var parametro = "fat_mes=" + $("#fat_mes").val();
+            $("#viewPlaceHolder").load("/Faturamento/GerarXMLRemessaCarregaListaFaturamento?" + parametro, function () { Paginacao(); });
+        })
+
+        $("#gerarnotasmes").click(function () {
+            var itensselecionados = [];
+            $(".itemselecionados").each(function () {
+                if ($(this).prop("checked")) {
+                    itensselecionados.push($(this).attr('id'));
+                }
+                //else {
+                //    $(this).prop("checked", true);
+                //}
+            });
+
+            EnviarRequisicao("/Faturamento/GerarXMLRemessaInsert", { notas: itensselecionados.join(", ") }, "POST", function () {
+                window.location = "/Faturamento/GerarNotasMes"
+            }, true);
+            console.log(itensselecionados);
+        })
+    });
+</script>

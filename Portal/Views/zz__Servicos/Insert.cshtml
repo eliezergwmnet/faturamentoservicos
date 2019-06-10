@@ -1,0 +1,45 @@
+﻿<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+
+            <div class="card-body">
+                <div id="pay-invoice">
+                    <div class="card-body">
+                        <form action="" method="post" name="submitenviar">
+                            <div class="col-sm-3" style="display:none">
+                                <div class="form-cli_nomeFantasia">
+                                    <label for="serv_nome" class="control-label mb-1">Nome *</label>
+                                    <div class="input-group">
+                                        <input id="serv_nome" name="serv_nome" type="text" placeholder="Nome" class="form-control" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="serv_descricao" class="control-label mb-1">Nome *</label>
+                                    <input id="serv_descricao" name="serv_descricao" type="text" placeholder="Nome" class="form-control obrigatorio" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="serv_parcelado" class="control-label mb-1">Aceita Parcela *</label>
+                                    <select id="serv_parcelado" name="serv_parcelado" class="form-control obrigatorio" required>
+                                        <option value="">Selecione</option>
+                                        <option value="True">Sim</option>
+                                        <option value="False">Não</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-dot-circle-o"></i> Salvar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

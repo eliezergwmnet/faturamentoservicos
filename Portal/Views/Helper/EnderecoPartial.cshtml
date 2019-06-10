@@ -1,0 +1,131 @@
+﻿@model Globais.BE.GlobaisEnderecoBE
+@{ 
+    Globais.BE.GlobaisEnderecoBE obj = new Globais.BE.GlobaisEnderecoBE();
+    string idcampo = "1";
+    if (Model != null)
+    {
+        obj = Model;
+        idcampo = obj.end_id.ToString();
+    }
+    var select = "";
+}
+<input type="hidden" id="end_id" name="end_id" value="@obj.end_id" />
+<input type="hidden" id="end_latitude" name="end_latitude" value="@obj.end_latitude" />
+<input type="hidden" id="end_longetitude" name="end_longetitude" value="@obj.end_longetitude" />
+<div class="row">
+    <div class="col-sm-2">
+        <div class="form-group">
+            <label for="end_cep" class="control-label mb-1">Cep *</label>
+            <div class="nk-int-st">
+                <input id="end_cep" name="end_cep" type="text" placeholder="Cep" class="form-control formCep obrigatorio end_cep-@idcampo" style="width: 80%; float: left" required value="@obj.end_cep">
+                <a href="javascript:" id="@idcampo" onclick="EnderecoBuscaCep()" style="margin: 5px 0px 0px 10px;"><i class="fa fa-refresh"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="end_logradouro" class="control-label mb-1">Logradouro *</label>
+            <div class="nk-int-st">
+                <input id="end_logradouro" name="end_logradouro" type="text" placeholder="Logradouro" class="form-control obrigatorio end_logradouro-@idcampo" required value="@obj.end_logradouro">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label for="end_numero" class="control-label mb-1">Numero *</label>
+            <div class="nk-int-st">
+                <input id="end_numero" name="end_numero" type="text" placeholder="Numero" class="form-control obrigatorio end_numero-@idcampo" required value="@obj.end_numero">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label for="end_complemento" class="control-label mb-1">Complemento</label>
+            <div class="nk-int-st">
+                <input id="end_complemento" name="end_complemento" placeholder="Complemento" type="text" class="form-control obrigatorio end_complemento-@idcampo" value="@obj.end_complemento">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="end_estado" class="control-label mb-1">Estado *</label>
+            <select id="end_estado" name="end_estado" class="form-control obrigatorio end_estado-@idcampo" tabindex="1" required>
+                @if (obj.end_estado == null)
+                {
+                    <option value="">Selecione</option>
+                }
+                @if (obj.end_estado != null && obj.end_estado == "AC") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="AC">Acre</option>
+                @if (obj.end_estado != null && obj.end_estado == "AL") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="AL">Alagoas</option>
+                @if (obj.end_estado != null && obj.end_estado == "AP") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="AP">Amapá</option>
+                @if (obj.end_estado != null && obj.end_estado == "AM") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="AM">Amazonas</option>
+                @if (obj.end_estado != null && obj.end_estado == "BA") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="BA">Bahia</option>
+                @if (obj.end_estado != null && obj.end_estado == "CE") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="CE">Ceará</option>
+                @if (obj.end_estado != null && obj.end_estado == "DF") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="DF">Distrito Federal</option>
+                @if (obj.end_estado != null && obj.end_estado == "ES") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="ES">Espírito Santo</option>
+                @if (obj.end_estado != null && obj.end_estado == "GO") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="GO">Goiás</option>
+                @if (obj.end_estado != null && obj.end_estado == "MA") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="MA">Maranhão</option>
+                @if (obj.end_estado != null && obj.end_estado == "MT") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="MT">Mato Grosso</option>
+                @if (obj.end_estado != null && obj.end_estado == "MS") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="MS">Mato Grosso do Sul</option>
+                @if (obj.end_estado != null && obj.end_estado == "MG") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="MG">Minas Gerais</option>
+                @if (obj.end_estado != null && obj.end_estado == "PA") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="PA">Pará</option>
+                @if (obj.end_estado != null && obj.end_estado == "PB") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="PB">Paraíba</option>
+                @if (obj.end_estado != null && obj.end_estado == "PR") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="PR">Paraná</option>
+                @if (obj.end_estado != null && obj.end_estado == "PE") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="PE">Pernambuco</option>
+                @if (obj.end_estado != null && obj.end_estado == "PI") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="PI">Piauí</option>
+                @if (obj.end_estado != null && obj.end_estado == "RJ") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="RJ">Rio de Janeiro</option>
+                @if (obj.end_estado != null && obj.end_estado == "RN") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="RN">Rio Grande do Norte</option>
+                @if (obj.end_estado != null && obj.end_estado == "RS") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="RS">Rio Grande do Sul</option>
+                @if (obj.end_estado != null && obj.end_estado == "RO") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="RO">Rondônia</option>
+                @if (obj.end_estado != null && obj.end_estado == "RR") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="RR">Roraima</option>
+                @if (obj.end_estado != null && obj.end_estado == "SC") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="SC">Santa Catarina</option>
+                @if (obj.end_estado != null && obj.end_estado == "SP") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="SP">São Paulo</option>
+                @if (obj.end_estado != null && obj.end_estado == "SE") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="SE">Sergipe</option>
+                @if (obj.end_estado != null && obj.end_estado == "TO") { select = "selected=selected"; } else { select = ""; }
+                <option @select value="TO">Tocantins</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="end_cidade" class="control-label mb-1">Cidade *</label>
+            <div class="nk-int-st">
+                <input id="end_cidade" name="end_cidade" placeholder="Cidade" type="text" class="form-control obrigatorio end_cidade-@idcampo" required value="@obj.end_cidade">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="end_bairro" class="control-label mb-1">Bairro *</label>
+            <div class="nk-int-st">
+                <input id="end_bairro" name="end_bairro" placeholder="Bairro" type="text" class="form-control obrigatorio end_bairro-@idcampo" required value="@obj.end_bairro">
+            </div>
+        </div>
+    </div>
+
+</div>

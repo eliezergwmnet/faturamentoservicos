@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1D9188D1-3323-4DC9-8A28-B62B59573D79}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Portal.BLL</RootNamespace>
+    <AssemblyName>Portal.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Chamado\ChamadoBLL.cs" />
+    <Compile Include="Chamado\MensagemBLL.cs" />
+    <Compile Include="Chamado\PrioridadeBLL.cs" />
+    <Compile Include="Chamado\CategoriaBLL.cs" />
+    <Compile Include="Chamado\ArquivosBLL.cs" />
+    <Compile Include="Chamado\StatusBLL.cs" />
+    <Compile Include="ClienteContatoBLL.cs" />
+    <Compile Include="ClienteEnderecoBLL.cs" />
+    <Compile Include="ClienteNotaCalcularNota.cs" />
+    <Compile Include="ConfiguracaoBLL.cs" />
+    <Compile Include="ClienteServicosBLL.cs" />
+    <Compile Include="ClienteNotaBLL.cs" />
+    <Compile Include="EmailBLL.cs" />
+    <Compile Include="NotasPendentesBLL.cs" />
+    <Compile Include="NotasXMLLoteItensBLL.cs" />
+    <Compile Include="NotasXMLLoteBLL.cs" />
+    <Compile Include="EmpresaBLL.cs" />
+    <Compile Include="NotasItensBLL.cs" />
+    <Compile Include="NotasBLL.cs" />
+    <Compile Include="ImportarDadosBLL.cs" />
+    <Compile Include="RelatorioHomeBLL.cs" />
+    <Compile Include="RetornoBancoBoletoBLL.cs" />
+    <Compile Include="ServicosBLL.cs" />
+    <Compile Include="UsuarioBLL.cs" />
+    <Compile Include="ClienteBLL.cs" />
+    <Compile Include="PermissaoPaginaBLL.cs" />
+    <Compile Include="PermissaoBLL.cs" />
+    <Compile Include="EnderecoBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Portal.Dao\Portal.Dao.csproj">
+      <Project>{25f9ec32-a3b8-459f-b60c-637dc9aec371}</Project>
+      <Name>Portal.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectsGlobais\Globais.BE\Globais.BE.csproj">
+      <Project>{BABD2C80-4559-40B1-9079-373FCE1A75BC}</Project>
+      <Name>Globais.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectsGlobais\Globais.BLL\Globais.BLL.csproj">
+      <Project>{BD716341-AAE7-4A42-9B42-FB2CE7693BC2}</Project>
+      <Name>Globais.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectsGlobais\Globais.Dao\Globais.Dao.csproj">
+      <Project>{7C68BEB7-ADAB-4FDB-A7B6-8696DE0E71A8}</Project>
+      <Name>Globais.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectsGlobais\Portal.Helper\Globais.Helper.csproj">
+      <Project>{108E9DDB-7FC2-4352-AB19-351AD4328A4E}</Project>
+      <Name>Globais.Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

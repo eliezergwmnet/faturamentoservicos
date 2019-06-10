@@ -1,0 +1,134 @@
+﻿@model List<Portal.BE.ClienteNotasContratoBE>
+
+@{ 
+    var i = 0;
+    var cor = "";
+    var endereco = "";
+    var iditem = "";
+
+    decimal total = 0;
+    decimal totalbruto = 0;
+
+    decimal pis = 0;
+    decimal confis = 0;
+    decimal cssl = 0;
+    decimal irrf = 0;
+    var empresa = (Portal.BE.EmpresaBE)ViewBag.Empresa;
+}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th><input type="checkbox" id="todos" onclick="marcardesmarcar();" checked="checked" /></th>
+            <th>Num. Contrato</th>
+            <th>Nome Fantasia</th>
+            <th>Endereço</th>
+            <th>Dt Emissão.</th>
+            <th>Dt Venc.</th>
+            @if (empresa.confCom_calcularTributos)
+            {
+                <th style="width: 90px; text-align: right">Pis</th>
+                <th style="width: 90px; text-align: right">Confins</th>
+                <th style="width: 90px; text-align: right">Cssl</th>
+                <th style="width: 90px; text-align: right">Irrf</th>
+            }
+            <th style="width: 100px; text-align: right">Valor Bruto</th>
+            <th style="width: 100px; text-align: right">Valor Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.Nota != null)
+            {
+                if (i % 2 == 0) { cor = "background-color: rgba(0,0,0,.05);"; } else { cor = ""; }
+                total = total + item.Nota.not_totalliquido;
+                totalbruto = totalbruto + item.Nota.not_totalbruto;
+                iditem = item.cli_id.ToString() + "|" + item.cliNot_contrato.ToString();
+                endereco = item.Endereco.Count > 0 ? item.Endereco[0].end_logradouro + " " + item.Endereco[0].end_numero + " " + item.Endereco[0].end_bairro + " " + item.Endereco[0].end_cidade + "-" + item.Endereco[0].end_estado : "";
+                <tr class="accordion-toggle clickable-row" href='#@i' style="@cor" data-toggle="collapse">
+                    <td width="20px"><input type="checkbox" id="@iditem" class="itemselecionados" checked="checked" /></td>
+                    <td>@item.cliNot_contrato.ToString().PadLeft(4, '0')</td>
+                    <td>@item.cli_nomeFantasia</td>
+                    <td>@endereco</td>
+                    <td>@item.Nota.not_dtEmissao.ToString("dd/MM/yyyy")</td>
+                    <td>@item.Nota.not_dtVencimento.ToString("dd/MM/yyyy")</td>
+                    @if (empresa.confCom_calcularTributos)
+                    {
+                        <td style="width: 60px; text-align: right">R$ @string.Format("{0:0,0.00}", item.Nota.not_pis)</td>
+                        <td style="width: 60px; text-align: right">R$ @string.Format("{0:0,0.00}", item.Nota.not_confins)</td>
+                        <td style="width: 60px; text-align: right">R$ @string.Format("{0:0,0.00}", item.Nota.not_cssl)</td>
+                        <td style="width: 60px; text-align: right">R$ @string.Format("{0:0,0.00}", item.Nota.not_irrf)</td>
+
+                        pis += item.Nota.not_pis;
+                        confis += item.Nota.not_confins;
+                        cssl += item.Nota.not_cssl;
+                        irrf += item.Nota.not_irrf;
+                    }
+                    <td class="text-right">@string.Format("{0:0,0.00}", item.Nota.not_totalbruto)</td>
+                    <td class="text-right">@string.Format("{0:0,0.00}", item.Nota.not_totalliquido)</td>
+                </tr>
+                <tr>
+                    <td colspan="100" style="padding:0px">
+                        <div id="@i" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <table class="table table-striped table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th>Descrição</th>
+                                            <th class="text-right">Valor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var itemNota in item.Nota.ItensNota)
+                                        {
+                                            <tr>
+                                                <td>@itemNota.notI_descricao</td>
+                                                <td class="text-right">@string.Format("{0:0,0.00}", itemNota.notI_total)</td>
+                                            </tr>
+
+                                        }
+                                        <tr>
+                                            <td class="text-right"><b>Total: </b></td>
+                                            <td class="text-right">R$ @string.Format("{0:0,0.00}", item.Nota.not_totalbruto) </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+            i++;
+        }
+        <tr>
+            <td colspan="6" class="text-right"><b>Total: </b></td>
+            @if (empresa.confCom_calcularTributos)
+            {
+                <td class="text-right">R$ @string.Format("{0:0,0.00}", pis) </td>
+                <td class="text-right">R$ @string.Format("{0:0,0.00}", confis) </td>
+                <td class="text-right">R$ @string.Format("{0:0,0.00}", cssl) </td>
+                <td class="text-right">R$ @string.Format("{0:0,0.00}", irrf) </td>
+
+            }
+            <td class="text-right">R$ @string.Format("{0:0,0.00}", totalbruto) </td>
+            <td class="text-right">R$ @string.Format("{0:0,0.00}", total) </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<script>
+    //$(function(){
+    function marcardesmarcar() {
+        var check = $("#todos").prop("checked");
+        $(".itemselecionados").each(function () {
+            //if ($(this).prop("checked")) {
+            $(this).prop("checked", check);
+            //} 
+            //else {
+            //    $(this).prop("checked", true);
+            //}
+        });
+    }
+   // })
+</script>

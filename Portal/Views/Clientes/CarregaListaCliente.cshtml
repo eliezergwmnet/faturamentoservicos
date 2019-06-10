@@ -1,0 +1,154 @@
+﻿    @model List<Globais.BE.GlobaisClienteBE>
+
+@{
+   /* var permissao = (Globais.BE.GlobaisPermissaoBE)Session[Globais.Helper.Globais.SessionSistemaPermissao];
+    var page = (from x in permissao.Paginas where x.permPag_url.Equals("/Clientes") select x).FirstOrDefault<Globais.BE.GlobaisPermissaoPaginaBE>();*/
+    int i = 0;
+    var cor = "";
+}
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th class="text-left" style="width: 30px"></th>
+            <th>Nome Fantasia</th>
+            <th>Razão Social</th>
+            <th>CNPJ/CPF</th>
+            <th>Endereço</th>
+            <th class="text-right" style="width: 20px"></th>
+            <th class="text-right" style="width: 20px"></th>
+            <th class="text-right" style="width: 10px"></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.Endereco.Count > 0)
+            {
+                if (i % 2 == 0) { cor = "background-color: rgba(0,0,0,.05);"; } else { cor = ""; }
+                <tr href='#@i' style="@cor">
+                    <td class="accordion-toggle clickable-row" href='#@i' data-toggle="collapse"><i class="fa fa-sort-desc"></i></td>
+                    <td class="text-left">@item.cli_nomeFantasia</td>
+                    <td class="text-left">@item.cli_razaoSocial</td>
+                    <td class="text-left">@item.cli_CPF</td>
+                    <td class="text-left">@string.Format("{0} - {1}, {2} - {3} / {4}", item.Endereco[0].end_logradouro, item.Endereco[0].end_numero, item.Endereco[0].end_bairro, item.Endereco[0].end_cidade, item.Endereco[0].end_estado) </td>
+                    <td class="text-left">
+                        <button class="btn btn-info btn-sm" alt="Mais Detalhes" title="Mais Detalhes"><i class="fa fa-info"></i></button>
+                    </td>
+                    <td class="text-left">
+                        <button class="btn btn-warning btn-sm" alt="Alterar Informação" title="Alterar Informação" onclick="CarregaDadosCliente(@item.cli_id)"><i class="fa fa-arrow-circle-o-right"></i></button>
+                    </td>
+                    <td class="text-left">
+                        <button class="btn btn-danger btn-sm" alt="Remover Item" onclick="RemoveClienteCadastrado(@item.cli_id)" title="Remover Item"><i class="fa fa-trash-o"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="100" style="padding:0px">
+                        <div id="@i" class="accordion-body collapse">
+                            <div class="accordion-inner" style="background: #fff">
+
+                                @if (item.Endereco.Count > 0)
+                                {
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <h5>Endereço(s)</h5>
+                                            </div>
+                                            <div class="col-sm-4  text-right">
+                                                <button class="btn btn-success" onclick="CadastrarNovoCliente(@item.cli_id)" style="border-radius: 29px; padding: .075rem .35rem; font-size: 12px;margin-bottom: 5px;"><i class="fa fa-plus-circle" aria-hidden="true"></i> Novo Endereço</button>
+                                            </div>
+                                        </div>
+
+
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>CEP</th>
+                                                    <th>Logradouro</th>
+                                                    <th>Numero</th>
+                                                    <th>Bairro</th>
+                                                    <th>Cidade / Estado</th>
+                                                    <th>Tipo</th>
+                                                    <th class="text-right" style="width: 120px"></th>
+                                                    <th class="text-right" style="width: 120px"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var itemEnd in item.Endereco)
+                                                {
+                                                    <tr id="@itemEnd.cliEnd_id">
+                                                        <td>@itemEnd.end_cep</td>
+                                                        <td>@itemEnd.end_logradouro</td>
+                                                        <td>@itemEnd.end_numero @itemEnd.end_complemento</td>
+                                                        <td>@itemEnd.end_bairro</td>
+                                                        <td>@itemEnd.end_cidade @itemEnd.end_estado</td>
+                                                        <td>@itemEnd.cliEnd_Tipo</td>
+                                                        <td><div class="text-right" style="width:55px"><a href="javascript:" style="padding: 0px 18px !important;" class="btn btn-warning btn-sm" onclick="CarregarEndereco(@itemEnd.end_id)" name="@itemEnd.cliEnd_id" id="@itemEnd.cliEnd_id"><i class="fa fa-refresh"></i>&nbsp;Alterar</a></div></td>
+                                                        <td><div class="text-right" style="width:55px"><button type="button" style="padding: 0px 18px !important;" class="btn btn-danger btn-sm" onclick="DeletarEnderecoCliente(@itemEnd.end_id, @itemEnd.cliEnd_id)" cliente="@itemEnd.cli_id" name="@itemEnd.cliEnd_id" id="@itemEnd.cliEnd_id"><i class="fa fa-trash-o"></i>&nbsp;Delete</button></div></td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                }
+
+                            
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <h5>Contato(s)</h5>
+                                            </div>
+                                            <div class="col-sm-4  text-right">
+                                                <button class="btn btn-success" onclick="CadastrarNovoContato(@item.cli_id)"  id="@item.cli_id" style="border-radius: 29px; padding: .075rem .35rem; font-size: 12px;margin-bottom: 5px;"><i class="fa fa-plus-circle" aria-hidden="true"></i> Novo Contato</button>
+                                            </div>
+                                        </div>
+
+                                        @if (item.Contato.Count > 0)
+                                        {
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nome</th>
+                                                    <th>Telefone</th>
+                                                    <th>Departamento</th>
+                                                    <th>Email</th>
+                                                    <th class="text-right" style="width: 120px"></th>
+                                                    <th class="text-right" style="width: 120px"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var itemContato in item.Contato)
+                                                {
+                                                    <tr id="@itemContato.cont_id">
+                                                        <td>@itemContato.cont_nome</td>
+                                                        <td>@itemContato.cont_fone</td>
+                                                        <td>@itemContato.cont_departamento</td>
+                                                        <td>@itemContato.cont_email</td>
+                                                        <td><div class="text-right" style="width:55px"><a href="javascript:" style="padding: 0px 18px !important;" class="btn btn-warning btn-sm" onclick="CarregarContato(@itemContato.cont_id)"><i class="fa fa-refresh"></i>&nbsp;Alterar</a></div></td>
+                                                        <td><div class="text-right" style="width:55px"><button type="button" style="padding: 0px 18px !important;" class="btn btn-danger btn-sm" onclick="DeletarContatoCliente(@itemContato.cont_id)"><i class="fa fa-trash-o"></i>&nbsp;Delete</button></div></td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                        }
+                                    </div>
+                            
+
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                i++;
+            }
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="50">
+                Total de Itens Encontrados: @Model.Count
+            </th>
+        </tr>
+    </tfoot>
+</table>

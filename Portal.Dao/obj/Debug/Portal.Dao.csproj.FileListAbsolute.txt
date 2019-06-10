@@ -1,0 +1,35 @@
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\bin\Debug\Portal.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\bin\Debug\Portal.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\bin\Debug\Portal.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\bin\Debug\Portal.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\bin\Debug\Portal.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\bin\Debug\Portal.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\obj\Debug\Portal.Dao.csprojResolveAssemblyReference.cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\obj\Debug\Portal.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\obj\Debug\Portal.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\bin\Debug\Portal.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\bin\Debug\Portal.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\bin\Debug\Globais.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\bin\Debug\Globais.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\bin\Debug\Portal.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\bin\Debug\Globais.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\bin\Debug\Portal.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\bin\Debug\Globais.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\bin\Debug\Globais.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\bin\Debug\Globais.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\obj\Debug\Portal.Dao.csprojResolveAssemblyReference.cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\obj\Debug\Portal.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\faturamento\Projeto\GwmNet_Faturamento\Portal.Dao\obj\Debug\Portal.Dao.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Dao\bin\Debug\Portal.Dao.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Dao\bin\Debug\Portal.Dao.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Dao\bin\Debug\Globais.Dao.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Dao\bin\Debug\Globais.Helper.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Dao\bin\Debug\Portal.BE.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Dao\bin\Debug\Globais.BE.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Dao\bin\Debug\Portal.BE.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Dao\bin\Debug\Globais.Dao.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Dao\bin\Debug\Globais.Helper.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Dao\bin\Debug\Globais.BE.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Dao\obj\Debug\Portal.Dao.csprojResolveAssemblyReference.cache
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Dao\obj\Debug\Portal.Dao.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Dao\obj\Debug\Portal.Dao.pdb

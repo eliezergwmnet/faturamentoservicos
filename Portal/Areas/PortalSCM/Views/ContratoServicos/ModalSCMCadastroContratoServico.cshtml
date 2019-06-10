@@ -1,0 +1,138 @@
+﻿<style>
+    .uploadimagemsistema {
+        display: none !important;
+    }
+
+    .newbtn {
+        cursor: pointer;
+    }
+</style>
+
+<div class="modal fade" id="SCMCadastroContratoServico" role="dialog">
+    <div class="modal-dialog modals-default">
+        <div class="modal-content">
+            <div class="modal-header" style="margin-bottom: 20px;background-color: #fff !important;">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="breadcomb-wp">
+                            <div class="breadcomb-icon">
+                                <i class="notika-icon notika-app"></i>
+                            </div>
+                            <div class="breadcomb-ctn">
+                                <h2>Serviço Cliente</h2>
+                                <p>Cadastro Novo Serviço</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form id="SCMCadastroServicoCliente" method="get">
+                <div class="modal-body">
+
+                    <input id="servCli_id" name="servCli_id" type="hidden" value="" />
+                    <input id="ModContratocli_id" name="ModContratocli_id" type="hidden" value="" />
+                    <input id="ModContratocont_id" name="ModContratocont_id" type="hidden" value="" />
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label for="serv_id" class="control-label mb-1">Serviço</label>
+                            <div class="nk-int-st">
+                                <select id="serv_id" name="serv_id" class="form-control obrigatorio" data-live-search="true"></select>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label for="servCli_valor" class="control-label mb-1">Valor</label>
+                            <div class="nk-int-st">
+                                <input id="servCli_valor" placeholder="Valor" name="servCli_valor" type="text" value="" class="form-control obrigatorio money">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label for="servCli_dataAtivacao" class="control-label mb-1">Data Ativação</label>
+                            <div class="nk-int-st">
+                                <input id="servCli_dataAtivacao" placeholder="Data Ativação" name="servCli_dataAtivacao" data-mask="99/99/9999" type="text" value="" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--
+                        ADICINAR O ITEM ACEITAR PARCELA NO SERVIÇO
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label for="servCli_parcelado" class="control-label mb-1">Parcelado</label>
+                            <div class="nk-int-st">
+                                <input id="servCli_parcelado" placeholder="Parcelado" name="servCli_parcelado" type="text" value="" class="form-control obrigatorio">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label for="servCli_parceladoQtd" class="control-label mb-1">Qtde Parcelas</label>
+                            <div class="nk-int-st">
+                                <input id="servCli_parceladoQtd" placeholder="Qtde Parcelas" name="servCli_parceladoQtd" type="text" value="" class="form-control obrigatorio">
+                            </div>
+                        </div>
+                    </div>
+                    -->
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label for="servCli_cobrarPorpor" class="control-label mb-1">Cobrar Proporcional</label>
+                                    <div class="nk-int-st">
+                                        <select id="servCli_cobrarPorpor" onchange="CobrarProporcional()" name="servCli_cobrarPorpor" class="form-control obrigatorio">
+                                            <option value="">Selecione</option>
+                                            <option value="1">Sim</option>
+                                            <option value="0">Não</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group" id="servCli_qtdDiasitem">
+                                    <label for="servCli_qtdDias" class="control-label mb-1 servCli_qtdDiasitem" style="display: none">Qtde Dias</label>
+                                    <div class="nk-int-st servCli_qtdDiasitem" style="display: none">
+                                        <select id="servCli_qtdDias" name="servCli_qtdDias" class="form-control">
+                                            @for (int i = 1; i < 31; i++)
+                                            {
+                                                <option value="@i">@i</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label for="servCli_descricao" class="control-label mb-1">Descrição</label>
+                            <div class="nk-int-st">
+                                <textarea id="servCli_descricao" placeholder="Descrição" name="servCli_descricao" type="text" value="" class="form-control obrigatorio"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+                <div class="modal-footer" style="margin-top: 30px">
+                    <button type="button" class="btn btn-default" onclick="SCMCadastrarServicosCliente()">Salvar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,121 @@
+﻿<style>
+    #empresaolateralModal {
+        padding-right: 0px !important;
+    }
+</style>
+
+
+
+
+
+<div class="modal right fade" id="empresaolateralModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" style="padding-right: 0px !important" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel2">Dados do Cliente</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <input id="cli_idmodal" name="cli_idmodal" type="hidden" class="form-control obrigatorio" required>
+            <div class="modal-body">
+                <div class="col-sm-12">
+                    <div class="form-cli_nomeFantasia">
+                        <label for="end_cep" class="control-label mb-1">Nome Fantasia *</label>
+                        <div class="nk-int-st">
+                            <input id="cli_nomeFantasiamodal" name="cli_nomeFantasiamodal" type="text" placeholder="Nome Fantasia" class="form-control obrigatorio" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="cli_razaoSocialmodal" class="control-label mb-1">Razão Social *</label>
+                        <div class="nk-int-st">
+                            <input id="cli_razaoSocialmodal" name="cli_razaoSocialmodal" type="text" placeholder="Razão Social" class="form-control obrigatorio" required>
+                        </div>
+                    </div>  
+                </div>
+                <div class="col-sm-12">
+                    <label for="cli_CPF" class="control-label mb-1">CPF/CNPJ</label>
+                    <div class="input-group">
+
+                        <div class="input-group-btn">
+                            <div class="btn-group">
+                                <button type="button" disabled="disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle btn btn-primary itemselecionado">CNPJ </button>
+                                <div tabindex="-1" aria-hidden="true" role="menu" class="dropdown-menu">
+                                    <button type="button" tabindex="0" class="dropdown-item cnpjselecionado">CNPJ</button>
+                                    <button type="button" tabindex="0" class="dropdown-item cpfselecionado">CPF</button>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="text" id="cli_CPFmodal" disabled="disabled" name="cli_CPFmodal" placeholder="CPF/CNPJ" class="form-control formCnpj">
+                        <input type="hidden" id="cli_tipoInscricaomodal" name="cli_tipoInscricaomodal" value="1">
+
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="cli_incricaoEstadualmodal" class="control-label mb-1">Inscr. Estadual</label>
+                         <div class="nk-int-st">
+                            <input id="cli_incricaoEstadualmodal" name="cli_incricaoEstadualmodal" placeholder="Inscr. Estadual" type="text" class="form-control obrigatorio">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="cli_CFOPmodal" class="control-label mb-1">CFOP</label>
+                        <div class="nk-int-st">
+                            <select id="cli_CFOPmodal" name="cli_CFOPmodal" class="form-control obrigatorio"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="cli_tipoVencimentomodal" class="control-label mb-1">Tipo Vencimento</label>
+                        <div class="nk-int-st">
+                            <select id="cli_tipoVencimentomodal" name="cli_tipoVencimentomodal" class="form-control obrigatorio"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="cli_parametroVencimentomodal" class="control-label mb-1">Dia Venc. ou Dias DLL</label>
+                        <div class="nk-int-st">
+                            <input id="cli_parametroVencimentomodal" name="cli_parametroVencimentomodal" maxlength="2" placeholder="Dia Venc. ou Dias DLL" type="text" class="form-control formDiasVencimento obrigatorio">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="cli_CodCidIBGEmodal" class="control-label mb-1">Codigo IBGE</label>
+                        <select id="cli_CodCidIBGEmodal" name="cli_CodCidIBGEmodal" class="form-control obrigatorio"></select>
+                    </div>
+                </div>
+
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <button onclick="CancelarCadastroCliente()" class="btn btn-default text-left">
+                                            <i class="fa fa-ban"></i> Cancelar
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button onclick="SalvarDadosCliente()" class="btn btn-success text-right rotacionaricone">
+                                            <div class="iconebutton" style="float: left; margin-right: 5px">
+                                                <i class="fa fa-spinner"></i>
+                                            </div>
+                                            Salvar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

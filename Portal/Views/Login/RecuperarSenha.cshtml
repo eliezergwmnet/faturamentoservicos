@@ -1,0 +1,86 @@
+﻿
+@{
+    var user = (Globais.BE.GlobaisUsuarioBE)ViewBag.User;
+    Layout = null;
+    
+}
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@HelpSistemaModel.Configuracao().Titulo</title>
+    <meta name="description" content="@HelpSistemaModel.Configuracao().Descricao">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="@HelpSistemaModel.Configuracao().IconTouch">
+    <link rel="shortcut icon" href="@HelpSistemaModel.Configuracao().Icon">
+
+
+    @Styles.Render("~/Base/css")
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body class="bg-dark" style="background:#f1f1f1 !important">
+
+    <div class="sufee-login d-flex align-content-center flex-wrap">
+        <div class="container">
+            <div class="login-content">
+                <div class="login-logo">
+                    <a href="index.html">
+                        <img class="align-content" src="@HelpSistemaModel.Configuracao().Logo" alt="HelpSistemaModel.Configuracao().Titulo">
+                    </a>
+                </div>
+                @if (ViewBag.Tipo == 1)
+                {
+                    <div class="login-form">
+                        <p>Codigo de validação inválido<br /><br /> Solicite novamente o email de Troca de Senha.<br /><br /><br /> <a href="@Url.Content("~/Login")" class="btn btn-success">Voltar</a>.</p>
+                    </div>
+                }
+                else if (ViewBag.Tipo == 2 || ViewBag.Tipo == 3 || ViewBag.Tipo == 4)
+                {
+                <div class="login-form" id="alterasenha">
+                    <form method="post" >
+                        <div class="form-group">
+                            <label>Olá <b>@user.usu_nome</b>, digite sua nova senha de acesso ao sistema.</label>
+                        </div>
+                        <div class="form-group">
+                            <label>Nova Senha</label>
+                            <input type="hidden" id="userautenticationvalue" name="userautenticationvalue" value="@Request["userautenticationvalue"]" class="form -control" placeholder="Email">
+                            <input type="password" name="novasenha" class="form-control" placeholder="Nova Senha">
+                        </div>
+                        <div class="form-group">
+                            <label>Confirmar Senha</label>
+                            <input type="password" name="confirmarsenha" class="form-control" placeholder="Confirmação">
+                        </div>
+                        @if (ViewBag.Tipo == 3)
+                        {
+                            <p style="color: red">Senha deve conter pelo menos 6 digitos.</p>
+                        }
+                        @if (ViewBag.Tipo == 4)
+                        {
+                            <p style="color: red">Senha diferente de confirmação.</p>
+                        }
+                        <button type="submit" id="resetarsenhanova" class="btn btn-success btn-flat m-b-30 m-t-30">Enviar</button>
+                    </form>
+                </div>
+                }
+                else
+                {
+                <div class="login-form" id="confirmaalteracao">
+                    <p>Sua senha foi alterada com sucesso, click no botão abaixo para retornar ao sistema.<br /><br /><br /> <a href="@Url.Content("~/Login")" class="btn btn-success">Voltar</a>.</p>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/Base/jquery")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    @Scripts.Render("~/Base/Dados")
+
+</body>
+</html>

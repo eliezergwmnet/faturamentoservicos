@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    int? idEmpresa = Request["cli_id"] != null ? Convert.ToInt32(Request["cli_id"]) : 0;
+}
+
+<style>
+    .chosen-choices{
+        height: 38px !important;
+        padding-top: 6px !important;
+        padding-left: 12px !important;
+    }
+</style>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+
+            <div class="card-body">
+                <div id="pay-invoice">
+                    <div class="card-body">
+                        
+                            <div class="col-sm-12" id="selecionarservico">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <label for="cli_IdEmpresa" class="control-label mb-1">Selecione Empresas</label>
+                                            <select id="cli_IdEmpresa" name="cli_IdEmpresa" multiple class="form-control" style="height: 38px" data-placeholder="Selecionar Serviço" tabindex="1"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="qtde_Horas" class="control-label mb-1">Qtde de horas</label>
+                                            <input type="text" id="qtde_Horas" name="qtde_Horas" class="form-control formInteiro" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <button type="button" name="btnCalcular" id="btnCalcular" class="btn btn-success" style="margin-top: 20px"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Calcular</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        <div class="col-sm-12" id="idtable" style="display:none">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table class="table table-bordered" id="tabledados">
+                                        <thead>
+                                            <tr>
+                                                <th>Cliente</th>
+                                                <th>Nome</th>
+                                                <th>Servicços</th>
+                                                <th>Horas</th>
+                                                <th>Valor Serviços</th>
+                                                <th>Valor Desconto</th>
+                                                <th>Valor Total</th>
+                                                <th style="width: 100px; text-align: right"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                                <button type="button" name="btnCalcular" id="btnenviardesconto" class="btn btn-success" style="margin-top: 20px"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Enviar Desconto</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+    jQuery(document).ready(function () {
+
+        CarregarSelect("cli_IdEmpresa", "CarregaClientes", null,
+        function () {
+            jQuery("#cli_IdEmpresa").chosen({
+                disable_search_threshold: 10,
+                no_results_text: "Empresa não encontrada!",
+                width: "100%"
+            });
+        });
+   
+        $("#btnCalcular").click(function () {
+            var cliente = $("#cli_IdEmpresa").val();
+            var horas = $("#qtde_Horas").val();
+            cliente = cliente.join(',');
+            EnviarRequisicao("/Faturamento/DescontoFaturamentoCalcula", { idCliente: cliente, horas: horas }, "GET", function (res) {
+                if (res != undefined && res != null && res.length > 0) {
+                    var html = "";
+                    //$("#tabledados tbody").html("");
+                    $.each(res, function (x, item) {
+                        html = "";
+                        html += "<tr id='linha" + item.cli_id + "' class='itenslistacadastro' cli_id='" + item.cli_id + "' horas='" + item.horas + "'>";
+                        html += "<td>" + item.cli_nome + "</td>";
+                        html += "<td>" + item.servCli_nome + "</td>";
+                        html += "<td>" + item.servicos + "</td>";
+                        html += "<td>" + item.horas + " Horas</td>";
+                        html += "<td>R$ " + item.servCli_valorServicos.toFixed(2) + "</td>";
+                        html += "<td>R$ " + item.servCli_valorDesconto.toFixed(2) + "</td>";
+                        html += "<td>R$ " + item.servCli_valorTotal.toFixed(2) + "</td>";
+                        html += "<td><button type='button' onclick=removeitem(" + item.cli_id + ") class='btn btn-danger removerdesconto'><i class='fa fa-trash-o' aria-hidden='true'></i> Delete</button></td>";
+                        html += "<tr>";
+
+                        $("#tabledados tbody").append(html);
+
+                        
+                    })
+                    $("#idtable").fadeIn();
+                    $("#cli_IdEmpresa").val("");
+                    $(".search-choice").remove();
+                }
+            }, true)
+
+        })
+
+        $("#btnenviardesconto").click(function () {
+            var itens = $(".itenslistacadastro");
+            $.each(itens, function (x, item) {
+                var cliente = $("#" + item.id).attr('cli_id');
+                var horas = $("#" + item.id).attr('horas');
+                EnviarRequisicao("/Faturamento/DescontoFaturamentoEnviar", { idCliente: cliente, horas: horas }, "GET", function (res) {
+                    if (x == (itens.length - 1)) {
+                        window.location = "/Faturamento/GerarNotasMes";
+                    }
+                }, true)
+            });
+        });
+
+    });
+    function removeitem(id) {
+        $("#linha" + id).remove();
+    }
+
+</script>

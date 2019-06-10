@@ -1,0 +1,45 @@
+﻿@{
+    int id = 0;
+    id = Convert.ToInt32(ViewBag.IdCliente);
+}
+<!--<div class="col-12">
+    <h5 class="col-sm-3">Buscar</h5>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label for="fat_mes" class="control-label mb-1">Cliente</label>
+            <select id="cli_cliente" name="cli_cliente" class="form-control" data-placeholder="Selecionar Cliente" tabindex="1"></select>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <button class="btn btn-info" id="btnbuscadados" style="margin-top:20px" type="button"><i class="fa fa-search"></i> Buscar</button>
+    </div>
+</div>
+
+<div id="viewPlaceHolder" class="text-center">
+    <b>Caregando Dados, Aguarde...</b><br /><br /><br />
+    <img src="@Url.Content("~/images/carregando.gif")" style="width:120px" />
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        CarregarSelect("cli_cliente", "CarregaClientes", null,
+        function () {
+            jQuery("#cli_cliente").chosen({
+                disable_search_threshold: 10,
+                no_results_text: "Empresa não encontrada!",
+                width: "100%"
+            });
+        });
+        $("#viewPlaceHolder").load("/Clientes/NotasCarregaLista/?cliente=@id", function () { Paginacao(); });
+
+        $("#btnbuscadados").click(function () {
+            $("#page-loader").fadeIn("slow");
+            var parametro = "cliente=" + $("#cli_cliente").val();
+            $("#viewPlaceHolder").load("/Clientes/NotasCarregaLista?" + parametro, function () { Paginacao(); });
+        })
+
+       
+    });
+</script>
+/*-->

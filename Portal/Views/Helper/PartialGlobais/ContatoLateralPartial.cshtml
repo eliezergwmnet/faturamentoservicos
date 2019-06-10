@@ -1,0 +1,76 @@
+﻿<style>
+    #contatoModal {
+        padding-right: 0px !important;
+    }
+</style>
+
+
+
+
+
+<div class="modal right fade" id="contatoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" style="padding-right: 0px !important" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <input type="hidden" id="cli_idContatoModal" name="cli_idContatoModal" value="" />
+            <input type="hidden" id="cont_idmodal" name="cont_idmodal" value="" />
+            
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel2">Contato</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="cont_nome" class="control-label mb-1">Nome</label>
+                            <input id="cont_nome" name="cont_nome" type="text" class="form-control obrigatorio">
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="cont_fone" class="control-label mb-1">Telefone</label>
+                            <input id="cont_fone" name="cont_fone" placeholder="Telefone" type="text" class="form-control formCel obrigatorio">
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="cont_departamento" class="control-label mb-1">Departamento</label>
+                            <input id="cont_departamento" name="cont_departamento" type="text" class="form-control obrigatorio">
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="cont_email" class="control-label mb-1">E-Mail</label>
+                            <input id="cont_email" name="cont_email" type="text" class="form-control obrigatorio">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <button id="btnCancelarItemContato" class="btn btn-default text-left">
+                                            <i class="fa fa-ban"></i> Cancelar
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button id="btnSalvarItemContato" class="btn btn-success text-right">
+                                            <div class="iconebutton" style="float: left; margin-right: 5px">
+                                                <i class="fa fa-spinner"></i>
+                                            </div>
+                                            Salvar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EE07FEC1-3D7B-40C8-A508-C36A41820438}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PortalSCM.BLL</RootNamespace>
+    <AssemblyName>PortalSCM.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SCMClienteServicosBLL.cs" />
+    <Compile Include="SCMContratoBLL.cs" />
+    <Compile Include="SCMFaturamentoMensalBLL.cs" />
+    <Compile Include="SCMServicosBLL.cs" />
+    <Compile Include="ModeloBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\ProjectsGlobais\Globais.BE\Globais.BE.csproj">
+      <Project>{BABD2C80-4559-40B1-9079-373FCE1A75BC}</Project>
+      <Name>Globais.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\ProjectsGlobais\Globais.BLL\Globais.BLL.csproj">
+      <Project>{BD716341-AAE7-4A42-9B42-FB2CE7693BC2}</Project>
+      <Name>Globais.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\ProjectsGlobais\Globais.Dao\Globais.Dao.csproj">
+      <Project>{7c68beb7-adab-4fdb-a7b6-8696de0e71a8}</Project>
+      <Name>Globais.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\ProjectsGlobais\Portal.Helper\Globais.Helper.csproj">
+      <Project>{108E9DDB-7FC2-4352-AB19-351AD4328A4E}</Project>
+      <Name>Globais.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\NFENotasFiscais\Class\NFENotasFiscais.BE\NFENotasFiscais.BE.csproj">
+      <Project>{362fc5a5-1538-4246-9e58-5226c635553b}</Project>
+      <Name>NFENotasFiscais.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\NFENotasFiscais\Class\NFENotasFiscais.BLL\NFENotasFiscais.BLL.csproj">
+      <Project>{a35e204a-9f9b-47a6-84fe-ac60e95bf4af}</Project>
+      <Name>NFENotasFiscais.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PortalSCM.BE\PortalSCM.BE.csproj">
+      <Project>{A68CCB82-958D-422C-92DB-5DB1D97CED77}</Project>
+      <Name>PortalSCM.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PortalSCM.Dao\PortalSCM.Dao.csproj">
+      <Project>{98b3fcf2-c6df-4c51-872f-cd2176c74700}</Project>
+      <Name>PortalSCM.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PortalSCM.Helper\PortalSCM.Helper.csproj">
+      <Project>{5BE2CA67-2D14-4E21-B834-5DEC8B45217F}</Project>
+      <Name>PortalSCM.Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

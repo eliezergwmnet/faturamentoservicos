@@ -1,0 +1,85 @@
+﻿<!--
+********************************************
+********************************************
+********************************************
+*** DESENVOLVIDO POR LEANDRO MARTINS *******
+*** PLATAFORMA DE CRIAÇÃO DE TELAS**********
+********************************************
+********************************************
+********************************************
+-->
+
+
+@model List<NFENotasFiscais.BE.NTNotasBE>
+
+<div class="data-table-list">
+    <div class="table-responsive">
+        <table id="data-table-basic" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>not_id</th>
+                    <th>log_id</th>
+                    <th>not_numero</th>
+                    <th>cli_id</th>
+                    <th>cont_id</th>
+                    <th>conf_id</th>
+                    <th>not_tipoReceita</th>
+                    <th>not_codReceita</th>
+                    <th>not_dtEmissao</th>
+                    <th>not_dtVencimento</th>
+                    <th>not_pis</th>
+                    <th>not_confins</th>
+                    <th>not_cssl</th>
+                    <th>not_irrf</th>
+                    <th>not_totalbruto</th>
+                    <th>not_totalliquido</th>
+                    <th>not_preenchida</th>
+                    <th>not_emitida</th>
+                    <th>not_situacao</th>
+                    <th>not_chave</th>
+                    <th>not_tipopagamento</th>
+                    <th style="padding: 15px 0px !important;width: 35px !important;"></th>
+                    <th style="padding: 15px 0px !important;width: 35px !important;"></th>
+                    <th style="padding: 15px 0px !important;width: 35px !important;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.not_id</td>
+                        <td>@item.log_id</td>
+                        <td>@item.not_numero</td>
+                        <td>@item.cli_id</td>
+                        <td>@item.cont_id</td>
+                        <td>@item.conf_id</td>
+                        <td>@item.not_tipoReceita</td>
+                        <td>@item.not_codReceita</td>
+                        <td>@item.not_dtEmissao.ToString("dd/MM/yyyy")</td>
+                        <td>@item.not_dtVencimento.ToString("dd/MM/yyyy")</td>
+                        <td>@string.Format("{0:0,0.00}", item.not_pis)</td>
+                        <td>@string.Format("{0:0,0.00}", item.not_confins)</td>
+                        <td>@string.Format("{0:0,0.00}", item.not_cssl)</td>
+                        <td>@string.Format("{0:0,0.00}", item.not_irrf)</td>
+                        <td>@string.Format("{0:0,0.00}", item.not_totalbruto)</td>
+                        <td>@string.Format("{0:0,0.00}", item.not_totalliquido)</td>
+                        <td>@item.not_preenchida</td>
+                        <td>@item.not_emitida</td>
+                        <td>@item.not_situacao</td>
+                        <td>@item.not_chave</td>
+                        <td>@item.not_tipopagamento</td>
+                        <td style="padding: 15px 0px !important;"><a href="@Url.Content("~/SCM/ContratoServicos?contrato=" + item.not_id)" class="btn btn-success btn-sm" alt="Alterar Informação" title="Serviços"><i class="fa fa-briefcase"></i></a></td>
+                        <td style="padding: 15px 0px !important;"><button class="btn btn-warning btn-sm" alt="Alterar Informação" title="Alterar Informação" onclick="SCMAlterarContrato(@item.not_id)"><i class="fa fa-arrow-circle-o-right"></i></button></td>
+                        <td style="padding: 15px 0px !important;"><button class="btn btn-danger btn-sm" alt="Remover Item" onclick="SCMRemoverContrato(@item.cont_id)" title="Remover Item"><i class="fa fa-trash-o"></i></button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@Html.Partial("~/Areas/NFENotasFiscais/Views/Home/ModalCadastroNota.cshtml")
+
+<script src="~/Content/Template/Verde/js/data-table/jquery.dataTables.min.js"></script>
+<script src="~/Content/Template/Verde/js/data-table/data-table-act.js"></script>
+<script src="~/Areas/NFENotasFiscais/js/NotaFiscal.js"></script>

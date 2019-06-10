@@ -1,0 +1,15 @@
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\PortalSCM.Dao.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\PortalSCM.Dao.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\Globais.BE.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\Globais.Dao.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\Globais.Helper.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\PortalSCM.BE.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\PortalSCM.Helper.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\Globais.BE.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\Globais.Dao.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\Globais.Helper.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\PortalSCM.BE.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\PortalSCM.Helper.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\obj\Debug\PortalSCM.Dao.csprojResolveAssemblyReference.cache
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\obj\Debug\PortalSCM.Dao.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\obj\Debug\PortalSCM.Dao.pdb

@@ -1,0 +1,4 @@
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\HelpersSistema\Class\HelpersSistema.BE\bin\Debug\HelpersSistema.BE.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\HelpersSistema\Class\HelpersSistema.BE\bin\Debug\HelpersSistema.BE.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\HelpersSistema\Class\HelpersSistema.BE\obj\Debug\HelpersSistema.BE.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\HelpersSistema\Class\HelpersSistema.BE\obj\Debug\HelpersSistema.BE.pdb

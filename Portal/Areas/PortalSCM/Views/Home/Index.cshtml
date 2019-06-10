@@ -1,0 +1,135 @@
+﻿@model List<PortalSCM.BE.SCMContratoBE>
+
+@{ 
+    var mensal = "";
+    var faturado = "";
+    decimal valor = 0;
+    int i = 0;
+    var cor = "";
+    var propor = "";
+    var dias = "";
+}
+
+<div class="data-table-list">
+    <div class="table-responsive">
+        <table id="data-table-basic" class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="text-left" style="width: 30px"></th>
+                    <th>Nº</th>
+                    <th>Cliente</th>
+                    <th>Nome</th>
+                    <th>Valor</th>
+                    <th>Data</th>
+                    <th>Mensal</th>
+                    <th>Faturado</th>
+                    <th style="padding: 15px 0px !important;width: 35px !important;"></th>
+                    <th style="padding: 15px 0px !important;width: 35px !important;"></th>
+                    <th style="padding: 15px 0px !important;width: 35px !important;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    mensal = item.cont_avulso ? "Sim" : "Não";
+                    faturado = item.cont_avulso ? "-" : item.cont_fatura ? "Sim" : "Não";
+                    valor = item.Servicos.Count == 0 ? 0 : (from x in item.Servicos select x.servCli_valor).Sum();
+                    if (i % 2 == 0) { cor = "background-color: rgba(0,0,0,.05);"; } else { cor = ""; }
+                    <tr href='#@i' style="@cor">
+                        <td class="accordion-toggle clickable-row" href='#@i' data-toggle="collapse"><i class="fa fa-sort-desc"></i></td>
+                        <td>@item.cont_numero</td>
+                        <td>@item.Cliente.cli_nomeFantasia</td>
+                        <td>@item.cont_nome</td>
+                        <td>@string.Format("{0:0,0.00}", valor)</td>
+                        <td>@item.cont_data.ToString("dd/MM/yyyy")</td>
+                        <td>@mensal</td>
+                        <td>@faturado</td>
+                        <td style="padding: 15px 0px !important;"><a href="@Url.Content("~/SCM/ContratoServicos?contrato=" + item.cont_id)" class="btn btn-success btn-sm" alt="Alterar Informação" title="Serviços"><i class="fa fa-briefcase"></i></a></td>
+                        <td style="padding: 15px 0px !important;"><button class="btn btn-warning btn-sm" alt="Alterar Informação" title="Alterar Informação" onclick="SCMAlterarContrato(@item.cont_id)"><i class="fa fa-arrow-circle-o-right"></i></button></td>
+                        <td style="padding: 15px 0px !important;"><button class="btn btn-danger btn-sm" alt="Remover Item" onclick="SCMRemoverContrato(@item.cont_id)" title="Remover Item"><i class="fa fa-trash-o"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="100" style="padding:0px">
+                            <div id="@i" class="accordion-body collapse">
+                                <div class="accordion-inner" style="background: #fff">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nome</th>
+                                                    <th>Descrição</th>
+                                                    <th>Valor</th>
+                                                    <th>Prop.</th>
+                                                    <th>Dias</th>
+                                                    <th>Ativação</th>
+                                                    <th style="padding: 15px 0px !important;width: 35px !important;"></th>
+                                                    <th style="padding: 15px 0px !important;width: 35px !important;">
+                                                        <div class="breadcomb-report">
+                                                            <button data-toggle="tooltip" onclick="CadastrarConfiguracaoItemTelaContrato(@item.cli_id, @item.cont_id)" data-placement="left" title="Cadastrar Novo Serviço" alt="Cadastrar Novo Serviço" class="btn waves-effect" data-original-title="Cadastrar Novo"><i class="notika-icon notika-sent"></i></button>
+                                                        </div>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                        @if (item.Servicos.Count > 0)
+                                        {
+
+                                            <tbody>
+                                                @foreach (var itemEnd in item.Servicos)
+                                                {
+                                                    if (itemEnd.servCli_cobrarPorpor == 1)
+                                                    {
+                                                        dias = itemEnd.servCli_qtdDias.ToString() + " Dias";
+                                                        propor = "Sim";
+                                                    }
+                                                    else
+                                                    {
+                                                        dias = "-";
+                                                        propor = "Não";
+                                                    }
+                                                    <tr id="@itemEnd.servCli_id">
+                                                        <td>@itemEnd.servCli_nome</td>
+                                                        <td>@itemEnd.servCli_descricao</td>
+                                                        <td>@string.Format("{0:0,0.00}", itemEnd.servCli_valor)</td>
+                                                        <td>@propor</td>
+                                                        <td>@dias</td>
+                                                        <td>@itemEnd.servCli_dataAtivacao.ToString("dd/MM/yyyy")</td>
+                                                        <td style="padding: 15px 0px !important;"><button class="btn btn-warning btn-sm" alt="Alterar Informação" title="Alterar Informação" onclick="SCMAlterarServicoCliente(@itemEnd.servCli_id)"><i class="fa fa-arrow-circle-o-right"></i></button></td>
+                                                        <td style="padding: 15px 0px !important;"><button class="btn btn-danger btn-sm" alt="Remover Item" onclick="SCMRemoverContrato(@item.cont_id)" title="Remover Item"><i class="fa fa-trash-o"></i></button></td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        }
+                                        </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    i++;
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@Html.Partial("~/Areas/PortalSCM/Views/Home/ModelContratoCadastro.cshtml")
+
+
+
+<script src="~/Content/Template/Verde/js/data-table/jquery.dataTables.min.js"></script>
+<script src="~/Content/Template/Verde/js/data-table/data-table-act.js"></script>
+<script src="~/Areas/PortalSCM/js/Contrato.js"></script>
+
+<script src="~/Areas/PortalSCM/js/ClienteServicos.js"></script>
+@Html.Partial("~/Areas/PortalSCM/Views/ContratoServicos/ModalSCMCadastroContratoServico.cshtml")
+
+<script>
+    $(document).ready(function () {
+    $("#buttonTituloPagesCadastro").click(function () {
+        CadastrarConfiguracaoItem();
+    })
+
+    $('.i-checks').iCheck({
+        checkboxClass: 'icheckbox_square-green',
+        radioClass: 'iradio_square-green',
+    });
+});
+</script>

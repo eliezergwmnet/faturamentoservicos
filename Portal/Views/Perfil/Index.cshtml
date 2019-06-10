@@ -1,0 +1,117 @@
+﻿@{ 
+    var listaPerfil = (List<Globais.BE.GlobaisPermissaoBE>)ViewData["perfil"];
+    var listaPpaginas = (List<Globais.BE.GlobaisConfiguracaoBE>)ViewData["page"];
+    var select = "";
+    int? idpage = 0;
+    Globais.BE.GlobaisPermissaoPaginaBE selPage;
+}
+
+<script src="@Url.Content("~/Content/js/Projeto/Perfil.js")"></script>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 30px 0px;background: #fff;float: left;">
+    <div class="col-12 text-right" style="margin-bottom: 10px">
+        <button type="button" class="btn btn-info" onclick="CarregaModalCadastroPerfil()">Modal Default</button>
+    </div>
+
+    @Html.Partial("~/Views/Perfil/ModalPerfil.cshtml")
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Pagina</th>
+                <th>URL</th>
+                <th width="80px">Incluir</th>
+                <th width="80px">Editar</th>
+                <th width="80px">Alterar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var itemPerfil in listaPerfil)
+            {
+                <tr style="background:#6c757d; font-size:16px">
+                    <td colspan="3"><strong>Perfil @itemPerfil.perm_nome</strong></td>
+                    <td><div class="text-right" style="width:55px"><a href="javascript:" style="padding: 0px 18px !important;" onclick="AlterarPerfil(@itemPerfil.perm_id, '@itemPerfil.perm_nome')" class="btn btn-info btn-sm alterarperfil"><i class="fa fa-refresh"></i>&nbsp;</a></div></td>
+                    <td><div class="text-right" style="width:55px"><a href="javascript:" style="padding: 0px 18px !important;" onclick="RemoverPerfil(@itemPerfil.perm_id)" class="btn btn-danger btn-sm removerperfil"><i class="fa fa-trash-o"></i>&nbsp;</a></div></td>
+                </tr>
+                foreach (var item in listaPpaginas)
+                {
+                    <tr>
+                        <td>@item.Con_Descricao.</td>
+                        <td>@item.Con_IdItem</td>
+                        <td>
+                            @{
+                                selPage = (from x in itemPerfil.Paginas where x.permPag_url.Equals(item.Con_IdItem) select x).FirstOrDefault<Globais.BE.GlobaisPermissaoPaginaBE>();
+                                select = selPage == null ? "" : (selPage.permPag_inserir ? "checked" : "");
+                                idpage = selPage == null ? 0 : selPage.permPag_id;
+                            }
+                            <div class="toggle-select-act fm-cmp-mg">
+                                <div class="nk-toggle-switch">
+                                    <input id="@Globais.Helper.TipoPagePermissao.InsertItem" type="checkbox" hidden="hidden" @select idperfil="@itemPerfil.perm_id" page="@item.Con_IdItem" idpage="@idpage">
+                                    <label for="@Globais.Helper.TipoPagePermissao.InsertItem" class="ts-helper"></label>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            @{
+                                selPage = (from x in itemPerfil.Paginas where x.permPag_url.Equals(item.Con_IdItem) select x).FirstOrDefault<Globais.BE.GlobaisPermissaoPaginaBE>();
+                                select = selPage == null ? "" : (selPage.permPag_alterar ? "checked" : "");
+                                idpage = selPage == null ? 0 : selPage.permPag_id;
+                            }
+                            <div class="toggle-select-act fm-cmp-mg">
+                                <div class="nk-toggle-switch" data-ts-color="blue">
+                                    <input id="@Globais.Helper.TipoPagePermissao.UpdateItem" type="checkbox" hidden="hidden" @select idperfil="@itemPerfil.perm_id" page="@item.Con_IdItem" idpage="@idpage">
+                                    <label for="@Globais.Helper.TipoPagePermissao.UpdateItem" class="ts-helper"></label>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            @{
+                                selPage = (from x in itemPerfil.Paginas where x.permPag_url.Equals(item.Con_IdItem) select x).FirstOrDefault<Globais.BE.GlobaisPermissaoPaginaBE>();
+                                select = selPage == null ? "" : (selPage.permPag_excluir ? "checked" : "");
+                                idpage = selPage == null ? 0 : selPage.permPag_id;
+                            }
+
+                            <div class="toggle-select-act fm-cmp-mg">
+                                <div class="nk-toggle-switch" data-ts-color="red">
+                                    <input  id="@Globais.Helper.TipoPagePermissao.DeletarItem" type="checkbox" hidden="hidden" @select idperfil="@itemPerfil.perm_id" page="@item.Con_IdItem" idpage="@idpage">
+                                    <label for="@Globais.Helper.TipoPagePermissao.DeletarItem" class="ts-helper"></label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                                    }
+
+                                }
+
+        </tbody>
+    </table>
+</div>
+
+
+
+    <script>
+        $(function () {
+            $(".checkitem").click(function () {
+                var tipo = $(this).attr('id');
+                var perfil = $(this).attr('idperfil');
+                var page = $(this).attr('page');
+                var idpage = $(this).attr('idpage');
+
+                var valoritem = false;
+                if ($(this).is(':checked'))
+                    valoritem = true;
+
+                $.ajax({
+                    url: '/Perfil/CadastrarItem',
+                    data: { tipo: tipo, page: page, perfil: perfil, idpage: idpage },
+                    type: 'POST',
+                    beforeSend: function () {
+                    },
+                    success: function (retornoEndereco) {
+                    },
+                    complete: function () {
+                    }
+                });
+            })
+
+
+        })
+    </script>

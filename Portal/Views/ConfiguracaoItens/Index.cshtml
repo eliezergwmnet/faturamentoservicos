@@ -1,0 +1,49 @@
+﻿@model List<Globais.BE.GlobaisConfiguracaoBE>
+
+<div class="notika-email-post-area">
+    <div class="recent-signup-inner notika-shadow mg-t-30">
+        <div class="widget-signup-list">
+            <input type="hidden" id="tipo" value="@ViewBag.tipo" />
+            <div class="col-12">
+                <h5>Buscar</h5>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="descricao" class="control-label mb-1">Descrição</label>
+                        <input id="descricao" name="descricao" type="text" class="form-control obrigatorio">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <button class="btn btn-info" onclick="BuscaConfiguracaoItensFiltro()" style="margin-top:20px" type="button"><i class="fa fa-search"></i> Buscar</button>
+                    <button class="btn btn-info" onclick="CadastrarConfiguracaoItem()" style="margin-top:20px" type="button"><i class="fa fa-search"></i> Adicionar</button>
+                </div>
+            </div>
+
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Valor</th>
+                        <th>Descrição</th>
+                        <th style="width:50px"></th>
+                        <th style="width:50px"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Con_IdItem</td>
+                            <td>@item.Con_Descricao</td>
+                            <td><button class="btn btn-warning btn-sm" alt="Alterar Informação" title="Alterar Informação" onclick="AlterarConfiguracaoItem(@item.Con_id)"><i class="fa fa-arrow-circle-o-right"></i></button></td>
+                            <td><button class="btn btn-danger btn-sm" alt="Desativar Item" onclick="DeletarConfiguracaoItem(@item.Con_id)" title="Desativar Item"><i class="fa fa-trash-o"></i></button></td>
+                        </tr>
+                    }
+                    <tr>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/Content/js/Projeto/ConfiguracaoItens.js")"></script>
+@Html.Partial("~/Views/ConfiguracaoItens/ModalItens.cshtml")

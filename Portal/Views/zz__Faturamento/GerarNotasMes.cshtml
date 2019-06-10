@@ -1,0 +1,43 @@
+﻿<div class="col-12">
+    <div class="col-sm-6">
+        <button class="btn btn-info" id="gerarnotasmes" style="margin-top:20px" type="button"><i class="fa fa-file-text"></i> Gerar Notas</button>
+        <a href="@Url.Content("~/Faturamento/DescontoFaturamento")" class="btn btn-warning" style="margin-top:20px" type="button"><i class="fa fa-refresh"></i> Desconto por Horas</a>
+    </div>
+</div>
+
+<hr />
+
+<div id="viewPlaceHolder" class="text-center">
+    <b>Caregando Dados, Aguarde...</b><br /><br /><br />
+    <img src="@Url.Content("~/images/carregando.gif")" style="width:120px" />
+</div>
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#viewPlaceHolder").load("/Faturamento/GerarNotaCarregaListaFaturamento", function () { Paginacao(); });
+
+        $("#btnbuscadados").click(function () {
+            $("#page-loader").fadeIn("slow");
+            var parametro = "fat_mes=" + $("#fat_mes").val();
+            $("#viewPlaceHolder").load("/Faturamento/GerarNotaCarregaListaFaturamento?" + parametro, function () { Paginacao(); });
+        })
+        $("#gerarnotasmes").click(function () {
+            var itensselecionados = [];
+            $(".itemselecionados").each(function () {
+                if ($(this).prop("checked")) {
+                    itensselecionados.push($(this).attr('id'));
+                } 
+            });
+
+            //Confirmacao("Confirmação", "Deseja receber um email com a execução das notas ?", function (res) {
+            //EnviarRequisicao("/Faturamento/GerarNotasMesInsert", { notas: itensselecionados.join(", "), enviaremail: res }, "POST", function () {
+            EnviarRequisicao("/Faturamento/GerarNotasMesInsert", { notas: itensselecionados.join(", ") }, "POST", function () {
+                window.location = "/Faturamento/GerarNotasMes"
+            }, true);
+            //})
+        })
+    });
+</script>

@@ -1,0 +1,47 @@
+﻿<div class="col-sm-5">
+    <div class="user-area dropdown float-right">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img class="user-avatar rounded-circle" src="@GlobalVariables.User.usu_imagem" alt="Nome Usuário">
+        </a>
+        <div class="user-menu dropdown-menu">
+            @foreach (var item in HelpSistemaModel.CarregaMenuProfile())
+            {
+                <a class="nav-link" href="@item.link">
+                    <!--<i class="fa fa- user"></i>-->
+                    @item.nome
+                </a>
+                if (item.referencia == MenuReferenciaitemEnum.MenuProfileNotificacao)
+                {
+                    <span class="count">0</span>
+                }
+            }
+            
+            <a class="nav-link" id="sairsistema" href="javacript:">Sair</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $("#sairsistema").click(function(){
+            Confirmacao("Sair", "Tem certeza que deseja sair ?", function (resSair) {
+                if (resSair) {
+                    window.location = "/Login";
+                    $.ajax({
+                        url: '/Home/SairSistema',
+                        type: 'GET',
+                        beforeSend: function () {
+                            //forma.find('.load').fadeIn("fast");
+                        },
+                        success: function (retornoEndereco) {
+                            window.location = "/Login";
+                        },
+                        complete: function () {
+                            //forma.find('.load').fadeOut("fast");
+                        }
+                    });
+                }
+            })
+        })
+    });
+</script>

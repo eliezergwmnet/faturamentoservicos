@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EnviarLoteRpsEnvio xmlns="http://www.ginfes.com.br/servico_enviar_lote_rps_envio_v03.xsd" xmlns:tipos="http://www.ginfes.com.br/tipos_v03.xsd">
+   <LoteRps>
+      <tipos:NumeroLote>0008</tipos:NumeroLote>
+      <tipos:Cnpj>32132123000112</tipos:Cnpj>
+      <tipos:InscricaoMunicipal>321321</tipos:InscricaoMunicipal>
+      <tipos:QuantidadeRps>1</tipos:QuantidadeRps>
+      <tipos:ListaRps>
+         <tipos:Rps>
+            <tipos:InfRps>
+               <tipos:IdentificacaoRps>
+                  <tipos:Numero>145</tipos:Numero>
+                  <tipos:Serie>NFSe</tipos:Serie>
+                  <tipos:Tipo>1</tipos:Tipo>
+               </tipos:IdentificacaoRps>
+               <tipos:DataEmissao>2019-06-06</tipos:DataEmissao>
+               <tipos:NaturezaOperacao>1</tipos:NaturezaOperacao>
+               <tipos:OptanteSimplesNacional>2</tipos:OptanteSimplesNacional>
+               <tipos:IncentivadorCultural>2</tipos:IncentivadorCultural>
+               <tipos:Status>1</tipos:Status>
+               <tipos:Servico>
+                  <tipos:Valores>
+                     <tipos:ValorServicos>1123.00</tipos:ValorServicos>
+                     <tipos:ValorDeducoes>0.00</tipos:ValorDeducoes>
+                     <tipos:ValorPis>11.23</tipos:ValorPis>
+                     <tipos:ValorCofins>11.23</tipos:ValorCofins>
+                     <tipos:ValorInss>0.00</tipos:ValorInss>
+                     <tipos:ValorIr>0.00</tipos:ValorIr>
+                     <tipos:ValorCsll>11.23</tipos:ValorCsll>
+                     <tipos:IssRetido>2</tipos:IssRetido>
+                     <tipos:ValorIss>11.23</tipos:ValorIss>
+                     <tipos:ValorIssRetido>0.00</tipos:ValorIssRetido>
+                     <tipos:OutrasRetencoes>0.00</tipos:OutrasRetencoes>
+                     <tipos:BaseCalculo>1123.00</tipos:BaseCalculo>
+                     <tipos:Aliquota>0.0300</tipos:Aliquota>
+                     <tipos:ValorLiquidoNfse>1078.08</tipos:ValorLiquidoNfse>
+                     <tipos:DescontoIncondicionado>0.00</tipos:DescontoIncondicionado>
+                     <tipos:DescontoCondicionado>0.00</tipos:DescontoCondicionado>
+                  </tipos:Valores>
+                  <tipos:ItemListaServico>108</tipos:ItemListaServico>
+                  <tipos:CodigoTributacaoMunicipio>2706</tipos:CodigoTributacaoMunicipio>
+                  <tipos:Discriminacao>CONTRATO PRESTACAO DE SERVICOS DE CLOUD COMPUTING DE SERVIDOR VIRTUAL PARA O SISTEMA DE RECADASTRAMENTO VALOR REFERENTE USO NO MES R$ 1.976,00 - VALOR APROXIMADO DOS TRIBUTOS: R$ 358,84(18, 16 %)  FONTE: IBPT</tipos:Discriminacao>
+                  <tipos:CodigoMunicipio>3548708</tipos:CodigoMunicipio>
+               </tipos:Servico>
+               <tipos:Prestador>
+                  <tipos:Cnpj>32132123000112</tipos:Cnpj>
+                  <tipos:InscricaoMunicipal>321321</tipos:InscricaoMunicipal>
+               </tipos:Prestador>
+               <tipos:Tomador>
+                  <tipos:IdentificacaoTomador>
+                     <tipos:CpfCnpj>
+                        <tipos:Cnpj>362.803.688-74</tipos:Cnpj>
+                     </tipos:CpfCnpj>
+                  </tipos:IdentificacaoTomador>
+                  <tipos:RazaoSocial>Leandro Martins</tipos:RazaoSocial>
+                  <tipos:Endereco>
+                     <tipos:Endereco>Rua Doutor João Aranha Netto</tipos:Endereco>
+                     <tipos:Numero>12</tipos:Numero>
+                     <tipos:Bairro>Vila Bocaina</tipos:Bairro>
+                     <tipos:CodigoMunicipio>3550308</tipos:CodigoMunicipio>
+                     <tipos:Uf>SP</tipos:Uf>
+                     <tipos:Cep>09310-52</tipos:Cep>
+                  </tipos:Endereco>
+               </tipos:Tomador>
+            </tipos:InfRps>
+         </tipos:Rps>
+      </tipos:ListaRps>
+   </LoteRps>
+</EnviarLoteRpsEnvio>

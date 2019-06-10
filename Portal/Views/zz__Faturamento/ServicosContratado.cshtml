@@ -1,0 +1,42 @@
+﻿<div class="col-12">
+    <h5 class="col-sm-3">Buscar</h5>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label for="cli_nomeFantasia" class="control-label mb-1">Nome Fantasia</label>
+            <input id="cli_nomeFantasia" name="cli_nomeFantasia" type="text" class="form-control obrigatorio">
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label for="cli_razaoSocial" class="control-label mb-1">Razão Social</label>
+            <input id="cli_razaoSocial" name="cli_razaoSocial" type="text" class="form-control obrigatorio">
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label for="cli_CGC" class="control-label mb-1">CNPJ / CPF</label>
+            <input id="cli_CGC" name="cli_CGC" type="text" class="form-control obrigatorio">
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <button class="btn btn-info" id="btnbuscadados" style="margin-top:20px" type="button"><i class="fa fa-search"></i> Buscar</button>
+    </div>
+</div>
+
+<div id="viewPlaceHolder" class="text-center">
+    <b>Caregando Dados, Aguarde...</b><br /><br /><br />
+    <img src="@Url.Content("~/images/carregando.gif")" style="width:120px" />
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#viewPlaceHolder").load("/Faturamento/ServicosContratadoCarregaLista", function () { Paginacao(); });
+
+        $("#btnbuscadados").click(function () {
+            $("#page-loader").fadeIn("slow");
+            var parametro = "cli_nomeFantasia=" + $("#cli_nomeFantasia").val() + "&cli_razaoSocial=" + $("#cli_razaoSocial").val() + "&cli_CGC=" + $("#cli_CGC").val()
+            $("#viewPlaceHolder").load("/Faturamento/ServicosContratadoCarregaLista?" + parametro, function () { Paginacao(); });
+        })
+    });
+</script>

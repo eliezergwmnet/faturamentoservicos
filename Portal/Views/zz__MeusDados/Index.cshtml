@@ -1,0 +1,151 @@
+﻿
+@{
+    var permissao = (Portal.BE.PermissaoBE)Session[Portal.Helper.Globais.SessionSistemaPermissao];
+    var user = (Portal.BE.UsuarioBE)Session[Portal.Helper.Globais.SessionSistema];
+    var select = "";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+
+            <div class="card-body">
+                <div id="pay-invoice">
+                    <div class="card-body">
+                        <hr>
+                        <form action="" method="post" name="submitenviar">
+                            <input type="hidden" value="@user.usu_id" name="usu_id" id="usu_id" />
+                            <input type="hidden" value="@user.log_id" name="log_id" id="log_id" />
+                            <input type="hidden" value="@user.user_id" name="user_id" id="user_id" />
+                            <div class="col-sm-4">
+                                <div class="form-cli_nomeFantasia">
+                                    <label for="usu_nome" class="control-label mb-1">Nome *</label>
+                                    <div class="input-group">
+                                        <input id="usu_nome" name="usu_nome" value="@user.usu_nome" type="text" class="form-control obrigatorio" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="usu_telefone" class="control-label mb-1">Telefone *</label>
+                                    <input id="usu_telefone" name="usu_telefone" value="@user.usu_telefone" type="text" class="form-control formFone obrigatorio" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="usu_celular" class="control-label mb-1">Celular</label>
+                                    <input id="usu_celular" name="usu_celular" value="@user.usu_celular" type="text" class="form-control formCel obrigatorio" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Imagem</label>
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <span class="btn btn-info btn-file">
+                                                Enviar… <input type="file" accept="image/*" id="imgInp">
+                                            </span>
+                                        </span>
+                                        <input id='usu_imagem' value="@user.usu_imagem" name="usu_imagem" type="text" class="form-control" readonly>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="usu_email" class="control-label mb-1">E-Mail *</label>
+                                    <input id="usu_email" name="usu_email" value="@user.usu_email" type="text" class="form-control obrigatorio">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="usu_senhanova" class="control-label mb-1">Senha</label>
+                                    <input id="usu_senhanova" name="usu_senhanova" type="password" class="form-control">
+                                    <input id="usu_senha" name="usu_senha" type="hidden" value="@user.usu_senha" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="usu_senhaconfirmacao" class="control-label mb-1">Confirmação</label>
+                                    <input id="usu_senhaconfirmacao" name="usu_senhaconfirmacao" type="password" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                @Html.Partial("~/Views/Helper/EnderecoPartial.cshtml", user.Endereco)
+                            </div>
+
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-dot-circle-o"></i> Salvar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $(document).on('change', '.btn-file :file', function () {
+            var input = $(this),
+                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+            input.trigger('fileselect', [label]);
+
+        });
+
+        $("form[name='submitenviar']").submit(function () {
+            var senha = $("#usu_senhanova").val();
+            var confirmacao = $("#usu_senhaconfirmacao").val();
+            if (senha.length > 0) {
+                if (senha.length < 6) {
+                    Alerta("Senha precisar ter pelo menos 6 digitos", function () { });
+                    return false;
+                }
+                else if (senha != confirmacao) {
+                    Alerta("Senha diferente de confimação", function () { });
+                    return false;
+                }
+                else {
+                    $("#usu_senha").val(senha);
+                }
+            }
+            else {
+                $("#usu_senha").val(senha);
+            }
+        });
+
+        $('.btn-file :file').on('fileselect', function (event, label) {
+
+            var input = $(this).parents('.input-group').find(':text'),
+		        log = label;
+
+            if (input.length) {
+                input.val(log);
+            } else {
+                if (log) alert(log);
+            }
+
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#usu_imagem').val(e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#imgInp").change(function () {
+            readURL(this);
+        });
+
+    })
+</script>

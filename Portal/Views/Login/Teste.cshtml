@@ -1,0 +1,145 @@
+﻿@{ 
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GeoLocalização</title>
+    <style type="text/css">
+        html, body, #map {
+            height: 100%;
+            margin: 0;
+        }
+    </style>
+    @Scripts.Render("~/Base/jquery")
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+</head>
+<body>
+    <div id="map"></div>
+</body>
+</html>
+
+<script>
+		var access_token = "";
+		var token_type = "";
+
+		//document.addEventListener('DOMContentLoaded', function(){
+		$(function(){
+			CarregaMapa2();
+        });
+		//});
+
+
+		function RequestService() {
+			var obj = {client_id: "loyalty-api-external", client_secret: "17cdf461-8966-4294-be09-7872d0d9eaa4", grant_type: "client_credentials"}
+            $.ajax({
+                type: "POST",
+                url: "https://idp-movida.loyaltysci.com/auth/realms/loyalty-externo/protocol/openid-connect/token",
+                contentType: "application/x-www-form-urlencoded",
+                data: obj,
+                dataType: "json",
+                success: function(data) {
+
+					access_token = data.token_type + " " + btoa(data.access_token);
+					token_type = data.token_type;
+					CarregaMapa();
+				},
+                error: function(data) {
+					debugger
+					console.log(data)
+				}
+            });
+        }
+
+		function CarregaMapa(){
+            $.ajax({
+                type: "GET",
+                url: "https://api-movida.loyaltysci.com/loyalty-api-external/webresources/v0/member/by-email/iceman2@example.com",
+				contentType: "application/x-www-form-urlencoded",
+				headers: "Access-Control-Allow-Origin",
+				//headers: {"Authorization ":  access_token},
+				dataType: 'json',
+				data: {},
+				cache: true,
+                beforeSend: function(head) {
+					head.setRequestHeader("authorization", access_token );
+				},
+                success: function(data) {
+					token_type = data.token_type;
+				},
+                error: function(data, data2, data3) {
+					debugger
+					console.log(data)
+				}
+            })
+		}
+
+		function CarregaMapa2(){
+            $.ajax({
+                type: "GET",
+				dataType: "json",
+				url: "http://demofaturamento.gwmnet.net/Login/TesteAPI",
+				data: {}, 
+                success: function(data) {
+					debugger
+					token_type = data.token_type;
+				},
+                error: function(data, data2, data3) {
+					debugger
+					console.log(data)
+				}
+            })
+		}
+
+		function LoadMapa() {
+		    var target = document.querySelector('#map');
+
+		    navigator.geolocation.getCurrentPosition(function (position) {
+
+		        var latitude = position.coords.latitude;
+		        var longitude = position.coords.longitude;
+		        var coordinate = new google.maps.LatLng(latitude, longitude);
+
+		        var optionsMap = {
+		            center: coordinate,
+		            zoom: 19,
+		            mapTypeId: google.maps.MapTypeId.ROADMAP
+		        };
+
+		        var map = new google.maps.Map(target, optionsMap);
+
+		        var configMarker = {
+		            position: coordinate,
+		            map: map,
+		            title: "Você está aqui!"
+		        };
+
+		        var marker = new google.maps.Marker(configMarker);
+
+		        //for (var i = 0; i < coord.length; i++) {
+		        //for (var i = 0; i < coord.length; i++) {
+		        //	var location = coord[i].split(",");
+		        //	var location = coord[i].split(",");
+		        //
+		        //
+		        //	var marker = new google.maps.Marker({
+		        //	var marker = new google.maps.Marker({
+		        //		position: new google.maps.LatLng(location[0], location[1]),
+		        //		position: new google.maps.LatLng(location[0], location[1]),
+		        //		map: map
+		        //		map: map
+		        //	});
+		        //	});
+		        //}
+		        //}
+
+		    });
+		}
+
+
+</script>

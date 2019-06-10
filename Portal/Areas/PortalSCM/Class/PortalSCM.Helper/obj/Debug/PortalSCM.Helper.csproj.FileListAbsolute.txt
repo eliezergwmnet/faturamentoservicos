@@ -1,0 +1,5 @@
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Helper\bin\Debug\PortalSCM.Helper.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Helper\bin\Debug\PortalSCM.Helper.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Helper\obj\Debug\PortalSCM.Helper.dll
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Helper\obj\Debug\PortalSCM.Helper.pdb
+E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Helper\obj\Debug\PortalSCM.Helper.csprojResolveAssemblyReference.cache
