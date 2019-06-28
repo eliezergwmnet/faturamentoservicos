@@ -2,3 +2,8 @@ E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscai
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Helper\bin\Debug\NFENotasFiscais.Helper.pdb
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Helper\obj\Debug\NFENotasFiscais.Helper.dll
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Helper\obj\Debug\NFENotasFiscais.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Helper\bin\Debug\NFENotasFiscais.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Helper\bin\Debug\NFENotasFiscais.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Helper\obj\Debug\NFENotasFiscais.Helper.csprojResolveAssemblyReference.cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Helper\obj\Debug\NFENotasFiscais.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Helper\obj\Debug\NFENotasFiscais.Helper.pdb

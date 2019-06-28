@@ -42,6 +42,7 @@ namespace Globais.BE
         public string conf_agenciadiito { get; set; }
         public string conf_conta { get; set; }
         public string conf_digito { get; set; }
+        public string conf_codigo { get; set; }
     }
 
     public class GlobaisEmpresaTaxasNotasBE

@@ -66,9 +66,9 @@ namespace Globais.Dao
                     result.Add(item);
 
                 }
-                dr.Close();
             }
-            
+            dr.Close();
+
             return result;
         }
 

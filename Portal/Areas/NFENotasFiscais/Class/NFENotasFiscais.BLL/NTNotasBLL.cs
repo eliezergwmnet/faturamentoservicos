@@ -20,18 +20,34 @@ namespace NFENotasFiscais.BLL
 {
     public class NTNotasBLL
     {
-        public List<NTNotasBE> Select()
+        public List<NTNotasEmitidasBE> Select()
         {
-            return new NTNotasDao().Select<NTNotasBE>().ToList();
+            return new NTNotasDao().Select<NTNotasEmitidasBE>().ToList();
         }
         public List<NTNotasBE> Select(NTNotasBE obj)
         {
             return new NTNotasDao().Select<NTNotasBE>(obj).ToList();
         }
-        public NTNotasBE SelectId(NTNotasBE obj)
+        public NTNotasEmitidasBE SelectId(NTNotasBE obj)
         {
-            return new NTNotasDao().SelectId<NTNotasBE>(obj);
+            return new NTNotasDao().Select<NTNotasEmitidasBE>(obj).FirstOrDefault<NTNotasEmitidasBE>();
         }
+
+        /// <summary>
+        /// Carrega a lista de nota que anida não foram geradas o boleto
+        /// </summary>
+        /// <returns></returns>
+        public List<NTNotasEmitidasBE> SelectPendentesBoleto()
+        {
+            return new NTNotasDao().SelectPendentesBoleto();
+        }
+
+        public bool AtualizaBoletoNota(int not_id, string urlBoleto)
+        {
+            var res = new NTNotasDao().UpdateBoleto(new { not_id = not_id, not_chave = urlBoleto });
+            return res.Value;
+        }
+
 
         public int NumeroNota(int conf_id)
         {

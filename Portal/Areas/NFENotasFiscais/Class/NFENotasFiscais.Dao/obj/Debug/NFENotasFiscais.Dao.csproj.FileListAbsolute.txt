@@ -17,3 +17,24 @@ E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscai
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\obj\Debug\NFENotasFiscais.Dao.csprojResolveAssemblyReference.cache
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\obj\Debug\NFENotasFiscais.Dao.dll
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\obj\Debug\NFENotasFiscais.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\bin\Debug\NFENotasFiscais.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\bin\Debug\NFENotasFiscais.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\bin\Debug\Globais.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\bin\Debug\Globais.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\bin\Debug\Globais.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\bin\Debug\NFENotasFiscais.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\bin\Debug\NFENotasFiscais.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\bin\Debug\PortalSCM.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\bin\Debug\PortalSCM.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\bin\Debug\Globais.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\bin\Debug\Globais.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\bin\Debug\Globais.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\bin\Debug\PortalSCM.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\bin\Debug\NFENotasFiscais.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\bin\Debug\NFENotasFiscais.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\bin\Debug\PortalSCM.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\obj\Debug\NFENotasFiscais.Dao.csprojResolveAssemblyReference.cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\obj\Debug\NFENotasFiscais.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\obj\Debug\NFENotasFiscais.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\bin\Debug\PortalSCM.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.Dao\bin\Debug\PortalSCM.Dao.pdb

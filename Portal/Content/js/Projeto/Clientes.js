@@ -32,6 +32,11 @@ function CarregaDadosCliente(id) {
         $("#cli_parametroVencimentomodal").val(res.cli_parametroVencimento);
         //$("#cli_CodCidIBGE").val(res.cli_CodCidIBGE);
 
+        if(res.cli_simplesNacional)
+            $('#cli_simplesNacional option[value="1"]').attr('selected', 'selected');
+        else
+            $('#cli_simplesNacional option[value="0"]').attr('selected', 'selected');
+
         CarregarSelect("cli_CFOPmodal", "CarregaFOP", res.cli_CFOP);
         CarregarSelect("cli_tipoVencimentomodal", "CarregaTipoVencimento", res.cli_tipoVencimento);
         CarregarSelect("cli_CodCidIBGEmodal", "CarregaCodigoIBGE", res.cli_parametroVencimento);
@@ -68,10 +73,11 @@ function RemoveClienteCadastrado(id) {
 function SalvarDadosCliente() {
     EfeitoBotao('.rotacionaricone > .iconebutton', '.rotacionaricone', true);
 
+    var simples = $("#cli_simplesNacional").val() == "1" ? true : false;
     let obj = {
         cli_id: $("#cli_idmodal").val(), cli_nomeFantasia: $("#cli_nomeFantasiamodal").val(), cli_razaoSocial: $("#cli_razaoSocialmodal").val(), cli_razaoSocial: $("#cli_razaoSocialmodal").val(), cli_CPF: $("#cli_CPFmodal").val(),
         cli_tipoInscricao: $("#cli_tipoInscricaomodal").val(), cli_incricaoEstadual: $("#cli_incricaoEstadualmodal").val(), cli_parametroVencimento: $("#cli_parametroVencimentomodal").val(),
-        cli_CFOP: $("#cli_CFOPmodal").val(), cli_tipoVencimento: $("#cli_tipoVencimentomodal").val(), cli_CodCidIBGE: $("#cli_CodCidIBGEmodal").val()
+        cli_CFOP: $("#cli_CFOPmodal").val(), cli_tipoVencimento: $("#cli_tipoVencimentomodal").val(), cli_CodCidIBGE: $("#cli_CodCidIBGEmodal").val(), cli_simplesNacional: simples
     }
 
     EnviarRequisicao("/Clientes/Update", obj, "POST", function (res) {

@@ -20,3 +20,14 @@ E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.BLL
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.BLL\obj\Debug\Globais.BLL.csprojResolveAssemblyReference.cache
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.BLL\obj\Debug\Globais.BLL.dll
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\ProjectsGlobais\Globais.BLL\obj\Debug\Globais.BLL.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\ProjectsGlobais\Globais.BLL\bin\Debug\Globais.BLL.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\ProjectsGlobais\Globais.BLL\bin\Debug\Globais.BLL.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\ProjectsGlobais\Globais.BLL\bin\Debug\Globais.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\ProjectsGlobais\Globais.BLL\bin\Debug\Globais.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\ProjectsGlobais\Globais.BLL\bin\Debug\Globais.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\ProjectsGlobais\Globais.BLL\bin\Debug\Globais.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\ProjectsGlobais\Globais.BLL\bin\Debug\Globais.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\ProjectsGlobais\Globais.BLL\bin\Debug\Globais.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\ProjectsGlobais\Globais.BLL\obj\Debug\Globais.BLL.csprojResolveAssemblyReference.cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\ProjectsGlobais\Globais.BLL\obj\Debug\Globais.BLL.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\ProjectsGlobais\Globais.BLL\obj\Debug\Globais.BLL.pdb

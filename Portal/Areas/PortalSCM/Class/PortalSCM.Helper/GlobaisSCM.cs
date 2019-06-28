@@ -2,7 +2,7 @@
 {
     public static class GlobaisSCM
     {
-        public const string ConectionDataBaseGlobal = "SERVERPROJECTSCM";
+        public const string ConectionDataBaseGlobal = "SERVERHOSTGLOBAIS";
         public const string NFeSerie = "NFSe";
         public const string Modulo = "SCM";
 

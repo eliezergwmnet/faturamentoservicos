@@ -51,6 +51,7 @@ namespace NFENotasFiscais.BLL.NFEServicos
                 {
                     lote.lote_status = StatusNotaNFe.LoteEnviado.GetDescription();
                     _lote.UpdateStatus(lote);
+                    _lote.UpdateProtocolo(new NTLoteBE { lote_id = lote.lote_id, lote_protocolo = retorno.Protocolo });
                     this.ConsultaLoteRPS(retorno.Protocolo);
                     return lote.lote_id;
                 }
@@ -90,7 +91,7 @@ namespace NFENotasFiscais.BLL.NFEServicos
             empresa.Nome = Common.RemoveCaracter(this.empresa.conf_razaosocial);
             empresa.CNPJ = Common.RemoveCaracter(this.empresa.conf_cnpj);
             empresa.InscricaoMunicipal = this.empresa.conf_inscricaoestadual;
-            empresa.CertificadoArquivo = @"D:\NotasEletronicas\Certificados\INFOGER.pfx";
+            empresa.CertificadoArquivo = this.ValidaCertificado();// @"D:\NotasEletronicas\Certificados\INFOGER.pfx";
             if (criptografado)
                 empresa.CertificadoSenha = NFSE.Net.Certificado.Criptografia.criptografaSenha(senhaCetificado);
             else
@@ -102,6 +103,24 @@ namespace NFENotasFiscais.BLL.NFEServicos
 
             empresa.CodigoMunicipio = 3529401;
             return empresa;
+        }
+
+
+        string ValidaCertificado()
+        {
+            var endereco = String.Format(System.Web.Hosting.HostingEnvironment.MapPath("~\\{0}"), "Certificados");
+            if (!System.IO.Directory.Exists(endereco))
+                throw new System.ArgumentException("Pasta do Certificado não encontrado", "Certificado");
+            else
+            {
+                endereco = endereco + "\\GwmNet.pfx";
+                if (!System.IO.File.Exists(endereco))
+                    throw new System.ArgumentException("Certificado não encontrado", "Certificado");
+                else
+                {
+                    return endereco;
+                }
+            }
         }
 
         public void EnviarRPSNotas(string caminhoXml, string caminhoXmlRetorno)
@@ -127,35 +146,8 @@ namespace NFENotasFiscais.BLL.NFEServicos
         }
 
 
-        /// <summary>
-        /// 
-        /// Código de situação de lote de RPS
-        /// 1 – Não Recebido
-        /// 2 – Não Processado
-        /// 3 – Processado com Erro
-        /// 4 – Processado com Sucesso
-        /// </summary>
-        /// <param name="cancellationToken"></param>
-        public void IniciarConsultar(CancellationToken cancellationToken = default(CancellationToken))
-        {
-            for (int i = 0; i < 20000; i++)
-            {
-                NTLoteBLL ntLote = new NTLoteBLL();
-                var LoteConsulta = ntLote.SelectId(new NTLoteBE { lote_id = this.lote_id });
-                var empresaDados = new GlobaisEmpresaBLL().SelectId(new Globais.BE.GlobaisEmpresaBE { conf_id = LoteConsulta.conf_id });
-                System.Net.ServicePointManager.Expect100Continue = false;
+        
 
-                var empresa = new NFEEnviarNota(LoteConsulta, empresaDados).RetornaEmpresa(false);
-                var envio = new NFSE.Net.Envio.Processar();
-                envio.ProcessaArquivo(empresa, LoteConsulta.lote_urlXmlConsulta, LoteConsulta.lote_urlXmlConsulta.Replace(".xml", "-Retorno.xml"), Servicos.ConsultarSituacaoLoteRps);
-
-                var retorno = new NFEGerarXMLNotasServicos().LerXMLConsulta(LoteConsulta.lote_urlXmlConsulta.Replace(".xml", "-Retorno.xml"));
-                if (retorno.Situacao == "2")
-                    Thread.Sleep(1500);
-                else
-                    return;
-            }
-        }
 
         /*int numTentativas;
         string urlConsulta;

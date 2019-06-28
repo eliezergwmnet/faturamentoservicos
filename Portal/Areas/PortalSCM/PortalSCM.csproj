@@ -251,6 +251,10 @@
       <Project>{108e9ddb-7fc2-4352-ab19-351ad4328a4e}</Project>
       <Name>Globais.Helper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NFENotasFiscais\Class\NFENotasFiscais.BE\NFENotasFiscais.BE.csproj">
+      <Project>{362FC5A5-1538-4246-9E58-5226C635553B}</Project>
+      <Name>NFENotasFiscais.BE</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NFENotasFiscais\Class\NFENotasFiscais.BLL\NFENotasFiscais.BLL.csproj">
       <Project>{a35e204a-9f9b-47a6-84fe-ac60e95bf4af}</Project>
       <Name>NFENotasFiscais.BLL</Name>
@@ -287,6 +291,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\ContratoServicos\ModalSCMCadastroContratoServico.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\public.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

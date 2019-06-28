@@ -13,3 +13,18 @@ E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Clas
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\obj\Debug\PortalSCM.Dao.csprojResolveAssemblyReference.cache
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\obj\Debug\PortalSCM.Dao.dll
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\obj\Debug\PortalSCM.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\PortalSCM.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\PortalSCM.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\Globais.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\Globais.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\Globais.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\PortalSCM.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\PortalSCM.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\Globais.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\Globais.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\Globais.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\PortalSCM.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\bin\Debug\PortalSCM.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\obj\Debug\PortalSCM.Dao.csprojResolveAssemblyReference.cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\obj\Debug\PortalSCM.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\obj\Debug\PortalSCM.Dao.pdb

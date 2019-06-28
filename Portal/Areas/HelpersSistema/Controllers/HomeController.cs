@@ -163,5 +163,20 @@ namespace HelpersSistema.Controllers
             return View("~/Areas/HelpersSistema/Views/Home/MostrarDados.cshtml");
             //return Json(retorno, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpGet]
+        public ActionResult CriarController(string conection, string Nome)
+        {
+            ViewData[TituloPageEnum.TituloPagina.ToString()] = "Criar Controller";
+            ViewData[TituloPageEnum.TituloModuloPagina.ToString()] = "Tabela: " + Nome;
+
+            Base.ConnectionString = ConfigurationManager.ConnectionStrings[conection].ConnectionString;
+            List<Table> colunas = new CriarProcedures(Nome).CarregaColunas();
+            var retorno = new CriarControler().CriarClasseController(Nome, colunas);
+
+            ViewBag.Dados = retorno;
+            return View("~/Areas/HelpersSistema/Views/Home/MostrarDados.cshtml");
+            //return Json(retorno, JsonRequestBehavior.AllowGet);
+        }
     }
 }

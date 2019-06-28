@@ -20,3 +20,31 @@ E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscai
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\obj\Debug\NFENotasFiscais.BLL.pdb
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\PortalSCM.Helper.dll
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\PortalSCM.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\NFENotasFiscais.BLL.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\NFENotasFiscais.BLL.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\Globais.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\Globais.BLL.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\Globais.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\Globais.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\NFENotasFiscais.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\NFENotasFiscais.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\NFSE.Net.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\PortalSCM.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\PortalSCM.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\Globais.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\Globais.BLL.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\Globais.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\Globais.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\PortalSCM.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\PortalSCM.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\NFENotasFiscais.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\NFENotasFiscais.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\obj\Debug\NFENotasFiscais.BLL.csprojResolveAssemblyReference.cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\obj\Debug\NFENotasFiscais.BLL.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\obj\Debug\NFENotasFiscais.BLL.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\NFENotasFiscais.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\NFENotasFiscais.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\PortalSCM.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\PortalSCM.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\NReco.PdfGenerator.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\NFENotasFiscais\Class\NFENotasFiscais.BLL\bin\Debug\Portal.Boleto.dll

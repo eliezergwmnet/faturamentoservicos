@@ -36,7 +36,7 @@ namespace Portal.Controllers
             {
                 var teste = ex;
             }
-            return View();
+            return View("~/Views/Clientes/Index.cshtml");
         }
 
 

@@ -2,3 +2,8 @@ E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\HelpersSistema
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\HelpersSistema\Class\HelpersSistema.BE\bin\Debug\HelpersSistema.BE.pdb
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\HelpersSistema\Class\HelpersSistema.BE\obj\Debug\HelpersSistema.BE.dll
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\HelpersSistema\Class\HelpersSistema.BE\obj\Debug\HelpersSistema.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\HelpersSistema\Class\HelpersSistema.BE\bin\Debug\HelpersSistema.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\HelpersSistema\Class\HelpersSistema.BE\bin\Debug\HelpersSistema.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\HelpersSistema\Class\HelpersSistema.BE\obj\Debug\HelpersSistema.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\HelpersSistema\Class\HelpersSistema.BE\obj\Debug\HelpersSistema.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\HelpersSistema\Class\HelpersSistema.BE\obj\Debug\HelpersSistema.BE.csprojResolveAssemblyReference.cache

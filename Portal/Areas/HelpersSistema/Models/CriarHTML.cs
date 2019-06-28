@@ -25,9 +25,9 @@ namespace HelpersSistema.Models
 
         public string CriarIndex()
         {
-            string retorno = Help.CriarTituloPage();
+            string retorno = "<!--\n" + Help.CriarTituloPage() + "-->";
 
-            retorno += "@model List<PortalSCM.BE.SCMContratoBE> \n";
+            retorno += "@model List<PortalSCM.BE." + table.Replace("tbl", "") + "BE> \n";
             retorno += " \n";
             retorno += "<div class=\"data-table-list\"> \n";
             retorno += "    <div class=\"table-responsive\"> \n";
@@ -56,9 +56,8 @@ namespace HelpersSistema.Models
                 else
                     retorno += "                        <td>@item." + item.Coluna + "</td> \n";
             }
-            retorno += "                        <td style=\"padding: 15px 0px !important;\"><a href=\"@Url.Content(\"~/SCM/ContratoServicos?contrato=\" + item." + colunas[0].Coluna + ")\" class=\"btn btn-success btn-sm\" alt=\"Alterar Informação\" title=\"Serviços\"><i class=\"fa fa-briefcase\"></i></a></td> \n";
-            retorno += "                        <td style=\"padding: 15px 0px !important;\"><button class=\"btn btn-warning btn-sm\" alt=\"Alterar Informação\" title=\"Alterar Informação\" onclick=\"SCMAlterarContrato(@item." + colunas[0].Coluna + ")\"><i class=\"fa fa-arrow-circle-o-right\"></i></button></td> \n";
-            retorno += "                        <td style=\"padding: 15px 0px !important;\"><button class=\"btn btn-danger btn-sm\" alt=\"Remover Item\" onclick=\"SCMRemoverContrato(@item.cont_id)\" title=\"Remover Item\"><i class=\"fa fa-trash-o\"></i></button></td> \n";
+            retorno += "                        <td style=\"padding: 15px 0px !important;\"><button class=\"btn btn-warning btn-sm\" alt=\"Alterar Informação\" title=\"Alterar Informação\" onclick=\"Alterar" + table.Replace("tbl", "") + "(@item." + colunas[0].Coluna + ")\"><i class=\"fa fa-arrow-circle-o-right\"></i></button></td> \n";
+            retorno += "                        <td style=\"padding: 15px 0px !important;\"><button class=\"btn btn-danger btn-sm\" alt=\"Remover Item\" onclick=\"Remover" + table.Replace("tbl", "") + "(@item.cont_id)\" title=\"Remover Item\"><i class=\"fa fa-trash-o\"></i></button></td> \n";
             retorno += "                    </tr> \n";
             retorno += "                } \n";
             retorno += "            </tbody> \n";
@@ -66,11 +65,11 @@ namespace HelpersSistema.Models
             retorno += "    </div> \n";
             retorno += "</div> \n";
             retorno += " \n";
-            retorno += "@Html.Partial(\"~/Areas/PortalSCM/Views/Home/ModelContratoCadastro.cshtml\") \n";
+            retorno += "@Html.Partial(\"~/Areas/Area/Views/" + table.Replace("tbl", "") + "/Model" + table.Replace("tbl", "") + "Cadastro.cshtml\") \n";
             retorno += " \n";
             retorno += "<script src=\"~/Content/Template/Verde/js/data-table/jquery.dataTables.min.js\"></script> \n";
             retorno += "<script src=\"~/Content/Template/Verde/js/data-table/data-table-act.js\"></script> \n";
-            retorno += "<script src=\"~/Areas/PortalSCM/js/Contrato.js\"></script> \n";
+            retorno += "<script src=\"~/Areas/Area/js/" + table.Replace("tbl", "") + ".js\"></script> \n";
 
             retorno = retorno.Replace("//NOME//", table);
             retorno = retorno.Replace("//ENTIDADE//", HelpersSistema.Models.Base.Base.NomeEntidade);
@@ -81,9 +80,9 @@ namespace HelpersSistema.Models
 
         public string CriarInsert()
         {
-            string retorno = Help.CriarTituloPage();
+            string retorno = "<!--\n" + Help.CriarTituloPage() + "-->";
 
-            retorno += " <div class=\"modal fade\" id=\"SCMCadastroContrato\" role=\"dialog\">\n";
+            retorno += " <div class=\"modal fade\" id=\"Cadastro" + table.Replace("tbl", "") + "\" role=\"dialog\">\n";
             retorno += "     <div class=\"modal-dialog modals-default\">\n";
             retorno += "         <div class=\"modal-content\">\n";
             retorno += "             <div class=\"modal-header\" style=\"margin-bottom: 20px;background-color: #fff !important;\">\n";
@@ -102,7 +101,7 @@ namespace HelpersSistema.Models
             retorno += "                 </div>\n";
             retorno += "                 <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n";
             retorno += "             </div>\n";
-            retorno += "             <form id=\"SCMCadastroServico\" method=\"get\">\n";
+            retorno += "             <form id=\"Cadastro" + table.Replace("tbl", "") + "\" method=\"get\">\n";
             retorno += "                 <div class=\"modal-body\">\n";
             retorno += "                     <input id=\"cont_id\" name=\"cont_id\" type=\"hidden\" value=\"\" />\n";
             foreach (var item in colunas)
@@ -139,7 +138,7 @@ namespace HelpersSistema.Models
             }
             retorno += "                 </div>\n";
             retorno += "                 <div class=\"modal-footer\" style=\"margin-top: 30px\">\n";
-            retorno += "                     <button type=\"button\" class=\"btn btn-default\" onclick=\"SCMCadastrarServicos()\" >Salvar</button>\n";
+            retorno += "                     <button type=\"button\" class=\"btn btn-default\" onclick=\"Cadastrar" + table.Replace("tbl", "") + "()\" >Salvar</button>\n";
             retorno += "                     <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Cancelar</button>\n";
             retorno += "                 </div>\n";
             retorno += "             </form>\n";
@@ -179,11 +178,11 @@ namespace HelpersSistema.Models
             retorno += "\n";
             retorno += "$(function () {\n";
             retorno += "    $(\"#buttonTituloPagesCadastro\").click(function () {\n";
-            retorno += "        CadastrarConfiguracaoItem();\n";
+            retorno += "        Cadastrar" + table.Replace("tbl", "") + "Item();\n";
             retorno += "    })\n";
             retorno += "});\n";
             retorno += "\n";
-            retorno += "function CadastrarConfiguracaoItem() {\n";
+            retorno += "function Cadastrar" + table.Replace("tbl", "") + "Item() {\n";
             retorno += "    \n";
             int i = 0;
             foreach (var item in colunas)
@@ -192,11 +191,11 @@ namespace HelpersSistema.Models
                     retorno += "        CarregarSelect(\"" + item.Coluna + "\", \"CarregaClientes\");\n";
                 i++;
             }
-            retorno += "    $('#SCMCadastroContrato').modal({ backdrop: 'static', keyboard: true });\n";
+            retorno += "    $('#Cadastro" + table.Replace("tbl", "") + "').modal({ backdrop: 'static', keyboard: true });\n";
             retorno += "}\n";
             retorno += "\n";
-            retorno += "function SCMCadastrarServicos() {\n";
-            retorno += "    if (ValidaCampos(\"SCMCadastroContrato\")) {\n";
+            retorno += "function Cadastrar" + table.Replace("tbl", "") + "() {\n";
+            retorno += "    if (ValidaCampos(\"Cadastro" + table.Replace("tbl", "") + "\")) {\n";
             retorno += "        var obj = {\n";
             foreach (var item in colunas)
             {
@@ -205,28 +204,28 @@ namespace HelpersSistema.Models
 
             retorno += "        }\n";
             retorno += "\n";
-            retorno += "        EnviarRequisicao(\"/SCM/Home/Cadastrar\", obj, \"Post\", function (res) {\n";
-            retorno += "            window.location.href = \"/SCM/ContratoServicos?contrato=\" + res;\n";
+            retorno += "        EnviarRequisicao(\"/Area/" + table.Replace("tbl", "") + "/Cadastrar\", obj, \"Post\", function (res) {\n";
+            retorno += "            window.location.href = \"/Area/" + table.Replace("tbl", "") + "?contrato=\" + res;\n";
             retorno += "        })\n";
             retorno += "    }\n";
             retorno += "}\n";
             retorno += "\n";
             retorno += "function SCMAlterarContrato(id) {\n";
-            retorno += "    EnviarRequisicao(\"/SCM/Home/SelectId\", {  " + colunas[0].Coluna + ": id }, \"Post\", function (res) {\n";
+            retorno += "    EnviarRequisicao(\"/Area/" + table.Replace("tbl", "") + "/SelectId\", {  " + colunas[0].Coluna + ": id }, \"Post\", function (res) {\n";
             foreach (var item in colunas)
             {
                 retorno += "        $(\"#" + item.Coluna + "\").val(res." + item.Coluna + ");\n";
             }
 
             retorno += "\n";
-            retorno += "        $('#SCMCadastroContrato').modal({ backdrop: 'static', keyboard: true });\n";
+            retorno += "        $('#Cadastro" + table.Replace("tbl", "") + "').modal({ backdrop: 'static', keyboard: true });\n";
             retorno += "    });\n";
             retorno += "}\n";
             retorno += "\n";
-            retorno += "function SCMRemoverContrato(id) {\n";
-            retorno += "    Confirmacao(\"Atenção\", \"Tem certeza que deseja remover o servço ? \", function (res) {\n";
+            retorno += "function Remover" + table.Replace("tbl", "") + "(id) {\n";
+            retorno += "    Confirmacao(\"Atenção\", \"Tem certeza que deseja remover o " + table.Replace("tbl", "") + " ? \", function (res) {\n";
             retorno += "        if (res) {\n";
-            retorno += "            EnviarRequisicao(\"/SCM/Home/Deletar\", {  " + colunas[0].Coluna + ": id }, \"Post\", function () {\n";
+            retorno += "            EnviarRequisicao(\"/Area/" + table.Replace("tbl", "") + "/Deletar\", {  " + colunas[0].Coluna + ": id }, \"Post\", function () {\n";
             retorno += "                window.location.reload();\n";
             retorno += "            });\n";
             retorno += "        }\n";

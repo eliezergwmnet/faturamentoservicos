@@ -33,6 +33,7 @@ namespace Globais.Dao
                     item.cli_CFOP = DBNull.Value.Equals(dr["cli_CFOP"]) ? 0 : Convert.ToDecimal(dr["cli_CFOP"]);
                     item.cli_SCM = DBNull.Value.Equals(dr["cli_SCM"])? false : Convert.ToBoolean(dr["cli_SCM"]);
                     item.cli_MNT = DBNull.Value.Equals(dr["cli_MNT"]) ? false : Convert.ToBoolean(dr["cli_MNT"]);
+                    item.cli_simplesNacional = DBNull.Value.Equals(dr["cli_simplesNacional"]) ? false : Convert.ToBoolean(dr["cli_simplesNacional"]);
                     item.cli_tipoVencimento = dr["cli_tipoVencimento"].ToString();
                     item.cli_parametroVencimento = dr["cli_parametroVencimento"].ToString();
                     item.cli_nomeFantasia = dr["cli_nomeFantasia"].ToString();

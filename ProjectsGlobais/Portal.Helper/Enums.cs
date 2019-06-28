@@ -162,6 +162,21 @@ namespace Globais.Helper
         [Description("ERR")]
         LoteErro
     }
+
+    /// <summary>
+    /// Enum com o retorno do status da nota
+    /// </summary>
+    public enum StatusNotaNFeRetorno
+    {
+        [Description("1")]
+        Nao_Recebido,
+        [Description("2")]
+        Nao_Processado,
+        [Description("3")]
+        Processado_Com_Erro,
+        [Description("4")]
+        Processado_Com_Sucesso
+    }
 }
 
 

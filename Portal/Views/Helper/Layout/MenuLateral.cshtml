@@ -154,18 +154,12 @@
                     <li class="@classActive">
                         <a data-toggle="tab" href="#Servicos"><i class="notika-icon notika-edit"></i> Serviços</a>
                     </li>
-                    @{classActive = Request.Url.LocalPath.Contains("/Chamados/Home") ? "active" : "";}
+
+                    @{classActive = Request.Url.LocalPath.Contains("/HelperSistema/Home") ? "active" : "";}
                     <li class="@classActive">
-                        <a href="@Url.Content("/Chamados/Home")"><i class="notika-icon notika-edit"></i> Chamados</a>
+                        <a href="@Url.Content("~/HelpersSistema/Home")"><i class="notika-icon notika-app"></i> Helper</a>
                     </li>
-                    @{classActive = Request.Url.LocalPath.Contains("/Mala") ? "active" : "";}
-                    <li class="@classActive">
-                        <a data-toggle="tab" href="#mala"><i class="notika-icon notika-windows"></i> Mala</a>
-                    </li>
-                    @{classActive = Request.Url.LocalPath.Contains("/Representante") ? "active" : "";}
-                    <li class="@classActive">
-                        <a href="@Url.Content("/HelpersSistema/Home")"><i class="notika-icon notika-form"></i> Helpers</a>
-                    </li>
+                  
                     @{classActive = Request.Url.LocalPath.Contains("/Configuracoes") ? "active" : "";}
                     <li class="@classActive">
                         <a href="@Url.Content("~/Configuracao")"><i class="notika-icon notika-app"></i> Configurações</a>
@@ -194,7 +188,16 @@
                                 <a href="@Url.Content("~/SCM/Faturamento")"><i class="notika-icon notika-support"></i> Faturamento</a>
                             </li>
                             <li>
+                                <a href="@Url.Content("~/NFENotasFiscais/Home")"><i class="notika-icon notika-support"></i> Notas Emitidas</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Content("~/NFENotasFiscais/Lotes")"><i class="notika-icon notika-support"></i> Lotes</a>
+                            </li>
+                            <li>
                                 <a href="@Url.Content("~/SCM/Relatorios")"><i class="notika-icon notika-support"></i> Relatórios</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Content("~/NFENotasFiscais/Boleto")"><i class="notika-icon notika-support"></i> Conf. Boleto</a>
                             </li>
                         </ul>
                     </div>

@@ -41,6 +41,7 @@
                 html += "   <td><a href='javascript:' class='btn btn-success btn-sm' alt='Selecionar' onclick='CriarBE(\"" + conection + "\", \"" + item.Nome + "\")' title='Selecionar'><i class='fa fa-trash-o'></i> BE</a></td>";
                 html += "   <td><a href='javascript:' class='btn btn-success btn-sm' alt='Selecionar' onclick='CriarDao(\"" + conection + "\", \"" + item.Nome + "\")' title='Selecionar'><i class='fa fa-trash-o'></i> Dao</a></td>";
                 html += "   <td><a href='javascript:' class='btn btn-success btn-sm' alt='Selecionar' onclick='CriarBLL(\"" + conection + "\", \"" + item.Nome + "\")' title='Selecionar'><i class='fa fa-trash-o'></i> BLL</a></td>";
+                html += "   <td><a href='javascript:' class='btn btn-success btn-sm' alt='Selecionar' onclick='CriarController(\"" + conection + "\", \"" + item.Nome + "\")' title='Selecionar'><i class='fa fa-trash-o'></i> Controller</a></td>";
                 html += "   <td><a href='javascript:' class='btn btn-success btn-sm' alt='Selecionar' onclick='CriarLista(\"" + conection + "\", \"" + item.Nome + "\")' title='Selecionar'><i class='fa fa-trash-o'></i> Lista HTML</a></td>";
                 html += "   <td><a href='javascript:' class='btn btn-success btn-sm' alt='Selecionar' onclick='CriarModal(\"" + conection + "\", \"" + item.Nome + "\")' title='Selecionar'><i class='fa fa-trash-o'></i> Modal HTML</a></td>";
                 html += "   <td><a href='javascript:' class='btn btn-success btn-sm' alt='Selecionar' onclick='CriarJS(\"" + conection + "\", \"" + item.Nome + "\")' title='Selecionar'><i class='fa fa-trash-o'></i> JS Paginas</a></td>";
@@ -64,6 +65,7 @@
         setTimeout(function () { CriarLista(conection, table); }, 1500);
         setTimeout(function () { CriarModal(conection, table); }, 1800);
         setTimeout(function () { CriarJS(conection, table); }, 2000);
+        setTimeout(function () { CriarController(conection, table); }, 2000);
     }
 
     function CriarProcedure(conection, table) {
@@ -129,6 +131,19 @@
                  CarregarTabelas(conection)
              })
          });*/
+    }
+
+    function CriarController(conection, table) {
+        window.open("/HelpersSistema/Home/CriarController?conection=" + conection + "&Nome=" + table, '_blank');
+        /*EnviarRequisicao("/HelpersSistema/Home/CriarLista", { conection: conection, Nome: table }, "Post", function (res) {
+            html = "<textarea  class='form-control obrigatorio' style='min-height: 500px;'>" + res + "</textarea>";
+            $("#dadosModal").html(html);
+            $('#SCMCadastroContrato').modal({ backdrop: 'static', keyboard: true });
+
+            $("#voltaritem").click(function () {
+                CarregarTabelas(conection)
+            })
+        });*/
     }
 
     function CriarLista(conection, table) {

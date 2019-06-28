@@ -1,5 +1,6 @@
-﻿using System.Web.Mvc;
-using System.Xml;
+﻿using System;
+using System.Collections.Generic;
+using System.Web.Mvc;
 using Globais.Helper;
 using PortalSCM.BE;
 using PortalSCM.BLL;
@@ -10,20 +11,19 @@ namespace PortalSCM.Controllers
     {
         public ActionResult Index()
         {
-            ViewData[TituloPageEnum.TituloPagina.ToString()] = "Contrato";
-            ViewData[TituloPageEnum.TituloModuloPagina.ToString()] = "Lista Contratos Clientes";
+            try
+            {
+                ViewData[TituloPageEnum.TituloPagina.ToString()] = "Contrato";
+                ViewData[TituloPageEnum.TituloModuloPagina.ToString()] = "Lista Contratos Clientes";
 
-
-
-            XmlDocument doc = new XmlDocument();
-            doc.Load(@"E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\NotaFiscalNFe\28-Retorno.xml");
-
-
-            
-
-
-            var lista = new SCMContratoBLL().Select();
-            return View(lista);
+                var lista = new SCMContratoBLL().Select();
+                return View(lista);
+            }
+            catch(Exception ex)
+            {
+                Common.TratarLogErro(ex);
+                return View(new List<SCMContratoBE>());
+            }
         }
 
         public JsonResult SelectId(SCMContratoBE obj)

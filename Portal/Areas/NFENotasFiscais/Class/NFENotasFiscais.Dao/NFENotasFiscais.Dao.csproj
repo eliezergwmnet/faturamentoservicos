@@ -40,8 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NTBoletoDao.cs" />
     <Compile Include="NTLoteDao.cs" />
     <Compile Include="NTLoteErroDao.cs" />
+    <Compile Include="NTLoteRetornoDao.cs" />
     <Compile Include="NTNotasDao.cs" />
     <Compile Include="NTNotasItensDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,6 +60,14 @@
     <ProjectReference Include="..\..\..\..\..\ProjectsGlobais\Portal.Helper\Globais.Helper.csproj">
       <Project>{108e9ddb-7fc2-4352-ab19-351ad4328a4e}</Project>
       <Name>Globais.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PortalSCM\Class\PortalSCM.BE\PortalSCM.BE.csproj">
+      <Project>{A68CCB82-958D-422C-92DB-5DB1D97CED77}</Project>
+      <Name>PortalSCM.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PortalSCM\Class\PortalSCM.Dao\PortalSCM.Dao.csproj">
+      <Project>{98B3FCF2-C6DF-4C51-872F-CD2176C74700}</Project>
+      <Name>PortalSCM.Dao</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\PortalSCM\Class\PortalSCM.Helper\PortalSCM.Helper.csproj">
       <Project>{5BE2CA67-2D14-4E21-B834-5DEC8B45217F}</Project>

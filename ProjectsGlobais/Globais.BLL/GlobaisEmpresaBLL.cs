@@ -18,7 +18,7 @@ namespace Globais.BLL
         }
         public GlobaisEmpresaBE SelectId(GlobaisEmpresaBE obj)
         {
-            return new GlobaisEmpresaDao().SelectId<GlobaisEmpresaBE>(obj);
+            return new GlobaisEmpresaDao().Select<GlobaisEmpresaBE>(obj).FirstOrDefault<GlobaisEmpresaBE>();
         }
         public GlobaisEmpresaBE Insert(GlobaisEmpresaBE obj, GlobaisEnderecoBE _endereco)
         {

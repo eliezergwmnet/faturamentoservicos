@@ -47,7 +47,15 @@ namespace PortalSCM.Controllers
                 }
             }
             else
+            {
                 ValidaUsuario();
+                const string culture = "en-US";
+                System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.GetCultureInfo(culture);
+
+                System.Threading.Thread.CurrentThread.CurrentCulture = ci;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
+
+            }
         }
 
         void ValidaUsuario()

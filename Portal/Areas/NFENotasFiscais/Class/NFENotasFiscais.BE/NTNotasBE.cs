@@ -44,4 +44,14 @@ namespace NFENotasFiscais.BE
         public List<NTNotasItensBE> NotaItens { get; set; }
         public SCMContratoBE Contrato { get; set; }
     }
+
+    public class NTNotasEmitidasBE: NTNotasBE
+    {
+        public NTLoteBE Lote { get; set; }
+        public GlobaisClienteBE Cliente { get; set; }
+        public int res_id { get; set; }
+        public int res_numeroNota { get; set; }
+        public int res_codigoVerificacao { get; set; }
+        public string res_dataEmissao { get; set; }
+    }
 }

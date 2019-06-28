@@ -1,5 +1,7 @@
 ﻿$(function () {
-
+    $("#buttonTituloPagesCadastro").click(function () {
+        CarregaModalCadastroPerfil();
+    })
 });
 
 function CarregaModalCadastroPerfil() {
@@ -14,7 +16,7 @@ function CadastrarPerfil() {
         $("#nomeperfil").addClass('is-valid');
     }
     else {
-        EnviarRequisicao("/Perfil/InsertPerfil", { idperfil: idperfil, nomeperfil: nomePerfil }, "GET", function () {
+        EnviarRequisicao("/Perfil/InsertPerfil", { perm_id: idperfil, perm_nome: nomePerfil }, "GET", function () {
             location.reload();
         }, false);
     }

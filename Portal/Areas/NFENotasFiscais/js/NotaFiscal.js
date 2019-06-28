@@ -31,6 +31,9 @@ $(function () {
     $("#buttonTituloPagesCadastro").click(function () {
         CadastrarConfiguracaoItem();
     })
+
+    CarregarSelect("cli_id", "CarregaClientes", null, function () { $('#cli_id').selectpicker(); });
+
 });
 
 function CadastrarConfiguracaoItem() {

@@ -34,7 +34,7 @@ namespace PortalSCM.BLL
         /// 2 => Contratos Mensais
         /// 3 => Contratos Avulso
         /// </param>
-        public SCMFaturamentoMensalBLL(int _conf_id, int _avulso = 1)
+        public SCMFaturamentoMensalBLL(int _conf_id, int _avulso = 3)
         {
             this.conf_id = _conf_id;
             this.avulso = _avulso;
@@ -159,11 +159,20 @@ namespace PortalSCM.BLL
                     obj.Contrato = item;
                     obj.valorBruto = (from x in item.Servicos select x.servCli_valor).Sum();
 
-                    if (this.Faturamento.EmpresaTaxas.confCom_calcularTributos)
+                    if (this.Faturamento.EmpresaTaxas.confCom_calcularTributos && !item.Cliente.cli_simplesNacional)
                     {
-                        var pis = Math.Round(((obj.valorBruto * GlobaisSCM.TaxaPis) / 100), 2);
+                        /*var pis = Math.Round(((obj.valorBruto * GlobaisSCM.TaxaPis) / 100), 2);
                         var confins = Math.Round(((obj.valorBruto * GlobaisSCM.TaxaConfins) / 100), 2);
-                        var cssl = Math.Round(((obj.valorBruto * GlobaisSCM.TaxaCssl) / 100), 2);
+                        var cssl = Math.Round(((obj.valorBruto * GlobaisSCM.TaxaCssl) / 100), 2);*/
+
+
+                        var pis = this.ValorTruncado(((obj.valorBruto * GlobaisSCM.TaxaPis) / 100), 2);
+                        var confins = this.ValorTruncado(((obj.valorBruto * GlobaisSCM.TaxaConfins) / 100), 2);
+                        var cssl = this.ValorTruncado(((obj.valorBruto * GlobaisSCM.TaxaCssl) / 100), 2);
+
+                       /* pis = Math.Round(Convert.ToDecimal(pis.ToString().Substring(0, pis.ToString().Length - 1)), 2);
+                        confins = Math.Round(Convert.ToDecimal(confins.ToString().Substring(0, confins.ToString().Length - 1)), 2);
+                        cssl = Math.Round(Convert.ToDecimal(cssl.ToString().Substring(0, cssl.ToString().Length - 1)), 2);*/
 
                         decimal somaTaxas = Math.Round(pis + confins + cssl);
 
@@ -196,6 +205,13 @@ namespace PortalSCM.BLL
             }
         }
 
+        public decimal ValorTruncado(decimal valor, int precisao)
+        {
+            decimal fator = (decimal)Math.Pow(10d, precisao);
+            decimal valorTruncado = Math.Floor(valor * fator);
+            return Math.Floor((Math.Round(valorTruncado, precisao))) / fator;
+        }
+
         bool SalvaNotas()
         {
             try
@@ -213,7 +229,7 @@ namespace PortalSCM.BLL
                     obj.not_tipoReceita = "N";
                     obj.not_codReceita = "N";
                     obj.not_dtEmissao = DateTime.Now;
-                    obj.not_dtVencimento = DateTime.Now.AddDays(10);//Ajustes com os parametros do sistema
+                    obj.not_dtVencimento = this.DataVencimento(item.Contrato.Cliente.cli_tipoVencimento, item.Contrato.Cliente.cli_parametroVencimento); // DateTime.Now.AddDays(10);//Ajustes com os parametros do sistema
                     obj.not_pis = item.pis;
                     obj.not_confins = item.confins;
                     obj.not_cssl = item.cssl;
@@ -263,6 +279,48 @@ namespace PortalSCM.BLL
                 Common.TratarLogErro(ex);
                 return false;
             }
+        }
+
+        DateTime DataVencimento(string tipovencimento, string objParametroVencimento)
+        {
+            DateTime retorno;
+            if (objParametroVencimento == "*")
+                objParametroVencimento = "20";
+            //Vencimento no mesmo mes
+            if (tipovencimento == "1")
+            {
+                //retorno = Convert.ToDateTime(objParametroVencimento + "/08/2018").Date;//.AddDays(Convert.ToInt32(objParametroVencimento));
+                if (Convert.ToInt32(objParametroVencimento) > DateTime.Now.Day)
+                {
+                    if (DateTime.Now.Month == 2 && Convert.ToInt32(objParametroVencimento) > 28)
+                        retorno = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 28);
+                    else
+                        retorno = new DateTime(DateTime.Now.Year, DateTime.Now.Month, Convert.ToInt32(objParametroVencimento));
+                }
+                else
+                {
+                    if (DateTime.Now.Month == 12)
+                        retorno = new DateTime((DateTime.Now.Year + 1), 1, Convert.ToInt32(objParametroVencimento));
+                    else
+                        retorno = new DateTime(DateTime.Now.Year, (DateTime.Now.Month + 1), Convert.ToInt32(objParametroVencimento));
+                }
+            }
+            //Vencimento no mes seguinte
+            else if (tipovencimento == "2")
+            {
+                //retorno = Convert.ToDateTime(objParametroVencimento + "/09/2018").Date;// (Convert.ToInt32(objParametroVencimento));
+                if (DateTime.Now.Month == 12)
+                    retorno = new DateTime((DateTime.Now.Year + 1), 1, Convert.ToInt32(objParametroVencimento));
+                else
+                    retorno = new DateTime(DateTime.Now.Year, (DateTime.Now.Month + 1), Convert.ToInt32(objParametroVencimento));
+            }
+            //Vencimento tantos dias apos a geração da nota
+            else
+            {
+                //retorno = Convert.ToDateTime("02/08/2018").Date.AddDays(Convert.ToInt32(objParametroVencimento));
+                retorno = DateTime.Now.AddDays(Convert.ToInt32(objParametroVencimento));
+            }
+            return retorno;
         }
     }
 }

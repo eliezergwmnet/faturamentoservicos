@@ -7,3 +7,12 @@ E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Clas
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.BE\obj\Debug\PortalSCM.BE.csprojResolveAssemblyReference.cache
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.BE\obj\Debug\PortalSCM.BE.dll
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\Class\PortalSCM.BE\obj\Debug\PortalSCM.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.BE\bin\Debug\PortalSCM.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.BE\bin\Debug\PortalSCM.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.BE\bin\Debug\Globais.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.BE\bin\Debug\Globais.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.BE\bin\Debug\Globais.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.BE\bin\Debug\Globais.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.BE\obj\Debug\PortalSCM.BE.csprojResolveAssemblyReference.cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.BE\obj\Debug\PortalSCM.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\Class\PortalSCM.BE\obj\Debug\PortalSCM.BE.pdb

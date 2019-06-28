@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HelpersSistema.Models.Base;
 using Portal.Importacao.Class;
+using Portal.Importacao.Model;
 
 namespace Portal.Importacao
 {
@@ -16,6 +18,10 @@ namespace Portal.Importacao
         public Form1()
         {
             InitializeComponent();
+
+            //new ClienteImport().CarregaDados();
+            //new ServicosImport().CarregaDados();
+            new ContratoImport().CarregaDados();
         }
 
         private void Form1_Load(object sender, EventArgs e)

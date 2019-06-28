@@ -10,34 +10,71 @@
 -->
 
 
-@model List<NFENotasFiscais.BE.NTNotasBE>
+@model List<NFENotasFiscais.BE.NTNotasEmitidasBE>
+@{
+    int i = 0;
+    var cor = "";
+}
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 30px 0px;background: #fff;float: left;">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <div class="form-group">
+            <label for="cli_nomeFantasia" class="control-label mb-1">Cliente</label>
+            <div class="nk-int-st">
+                <select id="cli_id" name="cli_id" class="form-control obrigatorio" data-live-search="true"></select>
+            </div>
 
-<div class="data-table-list">
+        </div>
+    </div>
+
+
+    <div class="col-lg-2 col-md-4 col-sm-4 col-xs-4">
+        <div class="form-group">
+            <label for="cli_razaoSocial" class="control-label mb-1">Data Início</label>
+            <div class="nk-int-st">
+                <input id="cli_razaoSocial" placeholder="Data Início" name="cli_razaoSocial" type="text" class="form-control formDate">
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-4 col-xs-4">
+        <div class="form-group">
+            <label for="cli_razaoSocial" class="control-label mb-1">Data Fim</label>
+            <div class="nk-int-st">
+                <input id="cli_razaoSocial" placeholder="Data Fim" name="cli_razaoSocial" type="text" class="form-control formDate">
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+        <div class="form-group">
+            <label for="cli_CGC" class="control-label mb-1">Emitida</label>
+            <div class="nk-int-st">
+                <select id="cli_CGC" name="cli_CGC" class="form-control obrigatorio">
+                    <option value="1">Sim</option>
+                    <option value="0">Não</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">
+        <div class="button-icon-btn mg-t-30 butt-mg-t-20">
+            <button class="btn btn-gray gray-icon-notika btn-reco-mg btn-button-mg waves-effect" id="btnbuscadados"><i class="notika-icon notika-search"></i></button>
+        </div>
+    </div>
+
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 data-table-list">
     <div class="table-responsive">
         <table id="data-table-basic" class="table table-striped">
             <thead>
                 <tr>
-                    <th>not_id</th>
-                    <th>log_id</th>
-                    <th>not_numero</th>
-                    <th>cli_id</th>
-                    <th>cont_id</th>
-                    <th>conf_id</th>
-                    <th>not_tipoReceita</th>
-                    <th>not_codReceita</th>
-                    <th>not_dtEmissao</th>
-                    <th>not_dtVencimento</th>
-                    <th>not_pis</th>
-                    <th>not_confins</th>
-                    <th>not_cssl</th>
-                    <th>not_irrf</th>
-                    <th>not_totalbruto</th>
-                    <th>not_totalliquido</th>
-                    <th>not_preenchida</th>
-                    <th>not_emitida</th>
-                    <th>not_situacao</th>
-                    <th>not_chave</th>
-                    <th>not_tipopagamento</th>
+                    <th class="text-left" style="width: 30px"></th>
+                    <th>Nº</th>
+                    <th>Cliente</th>
+                    <th>Contrato</th>
+                    <th>Dt Emissão</th>
+                    <th>Dt Venci.</th>
+                    <th>Vl. Bruto</th>
+                    <th>VL. Liq.</th>
                     <th style="padding: 15px 0px !important;width: 35px !important;"></th>
                     <th style="padding: 15px 0px !important;width: 35px !important;"></th>
                     <th style="padding: 15px 0px !important;width: 35px !important;"></th>
@@ -46,40 +83,97 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>@item.not_id</td>
-                        <td>@item.log_id</td>
-                        <td>@item.not_numero</td>
-                        <td>@item.cli_id</td>
-                        <td>@item.cont_id</td>
-                        <td>@item.conf_id</td>
-                        <td>@item.not_tipoReceita</td>
-                        <td>@item.not_codReceita</td>
+                    if (i % 2 == 0) { cor = "background-color: rgba(0,0,0,.05);"; } else { cor = ""; }
+                    <tr href='#@i' style="@cor">
+                        <td class="accordion-toggle clickable-row" href='#@i' data-toggle="collapse"><i class="fa fa-sort-desc"></i></td>
+                        <td>@item.not_numero.ToString().PadLeft(6, '0')</td>
+                        <td>@item.Cliente.cli_nomeFantasia</td>
+                        <td>@item.Contrato.cont_nome</td>
                         <td>@item.not_dtEmissao.ToString("dd/MM/yyyy")</td>
                         <td>@item.not_dtVencimento.ToString("dd/MM/yyyy")</td>
-                        <td>@string.Format("{0:0,0.00}", item.not_pis)</td>
-                        <td>@string.Format("{0:0,0.00}", item.not_confins)</td>
-                        <td>@string.Format("{0:0,0.00}", item.not_cssl)</td>
-                        <td>@string.Format("{0:0,0.00}", item.not_irrf)</td>
                         <td>@string.Format("{0:0,0.00}", item.not_totalbruto)</td>
                         <td>@string.Format("{0:0,0.00}", item.not_totalliquido)</td>
-                        <td>@item.not_preenchida</td>
-                        <td>@item.not_emitida</td>
-                        <td>@item.not_situacao</td>
-                        <td>@item.not_chave</td>
-                        <td>@item.not_tipopagamento</td>
-                        <td style="padding: 15px 0px !important;"><a href="@Url.Content("~/SCM/ContratoServicos?contrato=" + item.not_id)" class="btn btn-success btn-sm" alt="Alterar Informação" title="Serviços"><i class="fa fa-briefcase"></i></a></td>
-                        <td style="padding: 15px 0px !important;"><button class="btn btn-warning btn-sm" alt="Alterar Informação" title="Alterar Informação" onclick="SCMAlterarContrato(@item.not_id)"><i class="fa fa-arrow-circle-o-right"></i></button></td>
-                        <td style="padding: 15px 0px !important;"><button class="btn btn-danger btn-sm" alt="Remover Item" onclick="SCMRemoverContrato(@item.cont_id)" title="Remover Item"><i class="fa fa-trash-o"></i></button></td>
+                        <td style="padding: 15px 0px !important;">
+                            <a href="@string.Format("http://visualizar.ginfes.com.br/report/consultarNota?__report=nfs_ver4&cdVerificacao={0}&numNota={1}&cnpjPrestador=null", item.res_codigoVerificacao.ToString().PadLeft(9, '0'), item.res_numeroNota.ToString().PadLeft(4, '0'))" target="_blank" class="btn btn-success btn-sm" alt="Nota Fiscal" title="Nota Fiscal"><i class="fa fa-file-code-o"></i></a>
+                        </td>
+                        <td style="padding: 15px 0px !important;"><button class="btn btn-warning btn-sm" alt="Enviar Email" title="Enviar Email" onclick="SCMAlterarContrato(@item.not_id)"><i class="fa fa-envelope-o"></i></button></td>
+                        <td style="padding: 15px 0px !important;"><button class="btn btn-info btn-sm" alt="Ver Boleto" onclick="SCMRemoverContrato(@item.cont_id)" title="Ver Boleto"><i class="fa fa-file-text-o"></i></button></td>
                     </tr>
+
+                    <tr>
+                        <td colspan="100" style="padding:0px">
+                            <div id="@i" class="accordion-body collapse">
+                                <div class="accordion-inner" style="background: #fff">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <h5>Taxas</h5>
+                                            </div>
+                                        </div>
+
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Pis</th>
+                                                    <th>Confins</th>
+                                                    <th>CSSL</th>
+                                                    <th>IRRF</th>
+                                                    <th>Bruto</th>
+                                                    <th>Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>@item.not_pis</td>
+                                                    <td>@item.not_confins</td>
+                                                    <td>@item.not_cssl</td>
+                                                    <td>@item.not_irrf</td>
+                                                    <td>@item.not_totalbruto</td>
+                                                    <td>@item.not_totalliquido</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <h5>Contrato</h5>
+                                            </div>
+                                        </div>
+
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nome</th>
+                                                    <th>Descrição</th>
+                                                    <th>Ativação</th>
+                                                    <th>Mensal</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>@item.Contrato.cont_nome</td>
+                                                    <td>@item.Contrato.cont_descricao</td>
+                                                    <td>@item.Contrato.cont_data.ToString("dd/MM/yyyy")</td>
+                                                    <td>@(item.Contrato.cont_avulso ? "Não" : "Sim")</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    i++;
                 }
             </tbody>
         </table>
     </div>
 </div>
 
-@Html.Partial("~/Areas/NFENotasFiscais/Views/Home/ModalCadastroNota.cshtml")
 
-<script src="~/Content/Template/Verde/js/data-table/jquery.dataTables.min.js"></script>
-<script src="~/Content/Template/Verde/js/data-table/data-table-act.js"></script>
 <script src="~/Areas/NFENotasFiscais/js/NotaFiscal.js"></script>

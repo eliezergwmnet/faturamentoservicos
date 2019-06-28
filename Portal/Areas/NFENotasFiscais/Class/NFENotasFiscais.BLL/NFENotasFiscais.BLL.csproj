@@ -33,6 +33,12 @@
     <Reference Include="NFSE.Net">
       <HintPath>NFEServicos\DLLProjeto\NFSE.Net.dll</HintPath>
     </Reference>
+    <Reference Include="NReco.PdfGenerator">
+      <HintPath>..\..\BoletoDLL\NReco.PdfGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="Portal.Boleto">
+      <HintPath>..\..\BoletoDLL\Portal.Boleto.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -45,10 +51,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormasPagamento\GerarBoleto.cs" />
+    <Compile Include="NFEServicos\NFEConsultarNotaStatus.cs" />
     <Compile Include="NFEServicos\NFEEnviarNota.cs" />
     <Compile Include="NFEServicos\NFEGerarXMLNotasServicos.cs" />
+    <Compile Include="NTBoletoBLL.cs" />
     <Compile Include="NTLoteBLL.cs" />
     <Compile Include="NTLoteErroBLL.cs" />
+    <Compile Include="NTLoteRetornoBLL.cs" />
     <Compile Include="NTNotasBLL.cs" />
     <Compile Include="NTNotasItensBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,6 +95,10 @@
     <ProjectReference Include="..\NFENotasFiscais.Dao\NFENotasFiscais.Dao.csproj">
       <Project>{BAD1CF0B-13B7-4597-9A07-7788D58AC4DA}</Project>
       <Name>NFENotasFiscais.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NFENotasFiscais.Helper\NFENotasFiscais.Helper.csproj">
+      <Project>{E1EAFB5F-CA3B-4113-8676-6B1FFC43651B}</Project>
+      <Name>NFENotasFiscais.Helper</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

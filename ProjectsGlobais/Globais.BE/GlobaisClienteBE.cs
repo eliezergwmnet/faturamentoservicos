@@ -18,6 +18,7 @@ namespace Globais.BE
         public string cli_CPF { get; set; }
         public string cli_CodCidIBGE { get; set; }
         public string cli_incricaoEstadual { get; set; }
+        public bool cli_simplesNacional { get; set; }
         public List<GlobaisClienteEnderecoBE> Endereco { get; set; }
         public List<GlobaisClienteContatoBE> Contato { get; set; }
         public int conf_id { get { return Helper.Common.GetEmpresaSelecionada(); } set { value = conf_id; } }

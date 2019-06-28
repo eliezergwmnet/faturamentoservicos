@@ -82,6 +82,10 @@ namespace NFENotasFiscais.BLL.NFEServicos
             return retorno;
         }
 
+        /// <summary>
+        /// Carrega cabeçalho para envio das notas a serem emitidas
+        /// </summary>
+        /// <param name="quant"></param>
         void CarregaXMCabecalho(int quant)
         {
             string retorno = "";
@@ -101,6 +105,10 @@ namespace NFENotasFiscais.BLL.NFEServicos
             xml = retorno;
         }
 
+        /// <summary>
+        /// Carrega xml com os itens das notas a serem emitidas
+        /// </summary>
+        /// <param name="obj"></param>
         void CarregaXMLRPSServico(NTLoteBE obj)
         {
             string retorno = "";
@@ -133,18 +141,18 @@ namespace NFENotasFiscais.BLL.NFEServicos
                 retorno += "               <tipos:Status>" + Status + "</tipos:Status>";
                 retorno += "               <tipos:Servico>";
                 retorno += "                  <tipos:Valores>";
-                retorno += "                     <tipos:ValorServicos>" + item.not_totalbruto.ToString("n2").Replace(".", "").Replace(",", ".") + "</tipos:ValorServicos>";
+                retorno += "                     <tipos:ValorServicos>" + item.not_totalbruto.ToString("n2").Replace(",", "") + "</tipos:ValorServicos>";
                 retorno += "                     <tipos:ValorDeducoes>0.00</tipos:ValorDeducoes>";
-                retorno += "                     <tipos:ValorPis>" + item.not_pis.ToString("n2").Replace(".", "").Replace(",", ".") + "</tipos:ValorPis>";
-                retorno += "                     <tipos:ValorCofins>" + item.not_confins.ToString("n2").Replace(".", "").Replace(",", ".") + "</tipos:ValorCofins>";
-                retorno += "                     <tipos:ValorIr>" + item.not_irrf.ToString("n2").Replace(".", "").Replace(",", ".") + "</tipos:ValorIr>";
-                retorno += "                     <tipos:ValorCsll>" + item.not_cssl.ToString("n2").Replace(".", "").Replace(",", ".") + "</tipos:ValorCsll>";
+                retorno += "                     <tipos:ValorPis>" + item.not_pis.ToString("n2").Replace(",", "") + "</tipos:ValorPis>";
+                retorno += "                     <tipos:ValorCofins>" + item.not_confins.ToString("n2").Replace(",", "") + "</tipos:ValorCofins>";
+                retorno += "                     <tipos:ValorIr>" + item.not_irrf.ToString("n2").Replace(",", "") + "</tipos:ValorIr>";
+                retorno += "                     <tipos:ValorCsll>" + item.not_cssl.ToString("n2").Replace(",", "") + "</tipos:ValorCsll>";
                 retorno += "                     <tipos:IssRetido>2</tipos:IssRetido>";
-                retorno += "                     <tipos:ValorIss>" + iss.ToString("n2").Replace(".", "").Replace(",", ".") + "</tipos:ValorIss>";
+                retorno += "                     <tipos:ValorIss>" + iss.ToString("n2").Replace(",", "") + "</tipos:ValorIss>";
                 retorno += "                     <tipos:ValorIssRetido>0.00</tipos:ValorIssRetido>";
-                retorno += "                     <tipos:BaseCalculo>" + item.not_totalbruto.ToString("n2").Replace(".", "").Replace(",", ".") + "</tipos:BaseCalculo>";
-                retorno += "                     <tipos:Aliquota>3</tipos:Aliquota>";
-                retorno += "                     <tipos:ValorLiquidoNfse>" + item.not_totalliquido.ToString("n2").Replace(".", "").Replace(",", ".") + "</tipos:ValorLiquidoNfse>";
+                retorno += "                     <tipos:BaseCalculo>" + item.not_totalbruto.ToString("n2").Replace(",", "") + "</tipos:BaseCalculo>";
+                retorno += "                     <tipos:Aliquota>0.0300</tipos:Aliquota>";
+                retorno += "                     <tipos:ValorLiquidoNfse>" + item.not_totalliquido.ToString("n2").Replace(",", "") + "</tipos:ValorLiquidoNfse>";
                 retorno += "                  </tipos:Valores>";
                 retorno += "                  <tipos:ItemListaServico>" + ItemListaServico + "</tipos:ItemListaServico>";
                 retorno += "                  <tipos:CodigoTributacaoMunicipio>" + CodigoTributacaoMunicipio + "</tipos:CodigoTributacaoMunicipio>";//Deixar Fixo
@@ -158,7 +166,10 @@ namespace NFENotasFiscais.BLL.NFEServicos
                 retorno += "               <tipos:Tomador>";
                 retorno += "                  <tipos:IdentificacaoTomador>";
                 retorno += "                     <tipos:CpfCnpj>";
-                retorno += "                        <tipos:Cnpj>" + Common.RemoveCaracter(item.Contrato.Cliente.cli_CPF) + "</tipos:Cnpj>";
+                if(item.Contrato.Cliente.cli_tipoInscricao == "2")
+                    retorno += "                        <tipos:Cpf>" + Common.RemoveCaracter(item.Contrato.Cliente.cli_CPF) + "</tipos:Cpf>";
+                else
+                    retorno += "                        <tipos:Cnpj>" + Common.RemoveCaracter(item.Contrato.Cliente.cli_CPF) + "</tipos:Cnpj>";
                 retorno += "                     </tipos:CpfCnpj>";
                 retorno += "                  </tipos:IdentificacaoTomador>";
                 retorno += "                  <tipos:RazaoSocial>" + Common.RemoveCaracter(item.Contrato.Cliente.cli_razaoSocial.ToUpper()) + "</tipos:RazaoSocial>";
@@ -178,6 +189,9 @@ namespace NFENotasFiscais.BLL.NFEServicos
             xml = xml.Replace("@DadosClientes", retorno);
         }
 
+        /// <summary>
+        /// Carrega arquivo XML para envio das notas de teste
+        /// </summary>
         void CarregaXML()
         {
             string retorno = "";
@@ -255,6 +269,11 @@ namespace NFENotasFiscais.BLL.NFEServicos
             //return retorno;
         }
 
+        /// <summary>
+        /// Carrega arquivo XMl para validar status do Lote Enviado
+        /// </summary>
+        /// <param name="protocolo"></param>
+        /// <returns></returns>
         public string GerarArquivoXMLConsulta(string protocolo)
         {
             string retorno = "";
@@ -266,6 +285,28 @@ namespace NFENotasFiscais.BLL.NFEServicos
             retorno += "   </Prestador>";
             retorno += "   <Protocolo>" + protocolo + "</Protocolo>";
             retorno += "</ConsultarSituacaoLoteRpsEnvio>";
+
+            xml = retorno;
+            this.SalvarXML("Consulta");
+            return fileXml;
+        }
+
+        /// <summary>
+        /// Carrega arquivo XML para capturar o retorno das notas emiitidas
+        /// </summary>
+        /// <param name="procotoco"></param>
+        /// <returns></returns>
+        public string GerarArquivoXMLConsultarNotasLote(string protocolo)
+        {
+            string retorno = "";
+            retorno += "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
+            retorno += "<ConsultarLoteRpsEnvio Id=\"" + this.numLote + "\" xmlns=\"http://www.ginfes.com.br/servico_consultar_lote_rps_envio_v03.xsd\">";
+            retorno += "	<Prestador>";
+            retorno += "		<Cnpj xmlns=\"http://www.ginfes.com.br/tipos_v03.xsd\">" + this.cnpj + "</Cnpj>";
+            retorno += "		<InscricaoMunicipal xmlns=\"http://www.ginfes.com.br/tipos_v03.xsd\">" + this.incricaoMunicipal + "</InscricaoMunicipal>";
+            retorno += "	</Prestador>";
+            retorno += "	<Protocolo>" + protocolo + "</Protocolo>";
+            retorno += "</ConsultarLoteRpsEnvio>";
 
             xml = retorno;
             this.SalvarXML("Consulta");

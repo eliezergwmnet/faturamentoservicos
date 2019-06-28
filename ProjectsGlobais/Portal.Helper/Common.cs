@@ -156,7 +156,7 @@ namespace Globais.Helper
 
         public static int GetEmpresaSelecionada()
         {
-            int conf_id = 1;
+            int conf_id = 9;
             try
             {
                 conf_id = (int)HttpContext.Current.Session[Globais.SessionSistemaConfId];

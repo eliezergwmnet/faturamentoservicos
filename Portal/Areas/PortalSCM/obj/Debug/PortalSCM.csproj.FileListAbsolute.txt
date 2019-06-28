@@ -104,3 +104,22 @@ E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\bin\PortalSCM.pdb
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\obj\Debug\PortalSCM.csprojResolveAssemblyReference.cache
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\obj\Debug\PortalSCM.dll
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal\Areas\PortalSCM\obj\Debug\PortalSCM.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\bin\ApplicationInsights.config
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\bin\roslyn\csc.exe
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\bin\roslyn\System.Collections.Immutable.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\bin\roslyn\System.Reflection.Metadata.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\bin\roslyn\vbc.exe
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\bin\roslyn\VBCSCompiler.exe
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\bin\roslyn\VBCSCompiler.exe.config
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\bin\PortalSCM.dll.config
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\bin\PortalSCM.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\bin\PortalSCM.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\obj\Debug\PortalSCM.csprojResolveAssemblyReference.cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\obj\Debug\PortalSCM.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal\Areas\PortalSCM\obj\Debug\PortalSCM.pdb

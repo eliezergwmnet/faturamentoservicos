@@ -145,6 +145,7 @@
     <Compile Include="Models\Base\GenericMethods.cs" />
     <Compile Include="Models\CriarBLL.cs" />
     <Compile Include="Models\CriarClasses.cs" />
+    <Compile Include="Models\CriarControler.cs" />
     <Compile Include="Models\CriarHTML.cs" />
     <Compile Include="Models\CriarProcedures.cs" />
     <Compile Include="Models\CriarTrigger.cs" />

@@ -67,11 +67,11 @@ namespace HelpersSistema.Models
                 {
                     retorno += "\n";
                     retorno += "                    item.log_id = DBNull.Value.Equals(dr[\"log_id\"]) ? 0 : Convert.ToInt32(dr[\"log_id\"]);\n";
-                    retorno += "                    item.user_id = DBNull.Value.Equals(dr[\"user_id\"]) ? 0 : Convert.ToInt32(dr[\"user_id\"]);\n";
+                    retorno += "                    //item.user_id = DBNull.Value.Equals(dr[\"user_id\"]) ? 0 : Convert.ToInt32(dr[\"user_id\"]);\n";
                     retorno += "                    item.log_cadastro = Convert.ToDateTime(dr[\"log_cadastro\"]);\n";
-                    retorno += "                    item.log_alteracao = DBNull.Value.Equals(dr[\"user_id\"]) ? default(DateTime) : Convert.ToDateTime(dr[\"log_alteracao\"]);\n";
-                    retorno += "                    item.log_exclusao = DBNull.Value.Equals(dr[\"user_id\"]) ? default(DateTime) : Convert.ToDateTime(dr[\"log_exclusao\"]);\n";
-                    retorno += "                    item.log_ativo = DBNull.Value.Equals(dr[\"log_ativo\"]) ? false : Convert.ToBoolean(dr[\"log_exclusao\"]);\n";
+                    retorno += "                    item.log_alteracao = DBNull.Value.Equals(dr[\"log_alteracao\"]) ? default(DateTime) : Convert.ToDateTime(dr[\"log_alteracao\"]);\n";
+                    retorno += "                    item.log_exclusao = DBNull.Value.Equals(dr[\"log_exclusao\"]) ? default(DateTime) : Convert.ToDateTime(dr[\"log_exclusao\"]);\n";
+                    retorno += "                    item.log_ativo = DBNull.Value.Equals(dr[\"log_ativo\"]) ? false : Convert.ToBoolean(dr[\"log_ativo\"]);\n";
                     retorno += "\n";
 
                 }
@@ -80,7 +80,7 @@ namespace HelpersSistema.Models
                     if (item.Tipo == "varchar")
                         retorno += "                    item." + item.Coluna + " = dr[\"" + item.Coluna + "\"].ToString();\n";
                     if (item.Tipo == "int")
-                        retorno += "                    item." + item.Coluna + "  = DBNull.Value.Equals(dr[\"" + item.Coluna + " \"]) ? 0 : Convert.ToInt32(dr[\"" + item.Coluna + " \"]);\n";
+                        retorno += "                    item." + item.Coluna + "  = DBNull.Value.Equals(dr[\"" + item.Coluna + "\"]) ? 0 : Convert.ToInt32(dr[\"" + item.Coluna + "\"]);\n";
                     if (item.Tipo == "bit")
                         retorno += "                    item." + item.Coluna + " = DBNull.Value.Equals(dr[\"" + item.Coluna + "\"]) ? false : Convert.ToBoolean(dr[\"" + item.Coluna + "\"]);\n";
                     if (item.Tipo == "decimal")

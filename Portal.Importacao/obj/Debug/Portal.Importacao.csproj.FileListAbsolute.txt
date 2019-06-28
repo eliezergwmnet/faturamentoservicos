@@ -24,3 +24,35 @@ E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Importacao\obj\Debug
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.exe
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.pdb
 E:\MeusDocumentos\Pessoal\__Dados\GwmNet_Faturamento\Portal.Importacao\obj\Debug\Portal.Importacao.csprojResolveAssemblyReference.cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\obj\Debug\Portal.Importacao.csprojResolveAssemblyReference.cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\obj\Debug\Portal.Importacao.Form1.resources
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\obj\Debug\Portal.Importacao.Properties.Resources.resources
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\obj\Debug\Portal.Importacao.csproj.GenerateResource.Cache
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\Portal.Importacao.exe.config
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\Portal.Importacao.exe
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\Portal.Importacao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\Globais.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\Globais.BLL.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\Globais.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\Globais.Helper.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\Globais.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\Globais.BLL.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\Globais.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\Globais.Helper.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\obj\Debug\Portal.Importacao.exe
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\obj\Debug\Portal.Importacao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\PortalSCM.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\PortalSCM.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\PortalSCM.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\PortalSCM.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\PortalSCM.BLL.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\NFENotasFiscais.BE.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\NFENotasFiscais.BLL.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\NFSE.Net.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\NFENotasFiscais.Dao.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\PortalSCM.BLL.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\NFENotasFiscais.BE.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\NFENotasFiscais.BLL.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\NFENotasFiscais.Dao.pdb
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\Portal.Boleto.dll
+E:\GWMNet\Projetos GWMNet\GWMNet Faturamento\FaturamentoServicos\Portal.Importacao\bin\Debug\NReco.PdfGenerator.dll

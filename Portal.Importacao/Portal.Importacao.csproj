@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\Base.cs" />
+    <Compile Include="Base\BaseDadosParametrizavel.cs" />
+    <Compile Include="Base\Exec.cs" />
+    <Compile Include="Base\ExecCommands.cs" />
+    <Compile Include="Base\ExecCommandsParametrizavel.cs" />
+    <Compile Include="Base\GenericMethods.cs" />
     <Compile Include="Class\TipoCampoSQL.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -52,6 +58,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ClienteImport.cs" />
+    <Compile Include="Model\ContratoImport.cs" />
+    <Compile Include="Model\ServicosImport.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -78,6 +87,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DBAccess\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Portal\Areas\PortalSCM\Class\PortalSCM.BE\PortalSCM.BE.csproj">
+      <Project>{A68CCB82-958D-422C-92DB-5DB1D97CED77}</Project>
+      <Name>PortalSCM.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Portal\Areas\PortalSCM\Class\PortalSCM.BLL\PortalSCM.BLL.csproj">
+      <Project>{EE07FEC1-3D7B-40C8-A508-C36A41820438}</Project>
+      <Name>PortalSCM.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Portal\Areas\PortalSCM\Class\PortalSCM.Dao\PortalSCM.Dao.csproj">
+      <Project>{98B3FCF2-C6DF-4C51-872F-CD2176C74700}</Project>
+      <Name>PortalSCM.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectsGlobais\Globais.BE\Globais.BE.csproj">
+      <Project>{babd2c80-4559-40b1-9079-373fce1a75bc}</Project>
+      <Name>Globais.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectsGlobais\Globais.BLL\Globais.BLL.csproj">
+      <Project>{bd716341-aae7-4a42-9b42-fb2ce7693bc2}</Project>
+      <Name>Globais.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectsGlobais\Globais.Dao\Globais.Dao.csproj">
+      <Project>{7c68beb7-adab-4fdb-a7b6-8696de0e71a8}</Project>
+      <Name>Globais.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectsGlobais\Portal.Helper\Globais.Helper.csproj">
+      <Project>{108e9ddb-7fc2-4352-ab19-351ad4328a4e}</Project>
+      <Name>Globais.Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

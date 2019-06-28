@@ -41,8 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NFEServicos\NFeEnvioRetornoBE.cs" />
+    <Compile Include="NTBoletoBE.cs" />
     <Compile Include="NTLoteBE.cs" />
     <Compile Include="NTLoteErroBE.cs" />
+    <Compile Include="NTLoteRetornoBE.cs" />
     <Compile Include="NTNotasBE.cs" />
     <Compile Include="NTNotasItens.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

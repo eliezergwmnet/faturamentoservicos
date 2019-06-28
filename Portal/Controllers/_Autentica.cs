@@ -16,8 +16,6 @@ namespace Portal.Controllers
             context = _context;
             if (context.HttpContext.Session[Globais.Helper.Globais.SessionSistema] == null)
             {
-                
-
                 try
                 {
                     var cookie = HttpContext.Current.Request.Cookies[Globais.Helper.Globais.NameCookie].Value;
@@ -28,7 +26,7 @@ namespace Portal.Controllers
                     else
                     {
                         var _user = new GlobaisUsuarioBLL().SelectId(Convert.ToInt32(cookie));
-                        
+
                         context.HttpContext.Session[Globais.Helper.Globais.SessionSistema] = _user;
                         context.HttpContext.Session[Globais.Helper.Globais.SessionSistemaConfId] = _user.conf_id;
                         context.HttpContext.Session[Globais.Helper.Globais.SessionSistemaPermissao] = _user.Permissao;
@@ -39,26 +37,34 @@ namespace Portal.Controllers
                 catch (Exception ex)
                 {
                     HttpContext.Current.Response.Redirect("~/Login");
-                   /* var _user = new GlobaisUsuarioBLL().SelectId(4);
+                    /* var _user = new GlobaisUsuarioBLL().SelectId(4);
 
-                    context.HttpContext.Session[Globais.Helper.Globais.SessionSistema] = _user;
-                    context.HttpContext.Session[Globais.Helper.Globais.SessionSistemaConfId] = _user.conf_id;
-                    context.HttpContext.Session[Globais.Helper.Globais.SessionSistemaPermissao] = _user.Permissao;
-                    this.ValidaUsuario();*/
+                     context.HttpContext.Session[Globais.Helper.Globais.SessionSistema] = _user;
+                     context.HttpContext.Session[Globais.Helper.Globais.SessionSistemaConfId] = _user.conf_id;
+                     context.HttpContext.Session[Globais.Helper.Globais.SessionSistemaPermissao] = _user.Permissao;
+                     this.ValidaUsuario();*/
                 }
             }
             else
+            {
                 ValidaUsuario();
+                const string culture = "en-US";
+                System.Globalization.CultureInfo ci = System.Globalization.CultureInfo.GetCultureInfo(culture);
+
+                System.Threading.Thread.CurrentThread.CurrentCulture = ci;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
+
+            }
         }
 
         void ValidaUsuario()
         {
-            if (context.HttpContext.Request.Url.LocalPath != "/")
+            if (context.HttpContext.Request.Url.LocalPath != "/" && context.HttpContext.Request.Url.LocalPath.Substring(0, 2) != "/_")
             {
                 var user = (GlobaisUsuarioBE)HttpContext.Current.Session[Globais.Helper.Globais.SessionSistema];
                 //var page = (from x in user.Permissao.Paginas where context.HttpContext.Request.Url.LocalPath.Contains(x.permPag_url) select x).Count();
-               /* if (page == 0)
-                    HttpContext.Current.Response.Redirect("~/");*/
+                /* if (page == 0)
+                     HttpContext.Current.Response.Redirect("~/");*/
             }
 
         }
